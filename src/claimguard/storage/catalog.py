@@ -4,7 +4,7 @@ import json
 import sqlite3
 from datetime import date
 from pathlib import Path
-from claimguard.models import Chunk
+from claimguard.models import Chunk, PolicyMetadata
 from claimguard.ingestion.pipeline import parse_with_sidecar
 
 class Catalog:
@@ -32,14 +32,21 @@ class Catalog:
             old = c.execute('SELECT hash,metadata FROM documents WHERE policy_id=? AND version=?',
                             (meta.policy_id, meta.version)).fetchone()
             if old:
-                if old == (digest, meta.model_dump_json()):
+                if old[0] == digest and PolicyMetadata.model_validate_json(old[1]) == meta:
+                    if path.with_suffix(path.suffix + '.sections.json').exists():
+                        previous_chunks = c.execute('SELECT data FROM chunks WHERE policy_id=? AND version=?',
+                            (meta.policy_id,meta.version)).fetchall()
+                        stored = sorted(Chunk.model_validate_json(r[0]).model_dump_json() for r in previous_chunks)
+                        incoming = sorted(x.model_dump_json() for x in chunks)
+                        if stored != incoming:
+                            raise ValueError('Immutable section mapping conflict: create a new snapshot version')
                     return {'status':'duplicate', 'chunks':0}
                 raise ValueError('Immutable version conflict: create a new version and effective interval')
             intervals = c.execute('SELECT metadata FROM documents WHERE policy_id=?', (meta.policy_id,)).fetchall()
             for (raw,) in intervals:
                 previous = json.loads(raw)
-                a, b = meta.effective_date.isoformat(), (meta.effective_until or date.max).isoformat()
-                if a < (previous['effective_until'] or date.max.isoformat()) and previous['effective_date'] < b:
+                a, b = (meta.effective_date or date.min).isoformat(), (meta.effective_until or date.max).isoformat()
+                if a < (previous['effective_until'] or date.max.isoformat()) and (previous['effective_date'] or date.min.isoformat()) < b:
                     raise ValueError('Overlapping effective intervals for policy versions')
             source = self.home / 'sources' / (digest + path.suffix.lower())
             source.write_bytes(path.read_bytes())
@@ -64,7 +71,7 @@ class Catalog:
         result = [Chunk.model_validate_json(r[0]) for r in rows]
         return [x for x in result if x.metadata.access_level in access
                 and (not category or x.metadata.category==category)
-                and (as_of is None or (x.metadata.effective_date <= as_of
+                and (as_of is None or ((x.metadata.effective_date is None or x.metadata.effective_date <= as_of)
                      and (x.metadata.effective_until is None or as_of < x.metadata.effective_until)))]
     def versions(self, policy_id):
         with self.connect() as c:

@@ -5,7 +5,7 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import numpy as np
 home=Path('.')
-r=json.loads((home/'reports/retrieval_results.json').read_text())
+r=json.loads((home/'reports/retrieval_results.json').read_text(encoding='utf-8'))
 s=r['summary']; labels=list(s)
 fig,ax=plt.subplots(figsize=(9,4.8),layout='constrained')
 x=np.arange(len(labels));w=.24
@@ -16,7 +16,7 @@ for n,(key,label,color) in enumerate([('recall@1','Recall@1','#4361ee'),('recall
 ax.set(xticks=x,xticklabels=labels,ylim=(0,1.12),ylabel='Score',title='ClaimGuard AI — 68 questions avec réponse')
 ax.spines[['top','right']].set_visible(False);ax.legend(loc='lower right');ax.grid(axis='y',alpha=.15);ax.set_axisbelow(True)
 fig.savefig('reports/retrieval_comparison.png',dpi=180);fig.savefig('reports/retrieval_comparison.svg');plt.close(fig)
-training=json.loads(Path('reports/training_run.json').read_text())
+training=json.loads(Path('reports/training_run.json').read_text(encoding='utf-8'))
 fig,ax=plt.subplots(figsize=(7,3.7),layout='constrained')
 ax.plot([v['epoch'] for v in training['logs']],[v['validation_loss'] for v in training['logs']],marker='o',label='Validation')
 ax.plot([v['epoch'] for v in training['logs'][1:]],[v['train_loss'] for v in training['logs'][1:]],marker='s',label='Entraînement')
@@ -37,7 +37,7 @@ lines+=['','E1 : dense ; E2 : BM25 ; E3 : dense + BM25 + RRF ; E4 : hybride + Cr
 '- Les latences sont des mesures locales CPU avec modèles déjà chargés ; elles excluent le chargement et les appels LLM, et ne constituent pas un test de charge. Les différences E4/E5 ne prouvent pas un gain de vitesse.',
 '','## Fine-tuning',f"Base : {training['base_model']}. Triplet cosine margin 0,25 ; 3 époques ; batch 8 ; lr 2e-5 ; weight decay 0,01 ; seed 42 ; CPU. 60 exemples train, 30 validation. Checkpoint retenu : époque {training['best_epoch']}, choisi sur validation uniquement. Durée mesurée : {training['training_seconds']:.2f} s.",
 '','![Pertes](training_curve.png)']
-ab=json.loads(Path('reports/dense_finetuning_comparison.json').read_text())
+ab=json.loads(Path('reports/dense_finetuning_comparison.json').read_text(encoding='utf-8'))
 lines+=['','## Comparaison du modèle dense seul','| Modèle | Recall@1 | Recall@5 | MRR@10 |','|---|---:|---:|---:|']
 for key,name in [('baseline','Pré-entraîné'),('fine_tuned','Fine-tuné')]:
     m=ab[key];lines.append(f"| {name} | {m['recall@1']:.4f} | {m['recall@5']:.4f} | {m['mrr@10']:.4f} |")

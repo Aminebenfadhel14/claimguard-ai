@@ -1,0 +1,55 @@
+{
+  "path": "models/drip-r-policy-embedding",
+  "files": [
+    {
+      "path": "1_Pooling/config.json",
+      "size_bytes": 90,
+      "sha256": "4fef0a7e8c8ee36e74c0fad89bab60ade72324442d43f559ea219bb7c2580710"
+    },
+    {
+      "path": "2_Normalize/config.json",
+      "size_bytes": 97,
+      "sha256": "cdb09dfca347a56aa2d691744e38d5ad3c7cbc2834e7181272b9a15328b82524"
+    },
+    {
+      "path": "README.md",
+      "size_bytes": 10502,
+      "sha256": "dcd602d2fd35c203a247304a06fec6654a12f7941b739f9221a064fe8dc3b7f0"
+    },
+    {
+      "path": "config.json",
+      "size_bytes": 746,
+      "sha256": "224b17151cb94ab614799c3e705b0a84909fdb85d7697bb4e2c01931f281c894"
+    },
+    {
+      "path": "config_sentence_transformers.json",
+      "size_bytes": 284,
+      "sha256": "763bd5849fb69f1603e8745be2937d12aadce6f191c1a20859b54895dc2482a2"
+    },
+    {
+      "path": "model.safetensors",
+      "size_bytes": 90864192,
+      "sha256": "57c9a7a2252ac3f08d4979f36bd23adff117d308f2f5857b09a48648761bb732"
+    },
+    {
+      "path": "modules.json",
+      "size_bytes": 413,
+      "sha256": "3d02572a0455b832de67fb8e63a54981bc7e8b46e337c95e917bd8122a533bfd"
+    },
+    {
+      "path": "sentence_bert_config.json",
+      "size_bytes": 241,
+      "sha256": "3084164002c0bca01b0259c5327123803fce32e660a57feb93184ffead186fc8"
+    },
+    {
+      "path": "tokenizer.json",
+      "size_bytes": 711649,
+      "sha256": "851ca67100d372ca3ae031a6abd168f53489eebfd7d89523f35c5c9b4d372c3c"
+    },
+    {
+      "path": "tokenizer_config.json",
+      "size_bytes": 594,
+      "sha256": "4817907ff3846ed899a62cccad0193c21d0792130c6139d8362187153eeff283"
+    }
+  ]
+}

@@ -12,7 +12,7 @@ class RetrievalEngine:
         ranked=[]
         if req.mode=='rerank':
             if self.reranker is None: raise RuntimeError('CrossEncoder required for rerank mode')
-            scores=self.reranker.predict([(req.query,h.chunk.text) for h in fused[:20]],show_progress_bar=False)
+            scores=self.reranker.predict([(req.query,h.chunk.text) for h in fused[:20]],show_progress_bar=False) if fused else []
             ranked=sorted([Hit(chunk=h.chunk,score=float(s),stage='reranker') for h,s in zip(fused[:20],scores)],
                           key=lambda h:(-h.score,h.chunk.chunk_id))
         final={'dense':dense,'sparse':sparse,'hybrid':fused,'rerank':ranked}[req.mode][:req.top_k]

@@ -1,5 +1,7 @@
 # État d’acceptation — 2 novembre 2026
 
+Cet état décrit le corpus NovaRetail de la livraison initiale. L'adaptation DRIP-R, ses tests et ses limites sont documentés séparément dans [drip_r/ACCEPTANCE.md](drip_r/ACCEPTANCE.md).
+
 Le projet est **partiellement réalisé**. Le moteur de retrieval et l'expérience de fine-tuning sont exécutés et évalués. Le passage complet Level 1 reste ouvert. Level 2 est réservé dans l'architecture et n'est pas présenté comme terminé.
 
 | Exigence | État | Preuve / limite |

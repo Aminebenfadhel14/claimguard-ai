@@ -41,6 +41,31 @@ def parse(path: Path, metadata: PolicyMetadata, chunk_size=1000, chunk_overlap=1
         raise ValueError('overlap must be between zero and chunk_size - 1')
     splitter = RecursiveCharacterTextSplitter(chunk_size=chunk_size, chunk_overlap=chunk_overlap)
     digest, result, previous_section = sha256(path), [], 'preamble'
+    # Optional auditable section boundaries, preserving every original source byte.
+    spans_path = path.with_suffix(path.suffix + '.sections.json')
+    if spans_path.exists():
+        if path.suffix.lower() not in {'.txt', '.md'}:
+            raise ValueError('Line-based sections require a text source')
+        mapping = json.loads(spans_path.read_text(encoding='utf-8'))
+        if mapping['source_sha256'] != digest:
+            raise ValueError('Stale section mapping: source SHA-256 differs')
+        lines = path.read_text(encoding='utf-8').splitlines(keepends=True)
+        expected, seen = 1, set()
+        for span in mapping['sections']:
+            start, end, section = span['start_line'], span['end_line'], span['section']
+            if start != expected or end < start or end > len(lines) or section in seen:
+                raise ValueError('Section mapping must cover each line exactly once')
+            expected, seen = end + 1, seen | {section}
+            body = clean_text(''.join(lines[start-1:end]))
+            for n, piece in enumerate(splitter.split_text(body)):
+                identity = f'{digest}|{metadata.model_dump_json()}|{section}|{start}|{end}|{n}|{piece}'
+                result.append(Chunk(chunk_id=hashlib.sha256(identity.encode()).hexdigest(), text=piece,
+                    metadata=metadata, section=section, page=1, file_hash=digest, source_file=path.name,
+                    source_line_start=start, source_line_end=end, section_title=span['title'],
+                    section_origin='project_segmentation'))
+        if expected != len(lines) + 1 or not result:
+            raise ValueError('Incomplete section mapping')
+        return result
     for page, raw in load_pages(path):
         text = clean_text(raw)
         matches = list(HEADING.finditer(text))
@@ -63,5 +88,5 @@ def parse(path: Path, metadata: PolicyMetadata, chunk_size=1000, chunk_overlap=1
     return result
 
 def parse_with_sidecar(path: Path):
-    metadata = PolicyMetadata.model_validate_json(path.with_suffix(path.suffix + '.json').read_text())
+    metadata = PolicyMetadata.model_validate_json(path.with_suffix(path.suffix + '.json').read_text(encoding='utf-8'))
     return metadata, parse(path, metadata)

@@ -7,11 +7,13 @@ import numpy as np
 import torch
 from sentence_transformers import SentenceTransformer
 from claimguard.runtime import BASE_MODEL, BASE_REVISION
+from claimguard.corpora import paths as corpus_paths, CORPORA
 
-def main(home,epochs=3,lr=2e-5,seed=42):
+def main(home,epochs=3,lr=2e-5,seed=42,corpus='novaretail'):
     torch.set_num_threads(min(4,os.cpu_count() or 1));torch.manual_seed(seed);random.seed(seed);np.random.seed(seed)
-    paths=[home/'data/synthetic/train.jsonl',home/'data/synthetic/validation.jsonl',home/'data/evaluation/questions.jsonl']
-    datasets=[[json.loads(l) for l in p.read_text().splitlines()] for p in paths]
+    locations=corpus_paths(home,corpus)
+    paths=[locations['training']/'train.jsonl',locations['training']/'validation.jsonl',locations['evaluation']]
+    datasets=[[json.loads(l) for l in p.read_text(encoding='utf-8').splitlines()] for p in paths]
     train,val,test=datasets
     groups=[{r['scenario_group'] for r in ds} for ds in datasets]
     assert not(groups[0]&groups[1] or groups[0]&groups[2] or groups[1]&groups[2])
@@ -19,7 +21,7 @@ def main(home,epochs=3,lr=2e-5,seed=42):
     assert not(queries[0]&queries[1] or queries[0]&queries[2] or queries[1]&queries[2])
     model=SentenceTransformer(BASE_MODEL,device='cpu',revision=BASE_REVISION);model.max_seq_length=256
     optimizer=torch.optim.AdamW(model.parameters(),lr=lr,weight_decay=.01)
-    output=home/'models/novaretail-embedding';output.mkdir(parents=True,exist_ok=True)
+    output=locations['model'];output.mkdir(parents=True,exist_ok=True)
     logs=[];best=float('inf');start=time.time()
     def loss(batch):
         embeddings=[]
@@ -41,14 +43,21 @@ def main(home,epochs=3,lr=2e-5,seed=42):
         logs.append(record);print(json.dumps(record),flush=True)
         if v<best:
             best=v;model.save(str(output));best_epoch=epoch
-    manifest={'base_model':BASE_MODEL,'base_revision':BASE_REVISION,'loss':'cosine triplet margin 0.25','seed':seed,'epochs':epochs,'batch_size':8,
+    manifest={'corpus':corpus,'base_model':BASE_MODEL,'base_revision':BASE_REVISION,'loss':'cosine triplet margin 0.25','seed':seed,'epochs':epochs,'batch_size':8,
         'learning_rate':lr,'weight_decay':.01,'max_seq_length':256,'device':'cpu','best_epoch':best_epoch,
         'training_seconds':time.time()-start,'sizes':dict(zip(['train','validation','test'],map(len,datasets))),
         'dataset_sha256':{str(p.relative_to(home)):hashlib.sha256(p.read_bytes()).hexdigest() for p in paths},
         'logs':logs,'limitations':['Small synthetic dataset','Train and validation are navigation/summary tasks; test uses complaint scenarios',
                                   'Shared policy corpus is intentional; no claim of unseen-policy generalization','No independent human annotation']}
-    (home/'reports/training_run.json').write_text(json.dumps(manifest,indent=2))
+    if corpus=='drip_r':
+        manifest['original_benchmark_scenarios_in_training']=0
+        manifest['limitations']+=['Training queries authored from DRIP-R policy text; not original scenario training',
+          'Held-out DRIP-R scenarios share policy text; this is corpus adaptation, not unseen-policy generalization',
+          'Original DRIP-R has no gold decision labels; results concern project retrieval annotations only']
+    locations['reports'].mkdir(parents=True,exist_ok=True)
+    (locations['reports']/'training_run.json').write_text(json.dumps(manifest,indent=2))
     print(json.dumps({'checkpoint':str(output),'best_epoch':best_epoch,'seconds':manifest['training_seconds']}),flush=True)
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--home',type=Path,default=Path('.'));p.add_argument('--epochs',type=int,default=3)
-    a=p.parse_args();main(a.home.resolve(),a.epochs)
+    p.add_argument('--corpus',choices=CORPORA,default='novaretail')
+    a=p.parse_args();main(a.home.resolve(),a.epochs,corpus=a.corpus)

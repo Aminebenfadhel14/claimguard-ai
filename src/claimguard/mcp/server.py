@@ -15,7 +15,7 @@ def services():
 
 @server.tool()
 def search_policies(query: str, incident_date: str, category: str | None=None, top_k: int=5) -> dict:
-    """Retrieve NovaRetail policy evidence applicable to an ISO incident date. Does not decide customer rights."""
+    """Retrieve evidence from the configured corpus. DRIP-R is an undated snapshot, not historical policy advice."""
     req=SearchRequest(query=query,incident_date=incident_date,category=category,top_k=top_k,mode='rerank')
     _,engine=services()
     trace=engine.retrieve(req,access=ACCESS)

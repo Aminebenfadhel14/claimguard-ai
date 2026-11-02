@@ -24,7 +24,7 @@ class PolicyIndex:
             id=str(uuid.UUID(x.chunk_id[:32])),
             vector={'dense':v.tolist(),'bm25':qm.SparseVector(indices=s.indices,values=s.values)},
             payload={'chunk_id':x.chunk_id,'access':x.metadata.access_level,'category':x.metadata.category,
-                     'start':x.metadata.effective_date.toordinal(),
+                     'start':x.metadata.effective_date.toordinal() if x.metadata.effective_date else 1,
                      'end':(x.metadata.effective_until.toordinal() if x.metadata.effective_until else 3652059)})
             for x,v,s in zip(chunks,vectors,sparse_vectors)],wait=True)
     def search(self, query, incident_date, mode, top_k=20, access=('public','internal'), category=None):

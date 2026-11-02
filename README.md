@@ -4,6 +4,42 @@
 
 Projet académique TEK-UP, Medamine Ben Fadhel. Cette livraison contient un **socle RAG exécuté et évalué**, un fine-tuning réel, un serveur MCP officiel et un atelier Streamlit. L'application métier complète n'est pas encore terminée : voir [état d'acceptation](reports/ACCEPTANCE.md).
 
+## Ajout DRIP-R — novembre 2026
+
+Le dataset Hugging Face **hsuvaskakoty/DRIP-R est inclus** dans `data/external/drip_r/` :
+
+- `scenarios.jsonl` : 400 scénarios synthétiques, issus de 40 situations et de 10 profils.
+- `tasks.jsonl`, `personas.jsonl`, carte du dataset et métadonnées d'origine.
+- Version source figée, SHA-256 contrôlés ; attribution dans `docs/DRIP_R.md`.
+
+Les deux politiques sont extraites sans réécriture dans `data/drip_r/policies/`. Le corpus DRIP-R reste séparé de NovaRetail : les règles, dates et résultats ne doivent pas être mélangés. L'interface propose un sélecteur de corpus et démarre sur DRIP-R.
+
+**Guide de cette adaptation : [docs/DRIP_R.md](docs/DRIP_R.md). Mesures : [reports/drip_r/RESULTS.md](reports/drip_r/RESULTS.md).** Les résultats NovaRetail ci-dessous restent ceux de la livraison précédente.
+
+Après installation des dépendances, les commandes DRIP-R sont :
+
+```powershell
+.\.venv\Scripts\python.exe scripts/prepare_drip_r.py
+.\.venv\Scripts\python.exe -m streamlit run app/Home.py --server.address 127.0.0.1
+```
+
+Pour reproduire les expériences depuis la racine du projet (remplacer `python` par `.\.venv\Scripts\python.exe` sous Windows) :
+
+```bash
+python scripts/prepare_drip_r.py --download
+python scripts/create_drip_annotations.py
+python training/finetune.py --corpus drip_r --epochs 3
+python scripts/evaluate.py --corpus drip_r --trained models/drip-r-policy-embedding
+python scripts/drip_batch.py
+python scripts/report_drip_results.py
+python -m claimguard.mcp.client --corpus drip_r
+python -m pytest -q
+```
+
+Le modèle adapté est livré dans `models/drip-r-policy-embedding/`. Les 400 scénarios originaux restent réservés à l'évaluation. L'entraînement porte sur 60 questions séparées rédigées pour le projet à partir des politiques, avec 30 autres pour validation. Le test comprend 50 scénarios annotés provisoirement et 8 cas sans réponse ajoutés au projet. Les labels de pertinence nécessitent une revue indépendante et ne sont pas des labels de conformité DRIP-R.
+
+Pour l'API/MCP, `CLAIMGUARD_CORPUS=drip_r` choisit ce corpus. Pour vérifier Groq après configuration de `.env` : `python scripts/live_rag_check.py --corpus drip_r`. La génération LLM, l'abstention et le Level 2 restent non validés ici.
+
 ## Ce qui fonctionne dans cette livraison
 
 - PDF, TXT, Markdown ; sections, pages, nettoyage conservateur, tableaux PDF, chunks récursifs 1000/100.

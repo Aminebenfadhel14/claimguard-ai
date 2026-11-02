@@ -1,0 +1,59 @@
+{
+  "source_sha256": "0279dff7ece714c70cd9d623dfb7deaa61ecc0e8a171194a15fd7cce994531bd",
+  "sections": [
+    {
+      "section": "2.1",
+      "title": "Returns to Third-Party Sellers",
+      "start_line": 1,
+      "end_line": 3
+    },
+    {
+      "section": "2.2",
+      "title": "Request a return",
+      "start_line": 4,
+      "end_line": 5
+    },
+    {
+      "section": "2.3",
+      "title": "Get return instructions",
+      "start_line": 6,
+      "end_line": 10
+    },
+    {
+      "section": "2.4",
+      "title": "Package your return",
+      "start_line": 11,
+      "end_line": 15
+    },
+    {
+      "section": "2.5",
+      "title": "Ship your return",
+      "start_line": 16,
+      "end_line": 24
+    },
+    {
+      "section": "2.6",
+      "title": "Track your refund",
+      "start_line": 25,
+      "end_line": 26
+    },
+    {
+      "section": "2.7",
+      "title": "Understanding refund delays",
+      "start_line": 27,
+      "end_line": 32
+    },
+    {
+      "section": "2.8",
+      "title": "Extra-large or heavy items",
+      "start_line": 33,
+      "end_line": 40
+    },
+    {
+      "section": "2.9",
+      "title": "What to do next",
+      "start_line": 41,
+      "end_line": 46
+    }
+  ]
+}

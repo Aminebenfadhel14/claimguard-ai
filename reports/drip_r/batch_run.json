@@ -1,0 +1,9 @@
+{
+  "corpus": "drip_r",
+  "scenarios_processed": 400,
+  "seconds": 1051.6702113779997,
+  "mode": "baseline hybrid + reranker",
+  "original_private_fields_exposed": false,
+  "llm_generation_executed": false,
+  "compliance_decisions_produced": 0
+}

@@ -1,0 +1,545 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "sc": "https://schema.org/",
+    "cr": "http://mlcommons.org/croissant/",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "dct": "http://purl.org/dc/terms/",
+    "ml": "http://mlcommons.org/schema/",
+    "data": {"@id": "cr:data", "@type": "@json"},
+    "dataType": {"@id": "cr:dataType", "@type": "@vocab"},
+    "source": "cr:source",
+    "fileObject": "cr:fileObject",
+    "field": "cr:field",
+    "recordSet": "cr:recordSet",
+    "extract": "cr:extract",
+    "jsonPath": "cr:jsonPath",
+    "column": "cr:column",
+    "references": "cr:references",
+    "key": "cr:key"
+  },
+  "@type": "sc:Dataset",
+  "dct:conformsTo": "http://mlcommons.org/croissant/1.0",
+  "name": "DRIP-R - A Dataset for Return policy Interpretation by LLM agents under Policy ambiguity",
+  "description": "DRIP-R is a benchmark dataset for evaluating how LLM-based customer support agents handle policy ambiguities in return request scenarios. It combines an Amazon return policy with synthetic customer personas, ambiguity-grounded return tasks, and LLM-generated customer scenarios to enable systematic assessment of agent behavior under policy uncertainty. The dataset includes 400 scenario instances constructed by pairing 10 customer personas with 40 return tasks across three complexity levels (Medium, High, Very High), each scenario generating a realistic first customer message.",
+  "url": "https://osf.io/kbd5q/",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "version": "1.0.0",
+  "datePublished": "2025",
+
+  "rai:dataCollection": "The dataset was constructed via an LLM-assisted pipeline. The Amazon return policy was fetched via HTTP using automated scraping (trafilatura). Policy ambiguities were manually reviewed and catalogued. Customer personas were sampled from the PersonaHub dataset (Hugging Face) and structured into demographic and personality profiles using GPT-4.1. Return tasks were generated in batches by an LLM conditioned on policy ambiguities at three complexity levels. Scenarios were produced by pairing each persona with each task and prompting an LLM to generate a realistic first customer message.",
+  "rai:dataCollectionType": [
+    "Web Scraping",
+    "Manual Human Curator",
+    "Software Collection"
+  ],
+  "rai:dataBiases": [
+    "Policy coverage is limited to a single retailer (Amazon) return policy, which may not generalize to other e-commerce domains or policy styles.",
+    "Customer personas are synthetic, derived from the PersonaHub dataset, and do not represent the full diversity of real customer demographics.",
+    "Scenario narratives are LLM-generated (GPT-4.1) and reflect the model's priors about customer communication patterns."
+  ],
+  "rai:dataUseCases": [
+    "Benchmarking LLM-based customer support agents on their ability to interpret and resolve policy ambiguities in return requests.",
+    "Evaluating agent behavioral alignment, policy adherence, and resolution quality in simulated customer service dialogues.",
+    "Academic research on natural language understanding, policy comprehension, and multi-turn dialogue systems.",
+    "Not recommended for direct production deployment in customer service systems without independent validation on real-world data."
+  ],
+  "rai:dataLimitations": [
+    "Covers a single retail domain (Amazon return policy); findings may not transfer to other policy types or domains.",
+    "Scenario diversity is constrained to 10 synthetic personas and 40 manually constructed task scenarios.",
+    "Customer interactions are entirely synthetic; behavioral realism has not been validated against real customer service logs.",
+    "Policy ambiguity taxonomy covers 8 types grounded in linguistics; other ambiguity dimensions (pragmatic, cultural) are not represented."
+  ],
+  "rai:personalSensitiveInformation": [
+    "Persona records include synthetic demographic attributes: age range, gender, geographic location, income range, job sector, and personality traits (Big Five). All persona data is AI-generated and does not correspond to any real individual.",
+    "No real personally identifiable information (PII) is present in any component of this dataset."
+  ],
+  "rai:dataReleaseMaintenancePlan": "Initial release: version 1.0.0. The dataset is released as a static research artifact accompanying the associated paper. No scheduled updates are planned. Bug reports and corrections may be submitted via the paper's contact information. Deprecated versions, if any, will be marked as such on the hosting platform (OSF).",
+  "rai:dataSocialImpact": "This dataset supports research on the reliability and consistency of LLM-based agents in customer service settings, specifically in the presence of policy ambiguity. It can contribute to the development of safer and more transparent AI decision-making in commercial contexts. Potential risks include over-specialization of models to the Amazon return policy domain and the reinforcement of biases present in the underlying LLM (GPT-4.1) used for data generation.",
+  "rai:hasSyntheticData": true,
+
+  "distribution": [
+    {
+      "@type": "cr:FileObject",
+      "@id": "personas-file",
+      "name": "personas.jsonl",
+      "description": "Synthetic customer personas with demographic and personality attributes (10 personas).",
+      "contentUrl": "personas.jsonl",
+      "encodingFormat": "application/jsonlines",
+      "sha256": "87f117eed05ee822d21f5b8ec8e333efcba5e850b2e8db6edc887e8d08c8c617"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "ambiguities-file",
+      "name": "policy_ambiguities_v3_final.csv",
+      "description": "Manually catalogued ambiguities found in the Amazon return policy.",
+      "contentUrl": "policy_ambiguities/policy_ambiguities_v3_final.csv",
+      "encodingFormat": "text/csv",
+      "sha256": "c316b5ff1df417f1200f6a928d6509d2097c0bbc303586271c804c9cadecf5f5"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "primary-policy-file",
+      "name": "primary_policy.txt",
+      "description": "Full text of the Amazon return policy (primary policy document).",
+      "contentUrl": "policy_ambiguities/policies/primary_policy.txt",
+      "encodingFormat": "text/plain",
+      "sha256": "b842240d620a391ce5cd5214d5515bb0a7f1318a1f8e8e121f01a9a6316f7274"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "related-policy-file",
+      "name": "related_policy_02.txt",
+      "description": "Supplementary policy document covering returns to third-party sellers.",
+      "contentUrl": "policy_ambiguities/policies/related_policy_02.txt",
+      "encodingFormat": "text/plain",
+      "sha256": "352594252e022f13c52e4a7450482f419abd32136fc524f87c521801922ebb68"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "tasks-file",
+      "name": "tasks.jsonl",
+      "description": "Return task scenarios designed to test policy ambiguity interpretation, at three complexity levels (40 tasks: 34 unique stratified + 6 non-stratified extras).",
+      "contentUrl": "tasks.jsonl",
+      "encodingFormat": "application/jsonlines",
+      "sha256": "aaabc2bae908d5fc0233eaa857928d6cbe45cd2a2042b4854758c0c342e0e91a"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "scenarios-file",
+      "name": "scenarios.jsonl",
+      "description": "Complete scenario instances (400 records, 10 personas x 40 tasks grid) combining policy, personas, tasks, and generated first customer messages.",
+      "contentUrl": "scenarios.jsonl",
+      "encodingFormat": "application/jsonlines",
+      "sha256": "888ad09bee3e7355a146a698db2670da951959dc0c0fad82f14b61568476470c"
+    }
+  ],
+
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "@id": "personas",
+      "name": "personas",
+      "description": "Synthetic customer personas used for scenario generation.",
+      "key": {"@id": "personas/Persona_id"},
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "personas/Name",
+          "name": "Name",
+          "description": "Full name of the persona.",
+          "dataType": "sc:Text",
+          "source": {"fileObject": {"@id": "personas-file"}, "extract": {"jsonPath": "$.Name"}}
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "personas/Age-range",
+          "name": "Age-range",
+          "description": "Age bracket of the persona (e.g., 35-40).",
+          "dataType": "sc:Text",
+          "source": {"fileObject": {"@id": "personas-file"}, "extract": {"jsonPath": "$['Age-range']"}}
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "personas/Location",
+          "name": "Location",
+          "description": "Geographic location of the persona.",
+          "dataType": "sc:Text",
+          "source": {"fileObject": {"@id": "personas-file"}, "extract": {"jsonPath": "$.Location"}}
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "personas/Gender",
+          "name": "Gender",
+          "description": "Gender of the persona.",
+          "dataType": "sc:Text",
+          "source": {"fileObject": {"@id": "personas-file"}, "extract": {"jsonPath": "$.Gender"}}
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "personas/Job_Sector",
+          "name": "Job Sector",
+          "description": "Professional sector of the persona.",
+          "dataType": "sc:Text",
+          "source": {"fileObject": {"@id": "personas-file"}, "extract": {"jsonPath": "$['Job Sector']"}}
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "personas/Income_range",
+          "name": "Income range",
+          "description": "Annual income range of the persona.",
+          "dataType": "sc:Text",
+          "source": {"fileObject": {"@id": "personas-file"}, "extract": {"jsonPath": "$['Income range']"}}
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "personas/Person_description",
+          "name": "Person description",
+          "description": "Narrative description of the persona's background and values.",
+          "dataType": "sc:Text",
+          "source": {"fileObject": {"@id": "personas-file"}, "extract": {"jsonPath": "$['Person description']"}}
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "personas/Language_Style",
+          "name": "Language Style",
+          "description": "Communication register (e.g., Consultative, Terse, Verbose).",
+          "dataType": "sc:Text",
+          "source": {"fileObject": {"@id": "personas-file"}, "extract": {"jsonPath": "$['Language Style']"}}
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "personas/Personality_Style",
+          "name": "Personality Style",
+          "description": "Big Five (OCEAN) personality trait scores as a serialized JSON object.",
+          "dataType": "sc:Text",
+          "source": {"fileObject": {"@id": "personas-file"}, "extract": {"jsonPath": "$['Personality Style']"}}
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "personas/Communication_style",
+          "name": "Communication style",
+          "description": "Behavioral communication style (e.g., Direct, Confrontational, Rambling).",
+          "dataType": "sc:Text",
+          "source": {"fileObject": {"@id": "personas-file"}, "extract": {"jsonPath": "$['Communication style']"}}
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "personas/Persona_id",
+          "name": "Persona_id",
+          "description": "Unique identifier for the persona (format: Firstname_Sector_CountryCode_NN).",
+          "dataType": "sc:Text",
+          "source": {"fileObject": {"@id": "personas-file"}, "extract": {"jsonPath": "$.Persona_id"}}
+        }
+      ]
+    },
+
+    {
+      "@type": "cr:RecordSet",
+      "@id": "policy_ambiguities",
+      "name": "policy_ambiguities",
+      "description": "Catalogued ambiguities in the Amazon return policy.",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "policy_ambiguities/policy_clause",
+          "name": "policy_clause",
+          "description": "Exact quoted text from the return policy that contains the ambiguity.",
+          "dataType": "sc:Text",
+          "source": {"fileObject": {"@id": "ambiguities-file"}, "extract": {"column": "policy_clause"}}
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "policy_ambiguities/Ambiguity_type",
+          "name": "Ambiguity_type",
+          "description": "Classification of the ambiguity (e.g., Vagueness, Incompleteness, Coordination Ambiguity, Missing Condition, Semantic Ambiguity).",
+          "dataType": "sc:Text",
+          "source": {"fileObject": {"@id": "ambiguities-file"}, "extract": {"column": "Ambiguity_type"}}
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "policy_ambiguities/Ambiguity_description",
+          "name": "Ambiguity_description",
+          "description": "Narrative explanation of why the clause is ambiguous.",
+          "dataType": "sc:Text",
+          "source": {"fileObject": {"@id": "ambiguities-file"}, "extract": {"column": "Ambiguity_description"}}
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "policy_ambiguities/List_of_ambiguities",
+          "name": "List_of_ambiguities",
+          "description": "Serialized list of specific ambiguous instances within the clause.",
+          "dataType": "sc:Text",
+          "source": {"fileObject": {"@id": "ambiguities-file"}, "extract": {"column": "List_of_ambiguities"}}
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "policy_ambiguities/Intent",
+          "name": "Intent",
+          "description": "High-level summary of what the ambiguity highlights.",
+          "dataType": "sc:Text",
+          "source": {"fileObject": {"@id": "ambiguities-file"}, "extract": {"column": "Intent"}}
+        }
+      ]
+    },
+
+    {
+      "@type": "cr:RecordSet",
+      "@id": "return_tasks",
+      "name": "return_tasks",
+      "description": "Return task scenarios grounded in policy ambiguities, at three complexity levels.",
+      "key": {"@id": "return_tasks/task_id"},
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "return_tasks/task_id",
+          "name": "task_id",
+          "description": "Unique identifier for the task (e.g., task_000, task_E01).",
+          "dataType": "sc:Text",
+          "source": {"fileObject": {"@id": "tasks-file"}, "extract": {"jsonPath": "$.task_id"}}
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "return_tasks/is_stratified",
+          "name": "is_stratified",
+          "description": "Whether this task is drawn from the stratified-35 task set (true) or is a non-stratified extra (false).",
+          "dataType": "sc:Boolean",
+          "source": {"fileObject": {"@id": "tasks-file"}, "extract": {"jsonPath": "$.is_stratified"}}
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "return_tasks/stratified_task_idx_aliases",
+          "name": "stratified_task_idx_aliases",
+          "description": "List of original stratified task indices that point to this canonical task (typically a single value; multiple values indicate duplicates collapsed during deduplication).",
+          "dataType": "sc:Text",
+          "source": {"fileObject": {"@id": "tasks-file"}, "extract": {"jsonPath": "$.stratified_task_idx_aliases"}}
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "return_tasks/detail",
+          "name": "detail",
+          "description": "Detailed narrative description of the customer's return situation.",
+          "dataType": "sc:Text",
+          "source": {"fileObject": {"@id": "tasks-file"}, "extract": {"jsonPath": "$.detail"}}
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "return_tasks/reason",
+          "name": "reason",
+          "description": "Concise summary of the customer's concern or question.",
+          "dataType": "sc:Text",
+          "source": {"fileObject": {"@id": "tasks-file"}, "extract": {"jsonPath": "$.reason"}}
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "return_tasks/task",
+          "name": "task",
+          "description": "One-sentence classification of the return type.",
+          "dataType": "sc:Text",
+          "source": {"fileObject": {"@id": "tasks-file"}, "extract": {"jsonPath": "$.task"}}
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "return_tasks/related_policy_issues",
+          "name": "related_policy_issues",
+          "description": "Serialized list of specific policy ambiguities relevant to this scenario.",
+          "dataType": "sc:Text",
+          "source": {"fileObject": {"@id": "tasks-file"}, "extract": {"jsonPath": "$.related_policy_issues"}}
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "return_tasks/complexity_level",
+          "name": "complexity_level",
+          "description": "Complexity level label: Medium, High, or Very High Complexity.",
+          "dataType": "sc:Text",
+          "source": {"fileObject": {"@id": "tasks-file"}, "extract": {"jsonPath": "$.complexity_level"}}
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "return_tasks/complexity_ordinal",
+          "name": "complexity_ordinal",
+          "description": "Numeric complexity ordinal (3 = High, 4 = Very High).",
+          "dataType": "sc:Integer",
+          "source": {"fileObject": {"@id": "tasks-file"}, "extract": {"jsonPath": "$.complexity_ordinal"}}
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "return_tasks/primary_ambiguity_type",
+          "name": "primary_ambiguity_type",
+          "description": "Primary ambiguity type targeted by this task.",
+          "dataType": "sc:Text",
+          "source": {"fileObject": {"@id": "tasks-file"}, "extract": {"jsonPath": "$.primary_ambiguity_type"}}
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "return_tasks/all_ambiguity_types",
+          "name": "all_ambiguity_types",
+          "description": "Serialized list of all applicable ambiguity types for this task.",
+          "dataType": "sc:Text",
+          "source": {"fileObject": {"@id": "tasks-file"}, "extract": {"jsonPath": "$.all_ambiguity_types"}}
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "return_tasks/stratum_label",
+          "name": "stratum_label",
+          "description": "Combined stratification label (primary ambiguity type + complexity level, e.g., Coordination Ambiguity__High).",
+          "dataType": "sc:Text",
+          "source": {"fileObject": {"@id": "tasks-file"}, "extract": {"jsonPath": "$.stratum_label"}}
+        }
+      ]
+    },
+
+    {
+      "@type": "cr:RecordSet",
+      "@id": "scenarios",
+      "name": "scenarios",
+      "description": "Complete scenario instances combining policy, persona, task, and LLM-generated customer message. 400 records in JSONL format (10 personas x 40 tasks grid).",
+      "key": {"@id": "scenarios/scenario_id"},
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "scenarios/scenario_id",
+          "name": "scenario_id",
+          "description": "Unique scenario identifier (format: PersonaName_tTaskIndex_ScenarioIndex).",
+          "dataType": "sc:Text",
+          "source": {"fileObject": {"@id": "scenarios-file"}, "extract": {"jsonPath": "$.scenario_id"}}
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scenarios/task_id",
+          "name": "task_id",
+          "description": "Identifier of the task underlying this scenario; links to the return_tasks record set.",
+          "dataType": "sc:Text",
+          "source": {"fileObject": {"@id": "scenarios-file"}, "extract": {"jsonPath": "$.task_id"}},
+          "references": {"field": {"@id": "return_tasks/task_id"}}
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scenarios/source",
+          "name": "source",
+          "description": "Origin marker for the scenario record: '427' (present in the original 427-scenario submission) or '516_extra' (drawn from the 516-scenario superset to fill grid cells absent from 427).",
+          "dataType": "sc:Text",
+          "source": {"fileObject": {"@id": "scenarios-file"}, "extract": {"jsonPath": "$.source"}}
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scenarios/first_customer_message",
+          "name": "first_customer_message",
+          "description": "LLM-generated opening message from the customer, grounded in the task and persona.",
+          "dataType": "sc:Text",
+          "source": {"fileObject": {"@id": "scenarios-file"}, "extract": {"jsonPath": "$.first_customer_message"}}
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scenarios/detail_agent",
+          "name": "detail_agent",
+          "description": "Brief agent-perspective interpretation of the customer's request.",
+          "dataType": "sc:Text",
+          "source": {"fileObject": {"@id": "scenarios-file"}, "extract": {"jsonPath": "$.detail_agent"}}
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scenarios/persona_name",
+          "name": "persona_name",
+          "description": "Name of the customer persona for this scenario.",
+          "dataType": "sc:Text",
+          "source": {"fileObject": {"@id": "scenarios-file"}, "extract": {"jsonPath": "$.persona.Name"}}
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scenarios/persona_age_range",
+          "name": "persona_age_range",
+          "description": "Age range of the customer persona.",
+          "dataType": "sc:Text",
+          "source": {"fileObject": {"@id": "scenarios-file"}, "extract": {"jsonPath": "$.persona['Age-range']"}}
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scenarios/persona_location",
+          "name": "persona_location",
+          "description": "Geographic location of the customer persona.",
+          "dataType": "sc:Text",
+          "source": {"fileObject": {"@id": "scenarios-file"}, "extract": {"jsonPath": "$.persona.Location"}}
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scenarios/persona_gender",
+          "name": "persona_gender",
+          "description": "Gender of the customer persona.",
+          "dataType": "sc:Text",
+          "source": {"fileObject": {"@id": "scenarios-file"}, "extract": {"jsonPath": "$.persona.Gender"}}
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scenarios/persona_job_sector",
+          "name": "persona_job_sector",
+          "description": "Professional sector of the customer persona.",
+          "dataType": "sc:Text",
+          "source": {"fileObject": {"@id": "scenarios-file"}, "extract": {"jsonPath": "$.persona['Job Sector']"}}
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scenarios/persona_language_style",
+          "name": "persona_language_style",
+          "description": "Language register of the customer persona.",
+          "dataType": "sc:Text",
+          "source": {"fileObject": {"@id": "scenarios-file"}, "extract": {"jsonPath": "$.persona['Language Style']"}}
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scenarios/persona_communication_style",
+          "name": "persona_communication_style",
+          "description": "Behavioral communication style of the customer persona.",
+          "dataType": "sc:Text",
+          "source": {"fileObject": {"@id": "scenarios-file"}, "extract": {"jsonPath": "$.persona['Communication style']"}}
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scenarios/persona_id",
+          "name": "persona_id",
+          "description": "Unique identifier of the customer persona; links to the personas record set.",
+          "dataType": "sc:Text",
+          "source": {"fileObject": {"@id": "scenarios-file"}, "extract": {"jsonPath": "$.persona.Persona_id"}},
+          "references": {"field": {"@id": "personas/Persona_id"}}
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scenarios/task_detail",
+          "name": "task_detail",
+          "description": "Detailed return task narrative.",
+          "dataType": "sc:Text",
+          "source": {"fileObject": {"@id": "scenarios-file"}, "extract": {"jsonPath": "$.task.detail"}}
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scenarios/task_reason",
+          "name": "task_reason",
+          "description": "Concise summary of the return task.",
+          "dataType": "sc:Text",
+          "source": {"fileObject": {"@id": "scenarios-file"}, "extract": {"jsonPath": "$.task.reason"}}
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scenarios/task_complexity_level",
+          "name": "task_complexity_level",
+          "description": "Complexity level of the task (Medium, High, or Very High Complexity).",
+          "dataType": "sc:Text",
+          "source": {"fileObject": {"@id": "scenarios-file"}, "extract": {"jsonPath": "$.task.complexity_level"}}
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scenarios/task_primary_ambiguity_type",
+          "name": "task_primary_ambiguity_type",
+          "description": "Primary ambiguity type targeted by the task.",
+          "dataType": "sc:Text",
+          "source": {"fileObject": {"@id": "scenarios-file"}, "extract": {"jsonPath": "$.task.primary_ambiguity_type"}}
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scenarios/customer_basic_info",
+          "name": "customer_basic_info",
+          "description": "Factual purchase and product details known to the customer.",
+          "dataType": "sc:Text",
+          "source": {"fileObject": {"@id": "scenarios-file"}, "extract": {"jsonPath": "$.customer_task_detail.basic_info"}}
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scenarios/customer_private_info",
+          "name": "customer_private_info",
+          "description": "Information the customer withholds or does not immediately disclose to the agent.",
+          "dataType": "sc:Text",
+          "source": {"fileObject": {"@id": "scenarios-file"}, "extract": {"jsonPath": "$.customer_task_detail.private_info"}}
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scenarios/customer_behavior",
+          "name": "customer_behavior",
+          "description": "Description of the customer's strategic communication behavior during the interaction.",
+          "dataType": "sc:Text",
+          "source": {"fileObject": {"@id": "scenarios-file"}, "extract": {"jsonPath": "$.customer_task_detail.behavior"}}
+        }
+      ]
+    }
+  ]
+}

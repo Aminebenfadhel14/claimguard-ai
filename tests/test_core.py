@@ -44,7 +44,7 @@ def test_txt_page_numbers(tmp_path,metadata):
 def test_catalog_dedup_conflict_and_deactivate(source,tmp_path):
     c=Catalog(tmp_path/'db');assert c.ingest(source)['status']=='added'
     assert c.ingest(source)['status']=='duplicate'
-    source.write_text(source.read_text().replace('14','7'))
+    source.write_text(source.read_text(encoding='utf-8').replace('14','7'))
     with pytest.raises(ValueError,match='Immutable'):c.ingest(source)
     c.deactivate('TEST-001','1.0','reviewer');assert c.chunks()==[]
 def test_historical_access_and_category(tmp_path):
@@ -84,13 +84,13 @@ def test_empty_context_abstains_without_llm():
 def test_annotation_references_and_split_integrity(tmp_path):
     c=Catalog(tmp_path/'db')
     for p in sorted((ROOT/'data/policies').glob('*.md')):c.ingest(p)
-    questions=[json.loads(l) for l in (ROOT/'data/evaluation/questions.jsonl').read_text().splitlines()]
+    questions=[json.loads(l) for l in (ROOT/'data/evaluation/questions.jsonl').read_text(encoding='utf-8').splitlines()]
     assert len(questions)>=50 and len({q['question_id'] for q in questions})==len(questions)
     for q in questions:
         refs={x.reference() for x in c.chunks(date.fromisoformat(q['incident_date']))}
         assert set(q['relevant_sections'])<=refs
         assert bool(q['relevant_sections'])==(q['difficulty']!='no_answer')
-    train=[json.loads(l) for l in (ROOT/'data/synthetic/train.jsonl').read_text().splitlines()]
-    val=[json.loads(l) for l in (ROOT/'data/synthetic/validation.jsonl').read_text().splitlines()]
+    train=[json.loads(l) for l in (ROOT/'data/synthetic/train.jsonl').read_text(encoding='utf-8').splitlines()]
+    val=[json.loads(l) for l in (ROOT/'data/synthetic/validation.jsonl').read_text(encoding='utf-8').splitlines()]
     a,b,d=({x['scenario_group'] for x in r} for r in (train,val,questions))
     assert not (a&b or a&d or b&d)

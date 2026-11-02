@@ -1,0 +1,15 @@
+{
+  "document_id": "DRIP-002-SNAPSHOT",
+  "policy_id": "DRIP-002",
+  "title": "Returns to Third-Party Sellers",
+  "category": "seller_returns",
+  "department": "Customer support",
+  "version": "1.0",
+  "version_origin": "project_snapshot",
+  "effective_date": null,
+  "temporal_basis": "dataset_snapshot",
+  "language": "en",
+  "access_level": "public",
+  "source": "https://huggingface.co/datasets/hsuvaskakoty/DRIP-R/blob/02f4c696df2a9170c3bea254ed2d60ea14bd4be4/scenarios.jsonl",
+  "source_revision": "02f4c696df2a9170c3bea254ed2d60ea14bd4be4"
+}

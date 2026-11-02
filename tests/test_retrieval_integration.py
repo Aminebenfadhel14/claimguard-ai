@@ -7,7 +7,7 @@ from claimguard.models import SearchRequest
 
 @pytest.fixture(scope='module')
 def engine():
-    _,e=build(Path(__file__).resolve().parents[1],with_reranker=True)
+    _,e=build(Path(__file__).resolve().parents[1],with_reranker=True,corpus='novaretail')
     yield e
     e.index.close()
 
