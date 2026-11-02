@@ -1,0 +1,52 @@
+{
+  "base_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "loss": "cosine triplet margin 0.25",
+  "seed": 42,
+  "epochs": 3,
+  "batch_size": 8,
+  "learning_rate": 2e-05,
+  "weight_decay": 0.01,
+  "max_seq_length": 256,
+  "device": "cpu",
+  "best_epoch": 3,
+  "training_seconds": 14.451020240783691,
+  "sizes": {
+    "train": 60,
+    "validation": 30,
+    "test": 76
+  },
+  "dataset_sha256": {
+    "data/synthetic/train.jsonl": "5beae02e3dd85308f76c051c39ede2829a2e7f56c85dc20278090dfcfd75539c",
+    "data/synthetic/validation.jsonl": "dc7f21434516d45642d7efa5fc6eefb45baf0dd2b4bd34c1288e015f239a1576",
+    "data/evaluation/questions.jsonl": "2f56dd7b9c8a513e629d752ed14c4b3566f1b9a38800a496226c474c5382305a"
+  },
+  "logs": [
+    {
+      "epoch": 0,
+      "validation_loss": 0.046678390353918076
+    },
+    {
+      "epoch": 1,
+      "train_loss": 0.03466483298689127,
+      "validation_loss": 0.023540399968624115
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.008168799802660942,
+      "validation_loss": 0.010763789527118206
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.0,
+      "validation_loss": 0.007789382711052895
+    }
+  ],
+  "limitations": [
+    "Small synthetic dataset",
+    "Train and validation are navigation/summary tasks; test uses complaint scenarios",
+    "Shared policy corpus is intentional; no claim of unseen-policy generalization",
+    "No independent human annotation"
+  ],
+  "base_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+  "revision_evidence": "Observed Hugging Face cache refs/main used by this run"
+}

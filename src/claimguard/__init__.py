@@ -1,0 +1,1 @@
+"""ClaimGuard AI academic core."""

@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/workspace/scratch/6bb9d0cc6af5/claimguard-ai/scripts/live_rag_check.py", line 9, in <module>
+    llm=groq_model()
+        ^^^^^^^^^^^^
+  File "/workspace/scratch/6bb9d0cc6af5/claimguard-ai/src/claimguard/prompts/rag.py", line 14, in groq_model
+    if not os.getenv('GROQ_API_KEY'): raise RuntimeError('GROQ_API_KEY is required for live LLM generation')
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: GROQ_API_KEY is required for live LLM generation
