@@ -1,0 +1,12 @@
+{
+  "drip_search_executed": true,
+  "source_cards": [
+    "DRIP-001@1.0#1.8 · lignes 53–56",
+    "DRIP-001@1.0#1.1 · lignes 1–4",
+    "DRIP-001@1.0#1.6 · lignes 45–46",
+    "DRIP-001@1.0#1.5 · lignes 32–44",
+    "DRIP-001@1.0#1.21 · lignes 102–104"
+  ],
+  "corpus_switch_has_no_stale_sources": true,
+  "exceptions": 0
+}

@@ -1,0 +1,20 @@
+{
+  "created_before_training": true,
+  "method": "Explicit project-authored judgments on visible requests",
+  "original_scenarios": 50,
+  "task_groups": 40,
+  "personas": 10,
+  "project_no_answer": 8,
+  "train_policy_questions": 60,
+  "validation_policy_questions": 30,
+  "benchmark_cases_used_for_training": 0,
+  "independent_human_review": false,
+  "test_sha256": "04c7c70f1741ef486a3ba1650f6cfafcb657a16e98eb67b67147cb3c03b6f723",
+  "limitations": [
+    "No gold compliance labels; metrics concern retrieval only",
+    "Small corpus of 2 policies / 30 local sections, many queries share general rules",
+    "50 scenarios represent 40 tasks, not 50 independent problems",
+    "Train/validation use the same policy corpus but separate authored questions",
+    "Partial answers are allowed: missing live order facts must remain unknown"
+  ]
+}

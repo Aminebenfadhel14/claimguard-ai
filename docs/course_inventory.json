@@ -1,0 +1,454 @@
+{
+  "repository": "Nadjib23/AI-Engineering-Course",
+  "commit": "2b0c4d78f992dce0a6349121e543ff8dddce94d4",
+  "files": [
+    {
+      "path": "labs/01-prompt-engineering/01-chatbot.py",
+      "sha256": "fa2fbcad83e4e3af64e3c6a79fa1fea2ed7823300ac368aa85efa38a2efd67db",
+      "imports": [
+        "os",
+        "Groq",
+        "load_dotenv"
+      ],
+      "lines": 45
+    },
+    {
+      "path": "labs/01-prompt-engineering/02-langchain_chatbot.py",
+      "sha256": "a50c7e2de0b4fed0ad3307ab8b24291a1d0baecaffe5941f81348951dd4ecd50",
+      "imports": [
+        "os",
+        "ChatGroq",
+        "HumanMessage",
+        "AIMessage",
+        "SystemMessage",
+        "load_dotenv"
+      ],
+      "lines": 25
+    },
+    {
+      "path": "labs/01-prompt-engineering/03-langchain_prompt_template.py",
+      "sha256": "c0b6a05a4c767dc420aba167c482d2e8ed05d04f9d83c93e08b0e45b9992dd0d",
+      "imports": [
+        "os",
+        "ChatGroq",
+        "SystemMessage",
+        "HumanMessage",
+        "AIMessage",
+        "ChatPromptTemplate",
+        "load_dotenv"
+      ],
+      "lines": 44
+    },
+    {
+      "path": "labs/01-prompt-engineering/04-langchain_chat_prompt_template.py",
+      "sha256": "29ccc0166a1d42064ccd6d6f33961e006f4fe8fd5b2fd2eb4702cdb2ddab5ce4",
+      "imports": [
+        "os",
+        "ChatGroq",
+        "HumanMessage",
+        "AIMessage",
+        "ChatPromptTemplate",
+        "MessagesPlaceholder",
+        "load_dotenv"
+      ],
+      "lines": 48
+    },
+    {
+      "path": "labs/02-chains-and-output-parsing/05-langchain_chains.py",
+      "sha256": "997fcf893b425e19055bfb893b4f43f978a6361640175acba87cb5d7b18b6aa7",
+      "imports": [
+        "os",
+        "ChatGroq",
+        "ChatPromptTemplate",
+        "StrOutputParser",
+        "RunnableParallel",
+        "RunnableLambda",
+        "RunnableBranch",
+        "load_dotenv"
+      ],
+      "lines": 127
+    },
+    {
+      "path": "labs/02-chains-and-output-parsing/06-langchain_output_parsers.py",
+      "sha256": "e363aa03a8df7adb9538eff081f873046ed22439796bdbfac726257262db971f",
+      "imports": [
+        "os",
+        "ChatGroq",
+        "ChatPromptTemplate",
+        "StrOutputParser",
+        "JsonOutputParser",
+        "BaseModel",
+        "Field",
+        "PydanticOutputParser",
+        "load_dotenv"
+      ],
+      "lines": 118
+    },
+    {
+      "path": "labs/03-session-tools-and-agents/07-langchain_memory.py",
+      "sha256": "231cfa00ed62a356d7ef95a601b261a978dd98b7d223a693a96eb92828f610ae",
+      "imports": [
+        "os",
+        "ChatGroq",
+        "ChatPromptTemplate",
+        "MessagesPlaceholder",
+        "StrOutputParser",
+        "InMemoryChatMessageHistory",
+        "RunnableWithMessageHistory",
+        "trim_messages",
+        "load_dotenv"
+      ],
+      "lines": 121
+    },
+    {
+      "path": "labs/03-session-tools-and-agents/08-langchain_tools.py",
+      "sha256": "1d8721f305f083b0984023dfd334fad72eda7c8dd685026f00f2d5d7eea1ec92",
+      "imports": [
+        "json",
+        "os",
+        "datetime",
+        "ChatGroq",
+        "tool",
+        "HumanMessage",
+        "convert_to_openai_tool",
+        "load_dotenv"
+      ],
+      "lines": 85
+    },
+    {
+      "path": "labs/03-session-tools-and-agents/08bis-langchain_tools_problems.py",
+      "sha256": "81b535842c51396cebe11eb1e50567c72e3dbf5bfb0b5197e18ef68c4c5e8d8c",
+      "imports": [
+        "os",
+        "datetime",
+        "ChatGroq",
+        "tool",
+        "HumanMessage",
+        "load_dotenv"
+      ],
+      "lines": 105
+    },
+    {
+      "path": "labs/03-session-tools-and-agents/09-langchain_tool_agent.py",
+      "sha256": "d3a76703e96fb2592b7fc50b2626879323ba09a433f7aaa36d531379148569e6",
+      "imports": [
+        "os",
+        "datetime",
+        "ChatGroq",
+        "tool",
+        "SystemMessage",
+        "HumanMessage",
+        "ToolMessage",
+        "load_dotenv"
+      ],
+      "lines": 120
+    },
+    {
+      "path": "labs/04-rag/10-init_qdrant.py",
+      "sha256": "740e2cebe1a8eac1c97895691dabbac9ada56ad81c3d31eed5fb44f14c80b37c",
+      "imports": [
+        "Path",
+        "PyPDFLoader",
+        "HuggingFaceEmbeddings",
+        "QdrantVectorStore",
+        "RecursiveCharacterTextSplitter"
+      ],
+      "lines": 51
+    },
+    {
+      "path": "labs/04-rag/10bis-init_qdrant_with_multiple_files.py",
+      "sha256": "017987e7a79e610083f9d47cbd4dd3e72cd9ce9c35a6439bb7c02f359d70a58b",
+      "imports": [
+        "Path",
+        "os",
+        "PyPDFLoader",
+        "HuggingFaceEmbeddings",
+        "QdrantVectorStore",
+        "RecursiveCharacterTextSplitter"
+      ],
+      "lines": 62
+    },
+    {
+      "path": "labs/04-rag/11-qdrant_retreival.py",
+      "sha256": "d94990f5f291c0888c8e4cfdf094a344e1aadce560ad8674b5e0603a14afaaf7",
+      "imports": [
+        "HuggingFaceEmbeddings",
+        "QdrantVectorStore",
+        "ChatPromptTemplate",
+        "StrOutputParser",
+        "os",
+        "ChatGroq",
+        "load_dotenv"
+      ],
+      "lines": 100
+    },
+    {
+      "path": "labs/04-rag/12-rag_inside_chain.py",
+      "sha256": "5213a96022ff39daf39aeff03dfae035d1b5f52b79d67d6a9fae7bf27a0865b7",
+      "imports": [
+        "os",
+        "HuggingFaceEmbeddings",
+        "QdrantVectorStore",
+        "ChatPromptTemplate",
+        "RunnablePassthrough",
+        "StrOutputParser",
+        "ChatGroq",
+        "load_dotenv"
+      ],
+      "lines": 72
+    },
+    {
+      "path": "labs/04-rag/13-rag_query_rewriting.py",
+      "sha256": "2e4149394b6a78d02be8897e0ba4441823c766fc412df8bd3660c4420fad9d56",
+      "imports": [
+        "os",
+        "HuggingFaceEmbeddings",
+        "QdrantVectorStore",
+        "ChatPromptTemplate",
+        "RunnablePassthrough",
+        "StrOutputParser",
+        "ChatGroq",
+        "load_dotenv"
+      ],
+      "lines": 88
+    },
+    {
+      "path": "labs/04-rag/14-adding_metadata.py",
+      "sha256": "1d49c6f843a756a3050ddb868ada2a0610b722955d4fb1470e9d30fe2c348d8a",
+      "imports": [
+        "Path",
+        "os",
+        "PyPDFLoader",
+        "HuggingFaceEmbeddings",
+        "QdrantVectorStore",
+        "RecursiveCharacterTextSplitter",
+        "hashlib",
+        "QdrantClient"
+      ],
+      "lines": 121
+    },
+    {
+      "path": "labs/04-rag/14-dealing_with_metadata.py",
+      "sha256": "cd24161518314ba99962d4e25a51908499ed8df56c225433f7269e5c8869becc",
+      "imports": [
+        "os",
+        "HuggingFaceEmbeddings",
+        "QdrantVectorStore",
+        "ChatPromptTemplate",
+        "RunnablePassthrough",
+        "StrOutputParser",
+        "ChatGroq",
+        "Filter",
+        "FieldCondition",
+        "MatchValue",
+        "load_dotenv"
+      ],
+      "lines": 104
+    },
+    {
+      "path": "labs/04-rag/14bis-retreiving_with_metadata.py",
+      "sha256": "7ab0c2d4cb83834d09827538e6824c4e15a4877c6285980874f37c22bfebaf2c",
+      "imports": [
+        "os",
+        "Range",
+        "HuggingFaceEmbeddings",
+        "QdrantVectorStore",
+        "ChatPromptTemplate",
+        "RunnablePassthrough",
+        "StrOutputParser",
+        "ChatGroq",
+        "Filter",
+        "FieldCondition",
+        "MatchValue",
+        "MatchAny",
+        "load_dotenv"
+      ],
+      "lines": 392
+    },
+    {
+      "path": "labs/04-rag/15-using_bm25.py",
+      "sha256": "39238a3e89509b2ac2fdd09e26c8697a7421e926e0cc4dadded4fbba5abcf9dd",
+      "imports": [
+        "Path",
+        "os",
+        "PyPDFLoader",
+        "HuggingFaceEmbeddings",
+        "FastEmbedSparse",
+        "QdrantVectorStore",
+        "RetrievalMode",
+        "RecursiveCharacterTextSplitter",
+        "hashlib",
+        "QdrantClient"
+      ],
+      "lines": 127
+    },
+    {
+      "path": "labs/04-rag/15bis-dense_vs_sparse_vs_hybrid.py",
+      "sha256": "76a9baa1bb6e270d3fa7b845218f68ab5047aea8a1b4e4c2ba65a120fdaeb630",
+      "imports": [
+        "os",
+        "Range",
+        "HuggingFaceEmbeddings",
+        "QdrantVectorStore",
+        "FastEmbedSparse",
+        "QdrantVectorStore",
+        "RetrievalMode",
+        "ChatPromptTemplate",
+        "RunnablePassthrough",
+        "StrOutputParser",
+        "ChatGroq",
+        "load_dotenv"
+      ],
+      "lines": 88
+    },
+    {
+      "path": "labs/04-rag/16-including_reranking.py",
+      "sha256": "a566e4067ad24abece98112747088a8e92ebee63c2069851c2646c5dba1e6b10",
+      "imports": [
+        "HuggingFaceEmbeddings",
+        "FastEmbedSparse",
+        "FastEmbedSparse",
+        "QdrantVectorStore",
+        "RetrievalMode",
+        "ChatPromptTemplate",
+        "StrOutputParser",
+        "v1",
+        "CrossEncoder",
+        "os",
+        "ChatGroq",
+        "load_dotenv"
+      ],
+      "lines": 125
+    },
+    {
+      "path": "labs/99-exercices/invoices_extractor/app.py",
+      "sha256": "fe3e22ffc85267c5239e58fb44d63dcfa2d05098606910f56be30d74d23723d1",
+      "imports": [
+        "streamlit",
+        "date",
+        "Path",
+        "create_or_update_qdrant_collection",
+        "ask_invoice_question"
+      ],
+      "lines": 333
+    },
+    {
+      "path": "labs/99-exercices/invoices_extractor/src/chat.py",
+      "sha256": "fad41336f1d6acdde4d0fa0fff42ff0114d6902445bf047a3a39ed5683c1b8c9",
+      "imports": [
+        "os",
+        "Filter",
+        "FieldCondition",
+        "MatchValue",
+        "MatchText",
+        "HuggingFaceEmbeddings",
+        "FastEmbedSparse",
+        "QdrantVectorStore",
+        "RetrievalMode",
+        "ChatPromptTemplate",
+        "RunnablePassthrough",
+        "StrOutputParser",
+        "ChatGroq",
+        "load_dotenv"
+      ],
+      "lines": 89
+    },
+    {
+      "path": "labs/99-exercices/invoices_extractor/src/ingesting.py",
+      "sha256": "4126f53e94f088ea52319234f821b44b2405ec57c9df04d89f473ea827311195",
+      "imports": [
+        "Path",
+        "os",
+        "PyPDFLoader",
+        "HuggingFaceEmbeddings",
+        "FastEmbedSparse",
+        "QdrantVectorStore",
+        "RetrievalMode",
+        "RetrievalMode",
+        "RecursiveCharacterTextSplitter",
+        "hashlib",
+        "extract_invoice_metadata",
+        "QdrantClient"
+      ],
+      "lines": 136
+    },
+    {
+      "path": "labs/99-exercices/invoices_extractor/src/metadata_extractor.py",
+      "sha256": "4249f466d1eca1a591edc76e5681f79c0ad447364736dc93295640365e318d67",
+      "imports": [
+        "os",
+        "BaseModel",
+        "Field",
+        "HuggingFaceEmbeddings",
+        "QdrantVectorStore",
+        "ChatPromptTemplate",
+        "RunnablePassthrough",
+        "StrOutputParser",
+        "ChatGroq",
+        "load_dotenv"
+      ],
+      "lines": 61
+    },
+    {
+      "path": "labs/99-exercices/quiz_generator.py",
+      "sha256": "0e00feac448f43385bd190d494ff9be0a1e7f67f1127701a38f55b46ba11bbfd",
+      "imports": [
+        "os",
+        "ChatGroq",
+        "ChatPromptTemplate",
+        "BaseModel",
+        "Field",
+        "load_dotenv"
+      ],
+      "lines": 48
+    },
+    {
+      "path": "labs/99-exercices/quiz_generator_save_tool.py",
+      "sha256": "941189436d47f241fe1e067b4af302a1e985892eff3f6cbe29af245b788fea37",
+      "imports": [
+        "os",
+        "datetime",
+        "load_dotenv",
+        "ChatGroq",
+        "ChatPromptTemplate",
+        "tool",
+        "SystemMessage",
+        "HumanMessage",
+        "BaseModel",
+        "Field"
+      ],
+      "lines": 147
+    },
+    {
+      "path": "labs/99-exercices/rag_with_sources.py",
+      "sha256": "893733fb447b4eb4a25067b254ba9dbfce8e53e8b6317080e501973511192a8c",
+      "imports": [
+        "os",
+        "HuggingFaceEmbeddings",
+        "QdrantVectorStore",
+        "ChatPromptTemplate",
+        "RunnablePassthrough",
+        "StrOutputParser",
+        "ChatGroq",
+        "BaseModel",
+        "Field",
+        "load_dotenv"
+      ],
+      "lines": 82
+    },
+    {
+      "path": "labs/99-exercices/ticket_categorisation.py",
+      "sha256": "8a3741076b3771c3e957a04fc7f590eda2e9fc86d1d5b9d58db132724ffada29",
+      "imports": [
+        "pandas",
+        "os",
+        "ChatGroq",
+        "ChatPromptTemplate",
+        "BaseModel",
+        "Field",
+        "load_dotenv"
+      ],
+      "lines": 45
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+services:
+  qdrant:
+    image: qdrant/qdrant:v1.20.0
+    ports:
+      - "127.0.0.1:6333:6333"
+    volumes:
+      - qdrant_data:/qdrant/storage
+  workbench:
+    build: .
+    ports:
+      - "127.0.0.1:8501:8501"
+    environment:
+      QDRANT_URL: http://qdrant:6333
+    volumes:
+      - model_cache:/root/.cache
+      - catalog_data:/app/var
+    depends_on:
+      - qdrant
+volumes:
+  qdrant_data:
+  model_cache:
+  catalog_data:

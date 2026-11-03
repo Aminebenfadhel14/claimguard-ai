@@ -1,0 +1,67 @@
+[
+  {
+    "path": "models/novaretail-embedding/1_Pooling/config.json",
+    "bytes": 90,
+    "sha256": "4fef0a7e8c8ee36e74c0fad89bab60ade72324442d43f559ea219bb7c2580710"
+  },
+  {
+    "path": "models/novaretail-embedding/2_Normalize/config.json",
+    "bytes": 97,
+    "sha256": "cdb09dfca347a56aa2d691744e38d5ad3c7cbc2834e7181272b9a15328b82524"
+  },
+  {
+    "path": "models/novaretail-embedding/BASE_MODEL_CARD.md",
+    "bytes": 10502,
+    "sha256": "dcd602d2fd35c203a247304a06fec6654a12f7941b739f9221a064fe8dc3b7f0"
+  },
+  {
+    "path": "models/novaretail-embedding/LICENSE",
+    "bytes": 11358,
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  {
+    "path": "models/novaretail-embedding/MODEL_PROVENANCE.md",
+    "bytes": 692,
+    "sha256": "9a0d6da5711d5d1a8d55167efaee39932cf54e512cb2d5ea975184806e16ef3f"
+  },
+  {
+    "path": "models/novaretail-embedding/README.md",
+    "bytes": 10502,
+    "sha256": "dcd602d2fd35c203a247304a06fec6654a12f7941b739f9221a064fe8dc3b7f0"
+  },
+  {
+    "path": "models/novaretail-embedding/config.json",
+    "bytes": 746,
+    "sha256": "224b17151cb94ab614799c3e705b0a84909fdb85d7697bb4e2c01931f281c894"
+  },
+  {
+    "path": "models/novaretail-embedding/config_sentence_transformers.json",
+    "bytes": 284,
+    "sha256": "763bd5849fb69f1603e8745be2937d12aadce6f191c1a20859b54895dc2482a2"
+  },
+  {
+    "path": "models/novaretail-embedding/model.safetensors",
+    "bytes": 90864192,
+    "sha256": "477b31882b74b2cedf8244ef8722b2e451492cbcc14624392722387e70d2c882"
+  },
+  {
+    "path": "models/novaretail-embedding/modules.json",
+    "bytes": 413,
+    "sha256": "3d02572a0455b832de67fb8e63a54981bc7e8b46e337c95e917bd8122a533bfd"
+  },
+  {
+    "path": "models/novaretail-embedding/sentence_bert_config.json",
+    "bytes": 241,
+    "sha256": "3084164002c0bca01b0259c5327123803fce32e660a57feb93184ffead186fc8"
+  },
+  {
+    "path": "models/novaretail-embedding/tokenizer.json",
+    "bytes": 711649,
+    "sha256": "851ca67100d372ca3ae031a6abd168f53489eebfd7d89523f35c5c9b4d372c3c"
+  },
+  {
+    "path": "models/novaretail-embedding/tokenizer_config.json",
+    "bytes": 594,
+    "sha256": "4817907ff3846ed899a62cccad0193c21d0792130c6139d8362187153eeff283"
+  }
+]

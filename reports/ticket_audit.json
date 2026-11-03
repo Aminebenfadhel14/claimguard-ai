@@ -1,0 +1,81 @@
+{
+  "source_url": "https://github.com/Nadjib23/AI-Engineering-Course/blob/2b0c4d78f992dce0a6349121e543ff8dddce94d4/labs/datasets/customer_support_tickets.csv",
+  "source_sha256": "b06a9cde84da65db388bd964d75f88ee1eed96607cf75d0c35f09c3f11bf8bea",
+  "rows": 8469,
+  "columns": [
+    "Ticket ID",
+    "Customer Name",
+    "Customer Email",
+    "Customer Age",
+    "Customer Gender",
+    "Product Purchased",
+    "Date of Purchase",
+    "Ticket Type",
+    "Ticket Subject",
+    "Ticket Description",
+    "Ticket Status",
+    "Resolution",
+    "Ticket Priority",
+    "Ticket Channel",
+    "First Response Time",
+    "Time to Resolution",
+    "Customer Satisfaction Rating"
+  ],
+  "missing": {
+    "Ticket ID": 0,
+    "Customer Name": 0,
+    "Customer Email": 0,
+    "Customer Age": 0,
+    "Customer Gender": 0,
+    "Product Purchased": 0,
+    "Date of Purchase": 0,
+    "Ticket Type": 0,
+    "Ticket Subject": 0,
+    "Ticket Description": 0,
+    "Ticket Status": 0,
+    "Resolution": 5700,
+    "Ticket Priority": 0,
+    "Ticket Channel": 0,
+    "First Response Time": 2819,
+    "Time to Resolution": 5700,
+    "Customer Satisfaction Rating": 5700
+  },
+  "duplicate_rows": 0,
+  "duplicate_descriptions": 392,
+  "placeholder_descriptions": 8469,
+  "placeholder_token_count": 15250,
+  "product_placeholder_occurrences": 13873,
+  "description_length": {
+    "min": 151,
+    "max": 397,
+    "mean": 289.82193883575394
+  },
+  "distributions": {
+    "Ticket Type": {
+      "Technical issue": 1747,
+      "Billing inquiry": 1634,
+      "Cancellation request": 1695,
+      "Product inquiry": 1641,
+      "Refund request": 1752
+    },
+    "Ticket Priority": {
+      "Critical": 2129,
+      "Low": 2063,
+      "High": 2085,
+      "Medium": 2192
+    },
+    "Ticket Status": {
+      "Pending Customer Response": 2881,
+      "Closed": 2769,
+      "Open": 2819
+    },
+    "Ticket Channel": {
+      "Social media": 2121,
+      "Chat": 2073,
+      "Email": 2143,
+      "Phone": 2132
+    }
+  },
+  "privacy": "Direct identifiers removed; residual text PII requires manual review before external use.",
+  "labels": "Ticket resolutions are not policy-compliance labels."
+}

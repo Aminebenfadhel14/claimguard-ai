@@ -1,0 +1,54 @@
+{
+  "corpus": "drip_r",
+  "transport": "stdio",
+  "discovered_tools": [
+    "search_policies",
+    "get_policy_section",
+    "compare_policy_versions"
+  ],
+  "successful_calls": 2,
+  "calls": [
+    {
+      "tool": "search_policies",
+      "arguments": {
+        "query": "How should I return a gift without the order number?",
+        "incident_date": "2026-11-02",
+        "top_k": 3
+      },
+      "result": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"query\": \"How should I return a gift without the order number?\",\n  \"incident_date\": \"2026-11-02\",\n  \"results\": [\n    {\n      \"chunk\": {\n        \"chunk_id\": \"343b37fd1ecf46e9b8f9f4221c06a78e86f091f7033284ad173d9c4473f55de8\",\n        \"text\": \"Returning a Gift\\nGo to the Returns page. Use the 17-digit order number, for example 123-1234567-1234567 (add: \\\"how do I find this?\\\" hover-over link) on your packing slip that came with your item or on the digital gift receipt, to initiate a return. If you can't locate the order number, ask the gift giver. If you need an exchange or replacement, you'll need to return the gift and place a new order.\\n- Kindle books you receive as a gift are eligible for exchange for an Amazon.com Gift Card before acceptance.\",\n        \"metadata\": {\n          \"document_id\": \"DRIP-001-SNAPSHOT\",\n          \"policy_id\": \"DRIP-001\",\n          \"title\": \"Amazon Return Policy\",\n          \"category\": \"returns\",\n          \"department\": \"Customer support\",\n          \"version\": \"1.0\",\n          \"effective_date\": null,\n          \"effective_until\": null,\n          \"language\": \"en\",\n          \"access_level\": \"public\",\n          \"source\": \"https://huggingface.co/datasets/hsuvaskakoty/DRIP-R/blob/02f4c696df2a9170c3bea254ed2d60ea14bd4be4/scenarios.jsonl\",\n          \"temporal_basis\": \"dataset_snapshot\",\n          \"source_revision\": \"02f4c696df2a9170c3bea254ed2d60ea14bd4be4\",\n          \"version_origin\": \"project_snapshot\"\n        },\n        \"section\": \"1.15\",\n        \"page\": 1,\n        \"file_hash\": \"b6f748921976c9b37b711d9043d702c28cc456c2b7029b85176e2e78faf00b3e\",\n        \"source_file\": \"DRIP-001.txt\",\n        \"source_line_start\": 85,\n        \"source_line_end\": 87,\n        \"section_title\": \"Returning a Gift\",\n        \"section_origin\": \"project_segmentation\"\n      },\n      \"score\": 7.654890060424805,\n      \"stage\": \"reranker\"\n    },\n    {\n      \"chunk\": {\n        \"chunk_id\": \"50ca8b3ce721d05c7c1112aefa2fc08d9fc6c7f36a883e8343d41074c9fece6b\",\n        \"text\": \"Initiating a Return\\nTo initiate a return on an item that's eligible for return, simply go to Your Orders and click on \\\"Return Items\\\" button next to the item. Detail instructions can be found in this video.\",\n        \"metadata\": {\n          \"document_id\": \"DRIP-001-SNAPSHOT\",\n          \"policy_id\": \"DRIP-001\",\n          \"title\": \"Amazon Return Policy\",\n          \"category\": \"returns\",\n          \"department\": \"Customer support\",\n          \"version\": \"1.0\",\n          \"effective_date\": null,\n          \"effective_until\": null,\n          \"language\": \"en\",\n          \"access_level\": \"public\",\n          \"source\": \"https://huggingface.co/datasets/hsuvaskakoty/DRIP-R/blob/02f4c696df2a9170c3bea254ed2d60ea14bd4be4/scenarios.jsonl\",\n          \"temporal_basis\": \"dataset_snapshot\",\n          \"source_revision\": \"02f4c696df2a9170c3bea254ed2d60ea14bd4be4\",\n          \"version_origin\": \"project_snapshot\"\n        },\n        \"section\": \"1.6\",\n        \"page\": 1,\n        \"file_hash\": \"b6f748921976c9b37b711d9043d702c28cc456c2b7029b85176e2e78faf00b3e\",\n        \"source_file\": \"DRIP-001.txt\",\n        \"source_line_start\": 45,\n        \"source_line_end\": 46,\n        \"section_title\": \"Initiating a Return\",\n        \"section_origin\": \"project_segmentation\"\n      },\n      \"score\": -1.4068057537078857,\n      \"stage\": \"reranker\"\n    },\n    {\n      \"chunk\": {\n        \"chunk_id\": \"f8ed27915b693c9492df759a7ec3edd3cbd824e85dc239bc0b357e272433f331\",\n        \"text\": \"Sending Us Your Return\\nYou can return most items for free at over 8,000 convenient locations, typically within a 5-mile radius of your address. Additionally, most returns do not need to be boxed or labeled. Please ensure that your item is returned in original or unused condition with tags attached and hygiene seals and liners intact, and in the original manufacturer's packaging including tags, components, accessories, manuals, certificates of authenticity, and other inserts. Please return your item before the \\\"return by date\\\" shown in your return request confirmation email or in the \\\"Return Request\\\" tab in your Order History.\\nPlease follow the return instructions for each item to receive a refund. Do not include items from separate orders in the same return.\\nIf you have bought an item (for example, computers, electronics) on which you've saved personal information, please erase this information completely by following manufacturer instructions.\",\n        \"metadata\": {\n          \"document_id\": \"DRIP-001-SNAPSHOT\",\n          \"policy_id\": \"DRIP-001\",\n          \"title\": \"Amazon Return Policy\",\n          \"category\": \"returns\",\n          \"department\": \"Customer support\",\n          \"version\": \"1.0\",\n          \"effective_date\": null,\n          \"effective_until\": null,\n          \"language\": \"en\",\n          \"access_level\": \"public\",\n          \"source\": \"https://huggingface.co/datasets/hsuvaskakoty/DRIP-R/blob/02f4c696df2a9170c3bea254ed2d60ea14bd4be4/scenarios.jsonl\",\n          \"temporal_basis\": \"dataset_snapshot\",\n          \"source_revision\": \"02f4c696df2a9170c3bea254ed2d60ea14bd4be4\",\n          \"version_origin\": \"project_snapshot\"\n        },\n        \"section\": \"1.8\",\n        \"page\": 1,\n        \"file_hash\": \"b6f748921976c9b37b711d9043d702c28cc456c2b7029b85176e2e78faf00b3e\",\n        \"source_file\": \"DRIP-001.txt\",\n        \"source_line_start\": 53,\n        \"source_line_end\": 56,\n        \"section_title\": \"Sending Us Your Return\",\n        \"section_origin\": \"project_segmentation\"\n      },\n      \"score\": -2.0979883670806885,\n      \"stage\": \"reranker\"\n    }\n  ]\n}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structuredContent": null,
+        "isError": false
+      }
+    },
+    {
+      "tool": "get_policy_section",
+      "arguments": {
+        "policy_id": "DRIP-001",
+        "version": "1.0",
+        "section": "1.15"
+      },
+      "result": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"reference\": \"DRIP-001@1.0#1.15\",\n  \"chunks\": [\n    {\n      \"chunk_id\": \"343b37fd1ecf46e9b8f9f4221c06a78e86f091f7033284ad173d9c4473f55de8\",\n      \"text\": \"Returning a Gift\\nGo to the Returns page. Use the 17-digit order number, for example 123-1234567-1234567 (add: \\\"how do I find this?\\\" hover-over link) on your packing slip that came with your item or on the digital gift receipt, to initiate a return. If you can't locate the order number, ask the gift giver. If you need an exchange or replacement, you'll need to return the gift and place a new order.\\n- Kindle books you receive as a gift are eligible for exchange for an Amazon.com Gift Card before acceptance.\",\n      \"metadata\": {\n        \"document_id\": \"DRIP-001-SNAPSHOT\",\n        \"policy_id\": \"DRIP-001\",\n        \"title\": \"Amazon Return Policy\",\n        \"category\": \"returns\",\n        \"department\": \"Customer support\",\n        \"version\": \"1.0\",\n        \"effective_date\": null,\n        \"effective_until\": null,\n        \"language\": \"en\",\n        \"access_level\": \"public\",\n        \"source\": \"https://huggingface.co/datasets/hsuvaskakoty/DRIP-R/blob/02f4c696df2a9170c3bea254ed2d60ea14bd4be4/scenarios.jsonl\",\n        \"temporal_basis\": \"dataset_snapshot\",\n        \"source_revision\": \"02f4c696df2a9170c3bea254ed2d60ea14bd4be4\",\n        \"version_origin\": \"project_snapshot\"\n      },\n      \"section\": \"1.15\",\n      \"page\": 1,\n      \"file_hash\": \"b6f748921976c9b37b711d9043d702c28cc456c2b7029b85176e2e78faf00b3e\",\n      \"source_file\": \"DRIP-001.txt\",\n      \"source_line_start\": 85,\n      \"source_line_end\": 87,\n      \"section_title\": \"Returning a Gift\",\n      \"section_origin\": \"project_segmentation\"\n    }\n  ]\n}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structuredContent": null,
+        "isError": false
+      }
+    }
+  ]
+}

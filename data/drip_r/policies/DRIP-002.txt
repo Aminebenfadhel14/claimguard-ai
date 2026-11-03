@@ -1,0 +1,46 @@
+Returns to Third-Party Sellers
+When you order from a third-party seller that fulfills and ships its own inventory, your return is sent back to the seller instead of Amazon.
+Content
+Request a return
+Go to the Amazon Online Returns Center to start your return request for third-party seller items.
+Get return instructions
+The seller will provide one of these return methods:
+- A return address in the United States
+- A prepaid return label
+- A full refund without returning the item
+Package your return
+To pack your item for safe return to the seller:
+- Use the original packaging or a similar-sized box
+- Disassemble items that required assembly
+- Remove all personal information, passwords, and passcodes from electronic devices. For instructions on how to do this, check the manufacturer’s website or contact the manufacturer for support.
+Ship your return
+To return your item to the seller:
+- Use the shipping label provided by the seller
+- Items valued at $100 or more: Insure the shipment and use a signature service
+- Items valued over $35: Use a trackable shipping service
+- Items below $35: We suggest using the USPS delivery confirmation service
+We may not be able to cover you under the A-to-z Guarantee if:
+- The package doesn't arrive with the seller and you didn't use a trackable method to return it, or
+- You refuse delivery of the shipment, to return it to the sender.
+Track your refund
+The seller will process your refund after receiving the return, usually within two business days. You'll receive a notification of your return and refund details. Outbound shipping charges aren't always refunded upon return.
+Understanding refund delays
+Refunds can be delayed if:
+- Your return is in transit longer than expected.
+- You use an untrackable shipping method.
+- The seller receives a different item than ordered.
+- An item that was sold as new, is returned with signs of use or damage.
+Extra-large or heavy items
+A package is defined as extra large or heavy if it:
+- weights more than 150 pounds
+- is over 108 inches long
+- exceeds a total of 165 inches in length and girth [(2 x width) + (2 x height)].
+For extra-large items, you'll receive either:
+- A postage-due label (you pay for shipping)
+- A prepaid label from the seller
+What to do next
+If you need help after returning an item to a third-party seller:
+- You can contact the seller.
+- If the seller doesn't respond within 48 hours, you can request an A-to-z Guarantee refund if:
+- The seller doesn't offer you an approved return method within 48 hours of asking to return a damaged, defective, or not as described item, OR
+- You returned an item in line with the Amazon Return Policy, but you haven't received the expected refund. Check the Return Fees section of the Amazon Return Policy before requesting an A-to-z Guarantee refund.

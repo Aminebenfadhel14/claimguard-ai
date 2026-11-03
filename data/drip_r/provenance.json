@@ -1,0 +1,31 @@
+{
+  "repo": "hsuvaskakoty/DRIP-R",
+  "revision": "02f4c696df2a9170c3bea254ed2d60ea14bd4be4",
+  "files": [
+    {
+      "file": "README.md",
+      "sha256": "15f5fa8055805b05f9a6459c88c942d1ee2d8b7a2245c0f3b6114bd25ece74d2",
+      "size_bytes": 15480
+    },
+    {
+      "file": "croissant_metadata.json",
+      "sha256": "83e45a7c5ad765ff25cec3a8588b8f385a0f41dc063d7594a6510806b90e36d3",
+      "size_bytes": 26623
+    },
+    {
+      "file": "scenarios.jsonl",
+      "sha256": "888ad09bee3e7355a146a698db2670da951959dc0c0fad82f14b61568476470c",
+      "size_bytes": 7389048
+    },
+    {
+      "file": "tasks.jsonl",
+      "sha256": "aaabc2bae908d5fc0233eaa857928d6cbe45cd2a2042b4854758c0c342e0e91a",
+      "size_bytes": 94884
+    },
+    {
+      "file": "personas.jsonl",
+      "sha256": "87f117eed05ee822d21f5b8ec8e333efcba5e850b2e8db6edc887e8d08c8c617",
+      "size_bytes": 9799
+    }
+  ]
+}
