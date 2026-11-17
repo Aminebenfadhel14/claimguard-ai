@@ -1,0 +1,15 @@
+{
+  "source_policy_sha256": {
+    "DRIP-001.txt": "b6f748921976c9b37b711d9043d702c28cc456c2b7029b85176e2e78faf00b3e",
+    "DRIP-002.txt": "0279dff7ece714c70cd9d623dfb7deaa61ecc0e8a171194a15fd7cce994531bd"
+  },
+  "original_drip_scenarios_used": 0,
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "training_examples": 40,
+  "development_examples": 44,
+  "test_sha256": "04c7c70f1741ef486a3ba1650f6cfafcb657a16e98eb67b67147cb3c03b6f723",
+  "status": "Synthetic relevance annotations; independent human review required; not refund decisions."
+}

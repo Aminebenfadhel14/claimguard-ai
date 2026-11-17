@@ -1,0 +1,56 @@
+{
+  "corpus": "drip_r",
+  "base_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "base_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+  "loss": "cosine triplet margin 0.25",
+  "seed": 42,
+  "epochs": 3,
+  "batch_size": 8,
+  "learning_rate": 2e-05,
+  "weight_decay": 0.01,
+  "max_seq_length": 256,
+  "device": "cpu",
+  "best_epoch": 3,
+  "training_seconds": 64.11821103096008,
+  "sizes": {
+    "train": 60,
+    "validation": 30,
+    "test": 58
+  },
+  "dataset_sha256": {
+    "data/drip_r/training/train.jsonl": "bcd249683ba373cc0a56f4d313256a6bc7d0d5d9ae0afbcf6dccbbad662e7beb",
+    "data/drip_r/training/validation.jsonl": "a471d783ee58435dba885916a7ef5d3a77e5427004dac31d5fa265c4b550cd95",
+    "data/drip_r/evaluation/questions.jsonl": "04c7c70f1741ef486a3ba1650f6cfafcb657a16e98eb67b67147cb3c03b6f723"
+  },
+  "logs": [
+    {
+      "epoch": 0,
+      "validation_loss": 0.0589270293712616
+    },
+    {
+      "epoch": 1,
+      "train_loss": 0.07223284803330898,
+      "validation_loss": 0.041452258825302124
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.026705660857260227,
+      "validation_loss": 0.03233625739812851
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.004591396078467369,
+      "validation_loss": 0.0251971036195755
+    }
+  ],
+  "limitations": [
+    "Small synthetic dataset",
+    "Train and validation are navigation/summary tasks; test uses complaint scenarios",
+    "Shared policy corpus is intentional; no claim of unseen-policy generalization",
+    "No independent human annotation",
+    "Training queries authored from DRIP-R policy text; not original scenario training",
+    "Held-out DRIP-R scenarios share policy text; this is corpus adaptation, not unseen-policy generalization",
+    "Original DRIP-R has no gold decision labels; results concern project retrieval annotations only"
+  ],
+  "original_benchmark_scenarios_in_training": 0
+}

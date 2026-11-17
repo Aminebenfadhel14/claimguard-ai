@@ -2,6 +2,27 @@
 
 Source : `hsuvaskakoty/DRIP-R`, révision `02f4c696df2a9170c3bea254ed2d60ea14bd4be4`. Exécution du 2 novembre 2026.
 
+## Mesures actuelles — profil `validated`, 2026-11-15
+
+Source : `reports/drip_r/latest.json` (c’est ce rapport qu’affichent les interfaces). Même jeu de test : 50 scénarios annotés + 8 sans réponse, SHA-256 `04c7c70f1741ef48…`.
+
+| Expérience | Recall@1 | Recall@3 | Recall@5 | Recall@10 | MRR@10 | Latence p95 (ms) |
+|---|---:|---:|---:|---:|---:|---:|
+| E1 | 0.2100 | 0.5083 | 0.6967 | 0.9167 | 0.6209 | 29 |
+| E2 | 0.1967 | 0.4367 | 0.5717 | 0.8617 | 0.5600 | 3 |
+| E3 | 0.2550 | 0.6300 | 0.7783 | 0.9167 | 0.7145 | 37 |
+| E4 | 0.3100 | 0.6233 | 0.8133 | 0.8983 | 0.7847 | 1877 |
+| FT_DENSE | 0.1533 | 0.3483 | 0.5600 | 0.8267 | 0.5068 | 29 |
+| E5 | 0.3100 | 0.6233 | 0.8233 | 0.8983 | 0.7857 | 2084 |
+
+Objectifs : Recall@5 ≥ 0,90 et MRR@10 ≥ 0,85 non atteints sur DRIP-R (E4 : 0.813 et 0.785) ; latence p95 ≤ 3 s atteinte (1.88 s). Chaque étape améliore le classement : dense 0.697 → hybride 0.778 → reranking 0.813.
+
+Fine-tuning : le dense adapté régresse (0.621 → 0.507 de MRR@10) ; dans la chaîne complète l’écart est négligeable (E5 Recall@5 0.823 contre 0.813). Le modèle pré-entraîné reste le défaut.
+
+Lecture des échecs : 19 questions sur 50 ont un Recall@5 < 1. Les labels sont très concentrés : `DRIP-001@1.0#1.8` est attendu dans 49 questions sur 50 et `DRIP-001@1.0#1.1` dans 33. La section 1.4 « Return Window » a perdu le contenu de son tableau dans la source et n’est jamais attendue. Les écarts reflètent donc aussi la qualité des annotations provisoires et du texte source, pas seulement les modèles.
+
+Les sections ci-dessous décrivent l’exécution historique du 2 novembre 2026 (pipeline précédent), conservée pour la traçabilité.
+
 ## Données et protocole
 400 scénarios synthétiques, issus de 40 situations et de 10 profils. Deux textes de politiques uniques sont conservés octet pour octet, divisés en 30 sections locales. Les numéros de sections et la version 1.0 sont ajoutés par le projet. Les dates de validité et la pagination PDF originales sont inconnues.
 
@@ -9,7 +30,7 @@ Le test annoté contient 50 scénarios originaux (40 situations, 10 profils équ
 
 Les requêtes ne contiennent que le message client et le résumé destiné à l’agent. Le détail de la situation, les ambiguïtés attendues et les informations privées du simulateur sont exclus. Le champ explicite task_id est utilisé pour regrouper les variantes.
 
-## Mesures réellement calculées
+## Mesures historiques (2 novembre 2026)
 
 | Expérience | Recall@1 | Recall@3 | Recall@5 | Recall@10 | MRR@10 | Latence moyenne (ms) |
 |---|---:|---:|---:|---:|---:|---:|
@@ -56,7 +77,7 @@ La baisse de la perte de validation ne garantit pas une amélioration du classem
 - Les tableaux des exceptions et de certains frais sont incomplets dans les sources. Aucun montant, catégorie ou condition manquante n’a été inventé.
 - Les déclarations clients ne sont pas des faits vérifiés ; aucune décision de conformité ou de remboursement n’est produite par le batch.
 - Les 8 questions sans réponse sont exclues des moyennes de retrieval. Aucune précision d’abstention, qualité sémantique des citations ou faithfulness n’est annoncée.
-- GROQ_API_KEY absente : réécriture et génération LLM réelles non validées. Le code est disponible via scripts/live_rag_check.py --corpus drip_r.
+- Réécriture et génération Groq : la clé peut être configurée dans `.env`, mais aucune exécution réelle n’est encore enregistrée (`live_rag_check.txt`). Validation : `python scripts/live_rag_check.py --corpus drip_r`.
 - Les politiques DRIP-R sont des instantanés fournis par le benchmark, pas une preuve des règles Amazon actuelles ni une source à fusionner avec les politiques NovaRetail.
 - Les fonctions métier avancées de Level 2 restent en attente de validation du socle LLM.
 

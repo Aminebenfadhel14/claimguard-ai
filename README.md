@@ -1,8 +1,31 @@
 # ClaimGuard AI
 
+## Version locale fiabilisée — novembre 2026
+
+Les modèles sont préparés explicitement et la recherche fonctionne ensuite hors ligne. L’interface distingue les ressources présentes du moteur réellement chargé, affiche des sections distinctes et conserve les preuves si Groq échoue. L’architecture SQLite / Qdrant dense + BM25 / RRF / CrossEncoder / MCP est conservée.
+
+```powershell
+.\.venv\Scripts\python.exe scripts/prepare_models.py --profiles course multilingual
+.\.venv\Scripts\python.exe scripts/doctor.py --load
+.\.venv\Scripts\python.exe scripts/run.py
+```
+
+**Guide actuel : [lancement, configuration, évaluation et limites](docs/LOCAL_RUN.md).** Les rapports initiaux ci-dessous restent historiques ; les nouvelles mesures sont dans `reports/drip_r/latest.json`, les comparaisons de développement dans `reports/drip_r/profile_selection.json`. Les objectifs de qualité sont vérifiés par mesure, jamais substitués aux résultats réels. La génération Groq réelle reste en attente d’autorisation de son test externe.
+
 **Intelligent Customer Complaint Analysis & Policy Compliance Assistant — NovaRetail**
 
 Projet académique TEK-UP, Medamine Ben Fadhel. Cette livraison contient un **socle RAG exécuté et évalué**, un fine-tuning réel, un serveur MCP officiel et un atelier Streamlit. L'application métier complète n'est pas encore terminée : voir [état d'acceptation](reports/ACCEPTANCE.md).
+
+
+## Interface web React + FastAPI — novembre 2026
+
+Nouvelle interface React (Recherche, Documents, Explication RAG, Évaluations) servie par une API FastAPI dédiée (`src/claimguard/web.py`), sur le même moteur offline. Le frontend compilé est livré dans `frontend/dist` : Node.js n'est pas nécessaire pour l'utiliser.
+
+```powershell
+.\.venv\Scripts\python.exe scripts\run_web.py
+```
+
+Ouvrir http://127.0.0.1:8000 (API : http://127.0.0.1:8000/docs). **Guide : [docs/WEB_APP.md](docs/WEB_APP.md).** L'atelier Streamlit reste disponible.
 
 ## Ajout DRIP-R — novembre 2026
 
@@ -52,7 +75,7 @@ Pour l'API/MCP, `CLAIMGUARD_CORPUS=drip_r` choisit ce corpus. Pour vérifier Gro
 - API FastAPI de recherche avec authentification locale et atelier Streamlit.
 - 16 tests réussis sur Linux/Python 3.12 ; vérification supplémentaire du formulaire Streamlit avec recherche réelle.
 
-**Limites de livraison :** Groq absent, donc génération/réécriture LLM et abstention non validées en réel. Les modules métier Level 2, les décisions humaines persistées et l'interface métier complète restent à développer après le passage Level 1. Le moteur de recherche ne tranche ni les droits du client ni la culpabilité d'un employé.
+**Limites de livraison :** génération/réécriture LLM via Groq intégrées mais pas encore validées par une exécution réelle enregistrée (`scripts/live_rag_check.py`) ; abstention non mesurée. Les modules métier Level 2, les décisions humaines persistées et l'interface métier complète restent à développer après le passage Level 1. Le moteur de recherche ne tranche ni les droits du client ni la culpabilité d'un employé.
 
 ## Démarrage Windows 11 / PowerShell
 

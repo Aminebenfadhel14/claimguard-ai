@@ -4,7 +4,7 @@ def metrics(ranked, relevant):
     # Evaluate sections, not duplicate chunks from the same section.
     ranked=list(dict.fromkeys(ranked)); relevant=set(relevant)
     if not relevant: raise ValueError('Unanswerable questions require separate abstention evaluation')
-    result={}
+    result={'hit@1':float(bool(ranked and ranked[0] in relevant))}
     for k in (1,3,5,10):
         result[f'recall@{k}']=len(set(ranked[:k]) & relevant)/len(relevant)
         result[f'precision@{k}']=len(set(ranked[:k]) & relevant)/k

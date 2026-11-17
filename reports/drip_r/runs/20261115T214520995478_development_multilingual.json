@@ -1,0 +1,2085 @@
+{
+  "schema_version": 2,
+  "created_at": "2026-11-15T21:45:20.993345+00:00",
+  "corpus": "drip_r",
+  "split": "development",
+  "dataset_sha256": "e5b3e646148c7587763d65b934188d066089535ff3e65a71f8b027d5af409dca",
+  "profile": {
+    "label": "Multilingue · E5 small (candidat)",
+    "dense": {
+      "name": "intfloat/multilingual-e5-small",
+      "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+      "max_tokens": 512,
+      "query_prefix": "query: ",
+      "passage_prefix": "passage: "
+    },
+    "sparse": {
+      "name": "Qdrant/bm25",
+      "revision": "22b8d2af71a76161e18dd432d2cee0eefa66e412"
+    },
+    "reranker": {
+      "name": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+      "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+      "max_tokens": 512
+    },
+    "candidate_k": 40,
+    "rerank_k": 20,
+    "rrf_k": 60,
+    "batch_size": 8,
+    "chunk_tokens": 190,
+    "chunk_overlap": 24,
+    "section_titles": true,
+    "name": "multilingual",
+    "fingerprint": "26ce3fedbb75e85647bca13bc6b8047f323125b9aaa07ea2e9ce6b6d99f95f2f"
+  },
+  "profile_fingerprint": "26ce3fedbb75e85647bca13bc6b8047f323125b9aaa07ea2e9ce6b6d99f95f2f",
+  "ranking_unit": "section",
+  "seed": 42,
+  "total_seconds": 30.373801700014155,
+  "benchmark": "Project-authored provisional relevance labels; independent human review required.",
+  "latency_protocol": "CPU; one warmup per mode; excludes model/index loading and LLM",
+  "summary": {
+    "E3": {
+      "answerable_questions": 24,
+      "unanswerable_questions": 4,
+      "metrics": {
+        "hit@1": 0.5833333333333334,
+        "recall@1": 0.5833333333333334,
+        "precision@1": 0.5833333333333334,
+        "recall@3": 0.8333333333333334,
+        "precision@3": 0.2777777777777778,
+        "recall@5": 0.9166666666666666,
+        "precision@5": 0.18333333333333335,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 0.7222718253968254,
+        "ndcg@10": 0.7894259516197489
+      },
+      "task_macro_metrics": {
+        "hit@1": 0.5833333333333334,
+        "recall@1": 0.5833333333333334,
+        "precision@1": 0.5833333333333334,
+        "recall@3": 0.8333333333333334,
+        "precision@3": 0.2777777777777778,
+        "recall@5": 0.9166666666666666,
+        "precision@5": 0.18333333333333335,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 0.7222718253968254,
+        "ndcg@10": 0.7894259516197489
+      },
+      "by_language": {
+        "en": {
+          "count": 12,
+          "metrics": {
+            "hit@1": 0.75,
+            "recall@1": 0.75,
+            "precision@1": 0.75,
+            "recall@3": 1.0,
+            "precision@3": 0.3333333333333333,
+            "recall@5": 1.0,
+            "precision@5": 0.2,
+            "recall@10": 1.0,
+            "precision@10": 0.1,
+            "mrr@10": 0.8611111111111112,
+            "ndcg@10": 0.8968216255952429
+          }
+        },
+        "fr": {
+          "count": 12,
+          "metrics": {
+            "hit@1": 0.4166666666666667,
+            "recall@1": 0.4166666666666667,
+            "precision@1": 0.4166666666666667,
+            "recall@3": 0.6666666666666666,
+            "precision@3": 0.2222222222222222,
+            "recall@5": 0.8333333333333334,
+            "precision@5": 0.16666666666666669,
+            "recall@10": 1.0,
+            "precision@10": 0.1,
+            "mrr@10": 0.5834325396825397,
+            "ndcg@10": 0.6820302776442551
+          }
+        }
+      },
+      "abstention_accuracy": null,
+      "abstention_note": "Retrieval only; LLM abstention is not evaluated.",
+      "task_groups": 12,
+      "latency_mean_ms": 21.674435711507353,
+      "latency_median_ms": 20.45189999626018,
+      "latency_p95_ms": 28.823399974498898,
+      "mode": "hybrid",
+      "embedding": "baseline"
+    },
+    "E4": {
+      "answerable_questions": 24,
+      "unanswerable_questions": 4,
+      "metrics": {
+        "hit@1": 0.6666666666666666,
+        "recall@1": 0.6666666666666666,
+        "precision@1": 0.6666666666666666,
+        "recall@3": 0.9166666666666666,
+        "precision@3": 0.3055555555555555,
+        "recall@5": 0.9166666666666666,
+        "precision@5": 0.18333333333333335,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 0.7958333333333333,
+        "ndcg@10": 0.8458300325534666
+      },
+      "task_macro_metrics": {
+        "hit@1": 0.6666666666666666,
+        "recall@1": 0.6666666666666666,
+        "precision@1": 0.6666666666666666,
+        "recall@3": 0.9166666666666666,
+        "precision@3": 0.3055555555555555,
+        "recall@5": 0.9166666666666666,
+        "precision@5": 0.18333333333333335,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 0.7958333333333333,
+        "ndcg@10": 0.8458300325534666
+      },
+      "by_language": {
+        "en": {
+          "count": 12,
+          "metrics": {
+            "hit@1": 0.8333333333333334,
+            "recall@1": 0.8333333333333334,
+            "precision@1": 0.8333333333333334,
+            "recall@3": 1.0,
+            "precision@3": 0.3333333333333333,
+            "recall@5": 1.0,
+            "precision@5": 0.2,
+            "recall@10": 1.0,
+            "precision@10": 0.1,
+            "mrr@10": 0.9027777777777778,
+            "ndcg@10": 0.9275774794642881
+          }
+        },
+        "fr": {
+          "count": 12,
+          "metrics": {
+            "hit@1": 0.5,
+            "recall@1": 0.5,
+            "precision@1": 0.5,
+            "recall@3": 0.8333333333333334,
+            "precision@3": 0.2777777777777778,
+            "recall@5": 0.8333333333333334,
+            "precision@5": 0.16666666666666669,
+            "recall@10": 1.0,
+            "precision@10": 0.1,
+            "mrr@10": 0.6888888888888889,
+            "ndcg@10": 0.764082585642645
+          }
+        }
+      },
+      "abstention_accuracy": null,
+      "abstention_note": "Retrieval only; LLM abstention is not evaluated.",
+      "task_groups": 12,
+      "latency_mean_ms": 759.1692464297272,
+      "latency_median_ms": 742.6863500004401,
+      "latency_p95_ms": 1002.971100009745,
+      "mode": "rerank",
+      "embedding": "baseline"
+    }
+  },
+  "per_question": [
+    {
+      "experiment": "E3",
+      "question_id": "DEV-001-en",
+      "scenario_group": "authored-dev-001",
+      "language": "en",
+      "expected": [
+        "DRIP-001@1.0#1.1"
+      ],
+      "ranked_sections": [
+        "DRIP-001@1.0#1.1",
+        "DRIP-002@1.0#2.6",
+        "DRIP-001@1.0#1.8",
+        "DRIP-002@1.0#2.9",
+        "DRIP-001@1.0#1.16",
+        "DRIP-001@1.0#1.17",
+        "DRIP-001@1.0#1.3",
+        "DRIP-001@1.0#1.7",
+        "DRIP-001@1.0#1.15",
+        "DRIP-002@1.0#2.7"
+      ],
+      "latency_ms": 20.157799997832626,
+      "top_score": 0.032266458495966696,
+      "metrics": {
+        "hit@1": 1.0,
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "experiment": "E3",
+      "question_id": "DEV-001-fr",
+      "scenario_group": "authored-dev-001",
+      "language": "fr",
+      "expected": [
+        "DRIP-001@1.0#1.1"
+      ],
+      "ranked_sections": [
+        "DRIP-001@1.0#1.3",
+        "DRIP-001@1.0#1.1",
+        "DRIP-001@1.0#1.8",
+        "DRIP-001@1.0#1.12",
+        "DRIP-001@1.0#1.10",
+        "DRIP-002@1.0#2.6",
+        "DRIP-001@1.0#1.16",
+        "DRIP-002@1.0#2.9",
+        "DRIP-002@1.0#2.7",
+        "DRIP-001@1.0#1.13"
+      ],
+      "latency_ms": 20.478399994317442,
+      "top_score": 0.03177805800756621,
+      "metrics": {
+        "hit@1": 0.0,
+        "recall@1": 0.0,
+        "precision@1": 0.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 0.5,
+        "ndcg@10": 0.6309297535714575
+      }
+    },
+    {
+      "experiment": "E3",
+      "question_id": "DEV-002-en",
+      "scenario_group": "authored-dev-002",
+      "language": "en",
+      "expected": [
+        "DRIP-001@1.0#1.8"
+      ],
+      "ranked_sections": [
+        "DRIP-001@1.0#1.15",
+        "DRIP-001@1.0#1.20",
+        "DRIP-001@1.0#1.8",
+        "DRIP-002@1.0#2.4",
+        "DRIP-001@1.0#1.13",
+        "DRIP-001@1.0#1.21",
+        "DRIP-001@1.0#1.5",
+        "DRIP-001@1.0#1.7",
+        "DRIP-001@1.0#1.16",
+        "DRIP-002@1.0#2.1"
+      ],
+      "latency_ms": 19.735199981369078,
+      "top_score": 0.0315136476426799,
+      "metrics": {
+        "hit@1": 0.0,
+        "recall@1": 0.0,
+        "precision@1": 0.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 0.3333333333333333,
+        "ndcg@10": 0.5
+      }
+    },
+    {
+      "experiment": "E3",
+      "question_id": "DEV-002-fr",
+      "scenario_group": "authored-dev-002",
+      "language": "fr",
+      "expected": [
+        "DRIP-001@1.0#1.8"
+      ],
+      "ranked_sections": [
+        "DRIP-001@1.0#1.21",
+        "DRIP-002@1.0#2.5",
+        "DRIP-002@1.0#2.4",
+        "DRIP-001@1.0#1.5",
+        "DRIP-001@1.0#1.8",
+        "DRIP-001@1.0#1.17",
+        "DRIP-001@1.0#1.15",
+        "DRIP-001@1.0#1.13",
+        "DRIP-002@1.0#2.9",
+        "DRIP-001@1.0#1.19"
+      ],
+      "latency_ms": 19.89369999500923,
+      "top_score": 0.030886196246139225,
+      "metrics": {
+        "hit@1": 0.0,
+        "recall@1": 0.0,
+        "precision@1": 0.0,
+        "recall@3": 0.0,
+        "precision@3": 0.0,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 0.2,
+        "ndcg@10": 0.38685280723454163
+      }
+    },
+    {
+      "experiment": "E3",
+      "question_id": "DEV-003-en",
+      "scenario_group": "authored-dev-003",
+      "language": "en",
+      "expected": [
+        "DRIP-001@1.0#1.5"
+      ],
+      "ranked_sections": [
+        "DRIP-001@1.0#1.5",
+        "DRIP-002@1.0#2.4",
+        "DRIP-001@1.0#1.8",
+        "DRIP-002@1.0#2.9",
+        "DRIP-001@1.0#1.19",
+        "DRIP-001@1.0#1.18",
+        "DRIP-001@1.0#1.15",
+        "DRIP-002@1.0#2.5",
+        "DRIP-001@1.0#1.16",
+        "DRIP-001@1.0#1.1"
+      ],
+      "latency_ms": 19.521899987012148,
+      "top_score": 0.031099324975891997,
+      "metrics": {
+        "hit@1": 1.0,
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "experiment": "E3",
+      "question_id": "DEV-003-fr",
+      "scenario_group": "authored-dev-003",
+      "language": "fr",
+      "expected": [
+        "DRIP-001@1.0#1.5"
+      ],
+      "ranked_sections": [
+        "DRIP-001@1.0#1.18",
+        "DRIP-002@1.0#2.4",
+        "DRIP-002@1.0#2.9",
+        "DRIP-001@1.0#1.19",
+        "DRIP-001@1.0#1.1",
+        "DRIP-001@1.0#1.10",
+        "DRIP-001@1.0#1.5",
+        "DRIP-001@1.0#1.16",
+        "DRIP-001@1.0#1.8",
+        "DRIP-002@1.0#2.5"
+      ],
+      "latency_ms": 22.706099989591166,
+      "top_score": 0.031544957774465976,
+      "metrics": {
+        "hit@1": 0.0,
+        "recall@1": 0.0,
+        "precision@1": 0.0,
+        "recall@3": 0.0,
+        "precision@3": 0.0,
+        "recall@5": 0.0,
+        "precision@5": 0.0,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 0.14285714285714285,
+        "ndcg@10": 0.3333333333333333
+      }
+    },
+    {
+      "experiment": "E3",
+      "question_id": "DEV-004-en",
+      "scenario_group": "authored-dev-004",
+      "language": "en",
+      "expected": [
+        "DRIP-001@1.0#1.12"
+      ],
+      "ranked_sections": [
+        "DRIP-001@1.0#1.12",
+        "DRIP-001@1.0#1.13",
+        "DRIP-001@1.0#1.1",
+        "DRIP-001@1.0#1.8",
+        "DRIP-001@1.0#1.5",
+        "DRIP-001@1.0#1.16",
+        "DRIP-002@1.0#2.9",
+        "DRIP-001@1.0#1.10",
+        "DRIP-001@1.0#1.4",
+        "DRIP-002@1.0#2.6"
+      ],
+      "latency_ms": 19.226300006266683,
+      "top_score": 0.03252247488101534,
+      "metrics": {
+        "hit@1": 1.0,
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "experiment": "E3",
+      "question_id": "DEV-004-fr",
+      "scenario_group": "authored-dev-004",
+      "language": "fr",
+      "expected": [
+        "DRIP-001@1.0#1.12"
+      ],
+      "ranked_sections": [
+        "DRIP-001@1.0#1.8",
+        "DRIP-001@1.0#1.12",
+        "DRIP-001@1.0#1.1",
+        "DRIP-001@1.0#1.16",
+        "DRIP-001@1.0#1.3",
+        "DRIP-002@1.0#2.6",
+        "DRIP-001@1.0#1.17",
+        "DRIP-001@1.0#1.2",
+        "DRIP-001@1.0#1.4",
+        "DRIP-001@1.0#1.5"
+      ],
+      "latency_ms": 22.658900008536875,
+      "top_score": 0.031544957774465976,
+      "metrics": {
+        "hit@1": 0.0,
+        "recall@1": 0.0,
+        "precision@1": 0.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 0.5,
+        "ndcg@10": 0.6309297535714575
+      }
+    },
+    {
+      "experiment": "E3",
+      "question_id": "DEV-005-en",
+      "scenario_group": "authored-dev-005",
+      "language": "en",
+      "expected": [
+        "DRIP-001@1.0#1.15"
+      ],
+      "ranked_sections": [
+        "DRIP-001@1.0#1.15",
+        "DRIP-002@1.0#2.4",
+        "DRIP-001@1.0#1.8",
+        "DRIP-001@1.0#1.13",
+        "DRIP-001@1.0#1.21",
+        "DRIP-001@1.0#1.1",
+        "DRIP-001@1.0#1.7",
+        "DRIP-001@1.0#1.6",
+        "DRIP-002@1.0#2.9",
+        "DRIP-002@1.0#2.1"
+      ],
+      "latency_ms": 23.867700016126037,
+      "top_score": 0.03278688524590164,
+      "metrics": {
+        "hit@1": 1.0,
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "experiment": "E3",
+      "question_id": "DEV-005-fr",
+      "scenario_group": "authored-dev-005",
+      "language": "fr",
+      "expected": [
+        "DRIP-001@1.0#1.15"
+      ],
+      "ranked_sections": [
+        "DRIP-001@1.0#1.15",
+        "DRIP-002@1.0#2.4",
+        "DRIP-002@1.0#2.5",
+        "DRIP-001@1.0#1.8",
+        "DRIP-002@1.0#2.9",
+        "DRIP-001@1.0#1.16",
+        "DRIP-001@1.0#1.13",
+        "DRIP-002@1.0#2.8",
+        "DRIP-001@1.0#1.6",
+        "DRIP-001@1.0#1.7"
+      ],
+      "latency_ms": 22.109700017608702,
+      "top_score": 0.01639344262295082,
+      "metrics": {
+        "hit@1": 1.0,
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "experiment": "E3",
+      "question_id": "DEV-006-en",
+      "scenario_group": "authored-dev-006",
+      "language": "en",
+      "expected": [
+        "DRIP-001@1.0#1.20"
+      ],
+      "ranked_sections": [
+        "DRIP-001@1.0#1.20",
+        "DRIP-001@1.0#1.14",
+        "DRIP-001@1.0#1.5",
+        "DRIP-002@1.0#2.9",
+        "DRIP-002@1.0#2.6",
+        "DRIP-001@1.0#1.8",
+        "DRIP-001@1.0#1.7",
+        "DRIP-002@1.0#2.7",
+        "DRIP-002@1.0#2.3",
+        "DRIP-001@1.0#1.1"
+      ],
+      "latency_ms": 20.81220000400208,
+      "top_score": 0.03278688524590164,
+      "metrics": {
+        "hit@1": 1.0,
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "experiment": "E3",
+      "question_id": "DEV-006-fr",
+      "scenario_group": "authored-dev-006",
+      "language": "fr",
+      "expected": [
+        "DRIP-001@1.0#1.20"
+      ],
+      "ranked_sections": [
+        "DRIP-002@1.0#2.9",
+        "DRIP-002@1.0#2.6",
+        "DRIP-002@1.0#2.5",
+        "DRIP-001@1.0#1.7",
+        "DRIP-001@1.0#1.20",
+        "DRIP-002@1.0#2.4",
+        "DRIP-001@1.0#1.5",
+        "DRIP-002@1.0#2.1",
+        "DRIP-001@1.0#1.1",
+        "DRIP-002@1.0#2.7"
+      ],
+      "latency_ms": 20.16029998776503,
+      "top_score": 0.01639344262295082,
+      "metrics": {
+        "hit@1": 0.0,
+        "recall@1": 0.0,
+        "precision@1": 0.0,
+        "recall@3": 0.0,
+        "precision@3": 0.0,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 0.2,
+        "ndcg@10": 0.38685280723454163
+      }
+    },
+    {
+      "experiment": "E3",
+      "question_id": "DEV-007-en",
+      "scenario_group": "authored-dev-007",
+      "language": "en",
+      "expected": [
+        "DRIP-001@1.0#1.13"
+      ],
+      "ranked_sections": [
+        "DRIP-001@1.0#1.13",
+        "DRIP-002@1.0#2.8",
+        "DRIP-001@1.0#1.12",
+        "DRIP-001@1.0#1.16",
+        "DRIP-001@1.0#1.17",
+        "DRIP-002@1.0#2.9",
+        "DRIP-001@1.0#1.21",
+        "DRIP-001@1.0#1.1",
+        "DRIP-001@1.0#1.10",
+        "DRIP-001@1.0#1.3"
+      ],
+      "latency_ms": 22.29510000324808,
+      "top_score": 0.03278688524590164,
+      "metrics": {
+        "hit@1": 1.0,
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "experiment": "E3",
+      "question_id": "DEV-007-fr",
+      "scenario_group": "authored-dev-007",
+      "language": "fr",
+      "expected": [
+        "DRIP-001@1.0#1.13"
+      ],
+      "ranked_sections": [
+        "DRIP-001@1.0#1.13",
+        "DRIP-001@1.0#1.17",
+        "DRIP-001@1.0#1.3",
+        "DRIP-001@1.0#1.16",
+        "DRIP-002@1.0#2.9",
+        "DRIP-002@1.0#2.5",
+        "DRIP-002@1.0#2.4",
+        "DRIP-001@1.0#1.15",
+        "DRIP-001@1.0#1.1",
+        "DRIP-001@1.0#1.12"
+      ],
+      "latency_ms": 28.823399974498898,
+      "top_score": 0.032018442622950824,
+      "metrics": {
+        "hit@1": 1.0,
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "experiment": "E3",
+      "question_id": "DEV-008-en",
+      "scenario_group": "authored-dev-008",
+      "language": "en",
+      "expected": [
+        "DRIP-001@1.0#1.16"
+      ],
+      "ranked_sections": [
+        "DRIP-001@1.0#1.16",
+        "DRIP-002@1.0#2.8",
+        "DRIP-001@1.0#1.7",
+        "DRIP-002@1.0#2.5",
+        "DRIP-002@1.0#2.6",
+        "DRIP-001@1.0#1.21",
+        "DRIP-001@1.0#1.3",
+        "DRIP-002@1.0#2.3",
+        "DRIP-002@1.0#2.9",
+        "DRIP-001@1.0#1.12"
+      ],
+      "latency_ms": 28.11370001290925,
+      "top_score": 0.03252247488101534,
+      "metrics": {
+        "hit@1": 1.0,
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "experiment": "E3",
+      "question_id": "DEV-008-fr",
+      "scenario_group": "authored-dev-008",
+      "language": "fr",
+      "expected": [
+        "DRIP-001@1.0#1.16"
+      ],
+      "ranked_sections": [
+        "DRIP-001@1.0#1.16",
+        "DRIP-001@1.0#1.11",
+        "DRIP-001@1.0#1.5",
+        "DRIP-001@1.0#1.12",
+        "DRIP-001@1.0#1.19",
+        "DRIP-002@1.0#2.6",
+        "DRIP-002@1.0#2.9",
+        "DRIP-001@1.0#1.1",
+        "DRIP-001@1.0#1.3",
+        "DRIP-002@1.0#2.3"
+      ],
+      "latency_ms": 27.317100000800565,
+      "top_score": 0.03278688524590164,
+      "metrics": {
+        "hit@1": 1.0,
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "experiment": "E3",
+      "question_id": "DEV-009-en",
+      "scenario_group": "authored-dev-009",
+      "language": "en",
+      "expected": [
+        "DRIP-002@1.0#2.3"
+      ],
+      "ranked_sections": [
+        "DRIP-001@1.0#1.7",
+        "DRIP-002@1.0#2.3",
+        "DRIP-001@1.0#1.8",
+        "DRIP-002@1.0#2.5",
+        "DRIP-001@1.0#1.16",
+        "DRIP-002@1.0#2.1",
+        "DRIP-002@1.0#2.9",
+        "DRIP-002@1.0#2.8",
+        "DRIP-001@1.0#1.5",
+        "DRIP-001@1.0#1.12"
+      ],
+      "latency_ms": 22.749399999156594,
+      "top_score": 0.03278688524590164,
+      "metrics": {
+        "hit@1": 0.0,
+        "recall@1": 0.0,
+        "precision@1": 0.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 0.5,
+        "ndcg@10": 0.6309297535714575
+      }
+    },
+    {
+      "experiment": "E3",
+      "question_id": "DEV-009-fr",
+      "scenario_group": "authored-dev-009",
+      "language": "fr",
+      "expected": [
+        "DRIP-002@1.0#2.3"
+      ],
+      "ranked_sections": [
+        "DRIP-001@1.0#1.17",
+        "DRIP-001@1.0#1.12",
+        "DRIP-002@1.0#2.3",
+        "DRIP-001@1.0#1.7",
+        "DRIP-002@1.0#2.9",
+        "DRIP-002@1.0#2.5",
+        "DRIP-001@1.0#1.16",
+        "DRIP-001@1.0#1.5",
+        "DRIP-002@1.0#2.4",
+        "DRIP-001@1.0#1.21"
+      ],
+      "latency_ms": 25.083899992750958,
+      "top_score": 0.031099324975891997,
+      "metrics": {
+        "hit@1": 0.0,
+        "recall@1": 0.0,
+        "precision@1": 0.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 0.3333333333333333,
+        "ndcg@10": 0.5
+      }
+    },
+    {
+      "experiment": "E3",
+      "question_id": "DEV-010-en",
+      "scenario_group": "authored-dev-010",
+      "language": "en",
+      "expected": [
+        "DRIP-002@1.0#2.5"
+      ],
+      "ranked_sections": [
+        "DRIP-002@1.0#2.5",
+        "DRIP-002@1.0#2.6",
+        "DRIP-001@1.0#1.7",
+        "DRIP-002@1.0#2.9",
+        "DRIP-001@1.0#1.8",
+        "DRIP-002@1.0#2.1",
+        "DRIP-001@1.0#1.13",
+        "DRIP-001@1.0#1.12",
+        "DRIP-002@1.0#2.7",
+        "DRIP-002@1.0#2.8"
+      ],
+      "latency_ms": 21.147899999050424,
+      "top_score": 0.03278688524590164,
+      "metrics": {
+        "hit@1": 1.0,
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "experiment": "E3",
+      "question_id": "DEV-010-fr",
+      "scenario_group": "authored-dev-010",
+      "language": "fr",
+      "expected": [
+        "DRIP-002@1.0#2.5"
+      ],
+      "ranked_sections": [
+        "DRIP-002@1.0#2.5",
+        "DRIP-002@1.0#2.9",
+        "DRIP-001@1.0#1.21",
+        "DRIP-002@1.0#2.4",
+        "DRIP-002@1.0#2.6",
+        "DRIP-001@1.0#1.7",
+        "DRIP-001@1.0#1.18",
+        "DRIP-001@1.0#1.8",
+        "DRIP-001@1.0#1.12",
+        "DRIP-001@1.0#1.11"
+      ],
+      "latency_ms": 20.42539999820292,
+      "top_score": 0.03278688524590164,
+      "metrics": {
+        "hit@1": 1.0,
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "experiment": "E3",
+      "question_id": "DEV-011-en",
+      "scenario_group": "authored-dev-011",
+      "language": "en",
+      "expected": [
+        "DRIP-001@1.0#1.18"
+      ],
+      "ranked_sections": [
+        "DRIP-001@1.0#1.18",
+        "DRIP-002@1.0#2.4",
+        "DRIP-001@1.0#1.8",
+        "DRIP-002@1.0#2.9",
+        "DRIP-002@1.0#2.5",
+        "DRIP-001@1.0#1.4",
+        "DRIP-001@1.0#1.2",
+        "DRIP-001@1.0#1.21",
+        "DRIP-001@1.0#1.12",
+        "DRIP-001@1.0#1.15"
+      ],
+      "latency_ms": 35.56559997377917,
+      "top_score": 0.03278688524590164,
+      "metrics": {
+        "hit@1": 1.0,
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "experiment": "E3",
+      "question_id": "DEV-011-fr",
+      "scenario_group": "authored-dev-011",
+      "language": "fr",
+      "expected": [
+        "DRIP-001@1.0#1.18"
+      ],
+      "ranked_sections": [
+        "DRIP-001@1.0#1.18",
+        "DRIP-002@1.0#2.9",
+        "DRIP-002@1.0#2.4",
+        "DRIP-002@1.0#2.5",
+        "DRIP-001@1.0#1.8",
+        "DRIP-001@1.0#1.1",
+        "DRIP-001@1.0#1.12",
+        "DRIP-002@1.0#2.2",
+        "DRIP-001@1.0#1.21",
+        "DRIP-001@1.0#1.11"
+      ],
+      "latency_ms": 20.172299991827458,
+      "top_score": 0.01639344262295082,
+      "metrics": {
+        "hit@1": 1.0,
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "experiment": "E3",
+      "question_id": "DEV-012-en",
+      "scenario_group": "authored-dev-012",
+      "language": "en",
+      "expected": [
+        "DRIP-001@1.0#1.19"
+      ],
+      "ranked_sections": [
+        "DRIP-002@1.0#2.9",
+        "DRIP-001@1.0#1.19",
+        "DRIP-002@1.0#2.5",
+        "DRIP-001@1.0#1.8",
+        "DRIP-001@1.0#1.7",
+        "DRIP-001@1.0#1.16",
+        "DRIP-001@1.0#1.1",
+        "DRIP-001@1.0#1.13",
+        "DRIP-002@1.0#2.4",
+        "DRIP-001@1.0#1.20"
+      ],
+      "latency_ms": 18.443899985868484,
+      "top_score": 0.03252247488101534,
+      "metrics": {
+        "hit@1": 0.0,
+        "recall@1": 0.0,
+        "precision@1": 0.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 0.5,
+        "ndcg@10": 0.6309297535714575
+      }
+    },
+    {
+      "experiment": "E3",
+      "question_id": "DEV-012-fr",
+      "scenario_group": "authored-dev-012",
+      "language": "fr",
+      "expected": [
+        "DRIP-001@1.0#1.19"
+      ],
+      "ranked_sections": [
+        "DRIP-002@1.0#2.4",
+        "DRIP-002@1.0#2.9",
+        "DRIP-001@1.0#1.16",
+        "DRIP-001@1.0#1.12",
+        "DRIP-001@1.0#1.1",
+        "DRIP-001@1.0#1.5",
+        "DRIP-001@1.0#1.8",
+        "DRIP-001@1.0#1.19",
+        "DRIP-002@1.0#2.5",
+        "DRIP-001@1.0#1.6"
+      ],
+      "latency_ms": 16.586899990215898,
+      "top_score": 0.01639344262295082,
+      "metrics": {
+        "hit@1": 0.0,
+        "recall@1": 0.0,
+        "precision@1": 0.0,
+        "recall@3": 0.0,
+        "precision@3": 0.0,
+        "recall@5": 0.0,
+        "precision@5": 0.0,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 0.125,
+        "ndcg@10": 0.31546487678572877
+      }
+    },
+    {
+      "experiment": "E3",
+      "question_id": "DEV-NA-1-en",
+      "scenario_group": "authored-dev-na-1",
+      "language": "en",
+      "expected": [],
+      "ranked_sections": [
+        "DRIP-001@1.0#1.1",
+        "DRIP-001@1.0#1.16",
+        "DRIP-001@1.0#1.3",
+        "DRIP-001@1.0#1.8",
+        "DRIP-001@1.0#1.12",
+        "DRIP-002@1.0#2.9",
+        "DRIP-001@1.0#1.7",
+        "DRIP-001@1.0#1.13",
+        "DRIP-001@1.0#1.17",
+        "DRIP-002@1.0#2.3"
+      ],
+      "latency_ms": 13.498299987986684,
+      "top_score": 0.03278688524590164
+    },
+    {
+      "experiment": "E3",
+      "question_id": "DEV-NA-1-fr",
+      "scenario_group": "authored-dev-na-1",
+      "language": "fr",
+      "expected": [],
+      "ranked_sections": [
+        "DRIP-001@1.0#1.3",
+        "DRIP-001@1.0#1.16",
+        "DRIP-001@1.0#1.17",
+        "DRIP-001@1.0#1.12",
+        "DRIP-002@1.0#2.9",
+        "DRIP-002@1.0#2.6",
+        "DRIP-001@1.0#1.1",
+        "DRIP-001@1.0#1.8",
+        "DRIP-001@1.0#1.13",
+        "DRIP-001@1.0#1.2"
+      ],
+      "latency_ms": 18.686900002649054,
+      "top_score": 0.03200204813108039
+    },
+    {
+      "experiment": "E3",
+      "question_id": "DEV-NA-2-en",
+      "scenario_group": "authored-dev-na-2",
+      "language": "en",
+      "expected": [],
+      "ranked_sections": [
+        "DRIP-001@1.0#1.16",
+        "DRIP-001@1.0#1.10",
+        "DRIP-001@1.0#1.5",
+        "DRIP-001@1.0#1.21",
+        "DRIP-001@1.0#1.19",
+        "DRIP-001@1.0#1.12",
+        "DRIP-001@1.0#1.1",
+        "DRIP-001@1.0#1.8",
+        "DRIP-001@1.0#1.7",
+        "DRIP-001@1.0#1.3"
+      ],
+      "latency_ms": 17.65210001030937,
+      "top_score": 0.031544957774465976
+    },
+    {
+      "experiment": "E3",
+      "question_id": "DEV-NA-2-fr",
+      "scenario_group": "authored-dev-na-2",
+      "language": "fr",
+      "expected": [],
+      "ranked_sections": [
+        "DRIP-001@1.0#1.16",
+        "DRIP-001@1.0#1.12",
+        "DRIP-002@1.0#2.9",
+        "DRIP-002@1.0#2.5",
+        "DRIP-001@1.0#1.15",
+        "DRIP-001@1.0#1.10",
+        "DRIP-001@1.0#1.7",
+        "DRIP-001@1.0#1.21",
+        "DRIP-001@1.0#1.3",
+        "DRIP-001@1.0#1.13"
+      ],
+      "latency_ms": 18.99410001351498,
+      "top_score": 0.01639344262295082
+    },
+    {
+      "experiment": "E4",
+      "question_id": "DEV-001-en",
+      "scenario_group": "authored-dev-001",
+      "language": "en",
+      "expected": [
+        "DRIP-001@1.0#1.1"
+      ],
+      "ranked_sections": [
+        "DRIP-001@1.0#1.8",
+        "DRIP-002@1.0#2.6",
+        "DRIP-001@1.0#1.1",
+        "DRIP-001@1.0#1.16",
+        "DRIP-001@1.0#1.12",
+        "DRIP-002@1.0#2.7",
+        "DRIP-001@1.0#1.4",
+        "DRIP-001@1.0#1.17",
+        "DRIP-001@1.0#1.20",
+        "DRIP-002@1.0#2.8"
+      ],
+      "latency_ms": 1002.971100009745,
+      "top_score": -5.608692646026611,
+      "metrics": {
+        "hit@1": 0.0,
+        "recall@1": 0.0,
+        "precision@1": 0.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 0.3333333333333333,
+        "ndcg@10": 0.5
+      }
+    },
+    {
+      "experiment": "E4",
+      "question_id": "DEV-001-fr",
+      "scenario_group": "authored-dev-001",
+      "language": "fr",
+      "expected": [
+        "DRIP-001@1.0#1.1"
+      ],
+      "ranked_sections": [
+        "DRIP-002@1.0#2.6",
+        "DRIP-001@1.0#1.1",
+        "DRIP-001@1.0#1.16",
+        "DRIP-001@1.0#1.8",
+        "DRIP-001@1.0#1.12",
+        "DRIP-002@1.0#2.4",
+        "DRIP-002@1.0#2.9",
+        "DRIP-001@1.0#1.4",
+        "DRIP-001@1.0#1.13",
+        "DRIP-002@1.0#2.5"
+      ],
+      "latency_ms": 1016.0191000031773,
+      "top_score": -2.833617925643921,
+      "metrics": {
+        "hit@1": 0.0,
+        "recall@1": 0.0,
+        "precision@1": 0.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 0.5,
+        "ndcg@10": 0.6309297535714575
+      }
+    },
+    {
+      "experiment": "E4",
+      "question_id": "DEV-002-en",
+      "scenario_group": "authored-dev-002",
+      "language": "en",
+      "expected": [
+        "DRIP-001@1.0#1.8"
+      ],
+      "ranked_sections": [
+        "DRIP-001@1.0#1.8",
+        "DRIP-002@1.0#2.1",
+        "DRIP-001@1.0#1.17",
+        "DRIP-001@1.0#1.20",
+        "DRIP-001@1.0#1.15",
+        "DRIP-002@1.0#2.4",
+        "DRIP-001@1.0#1.7",
+        "DRIP-001@1.0#1.13",
+        "DRIP-002@1.0#2.6",
+        "DRIP-001@1.0#1.21"
+      ],
+      "latency_ms": 856.3316000218038,
+      "top_score": -4.373387813568115,
+      "metrics": {
+        "hit@1": 1.0,
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "experiment": "E4",
+      "question_id": "DEV-002-fr",
+      "scenario_group": "authored-dev-002",
+      "language": "fr",
+      "expected": [
+        "DRIP-001@1.0#1.8"
+      ],
+      "ranked_sections": [
+        "DRIP-001@1.0#1.20",
+        "DRIP-001@1.0#1.8",
+        "DRIP-002@1.0#2.4",
+        "DRIP-001@1.0#1.7",
+        "DRIP-001@1.0#1.17",
+        "DRIP-001@1.0#1.13",
+        "DRIP-002@1.0#2.5",
+        "DRIP-002@1.0#2.1",
+        "DRIP-001@1.0#1.15",
+        "DRIP-001@1.0#1.21"
+      ],
+      "latency_ms": 771.7050999926869,
+      "top_score": -3.6713340282440186,
+      "metrics": {
+        "hit@1": 0.0,
+        "recall@1": 0.0,
+        "precision@1": 0.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 0.5,
+        "ndcg@10": 0.6309297535714575
+      }
+    },
+    {
+      "experiment": "E4",
+      "question_id": "DEV-003-en",
+      "scenario_group": "authored-dev-003",
+      "language": "en",
+      "expected": [
+        "DRIP-001@1.0#1.5"
+      ],
+      "ranked_sections": [
+        "DRIP-001@1.0#1.5",
+        "DRIP-002@1.0#2.4",
+        "DRIP-002@1.0#2.3",
+        "DRIP-001@1.0#1.8",
+        "DRIP-002@1.0#2.5",
+        "DRIP-002@1.0#2.2",
+        "DRIP-001@1.0#1.13",
+        "DRIP-001@1.0#1.6",
+        "DRIP-001@1.0#1.18",
+        "DRIP-001@1.0#1.1"
+      ],
+      "latency_ms": 763.6885000101756,
+      "top_score": -5.11516809463501,
+      "metrics": {
+        "hit@1": 1.0,
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "experiment": "E4",
+      "question_id": "DEV-003-fr",
+      "scenario_group": "authored-dev-003",
+      "language": "fr",
+      "expected": [
+        "DRIP-001@1.0#1.5"
+      ],
+      "ranked_sections": [
+        "DRIP-001@1.0#1.2",
+        "DRIP-001@1.0#1.5",
+        "DRIP-001@1.0#1.8",
+        "DRIP-002@1.0#2.6",
+        "DRIP-002@1.0#2.4",
+        "DRIP-002@1.0#2.5",
+        "DRIP-001@1.0#1.13",
+        "DRIP-001@1.0#1.21",
+        "DRIP-002@1.0#2.2",
+        "DRIP-001@1.0#1.1"
+      ],
+      "latency_ms": 780.4035999870393,
+      "top_score": -4.508439540863037,
+      "metrics": {
+        "hit@1": 0.0,
+        "recall@1": 0.0,
+        "precision@1": 0.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 0.5,
+        "ndcg@10": 0.6309297535714575
+      }
+    },
+    {
+      "experiment": "E4",
+      "question_id": "DEV-004-en",
+      "scenario_group": "authored-dev-004",
+      "language": "en",
+      "expected": [
+        "DRIP-001@1.0#1.12"
+      ],
+      "ranked_sections": [
+        "DRIP-001@1.0#1.12",
+        "DRIP-002@1.0#2.6",
+        "DRIP-001@1.0#1.8",
+        "DRIP-001@1.0#1.1",
+        "DRIP-001@1.0#1.16",
+        "DRIP-001@1.0#1.2",
+        "DRIP-001@1.0#1.4",
+        "DRIP-002@1.0#2.9",
+        "DRIP-001@1.0#1.13",
+        "DRIP-001@1.0#1.17"
+      ],
+      "latency_ms": 776.0919999855105,
+      "top_score": -2.7650718688964844,
+      "metrics": {
+        "hit@1": 1.0,
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "experiment": "E4",
+      "question_id": "DEV-004-fr",
+      "scenario_group": "authored-dev-004",
+      "language": "fr",
+      "expected": [
+        "DRIP-001@1.0#1.12"
+      ],
+      "ranked_sections": [
+        "DRIP-001@1.0#1.12",
+        "DRIP-001@1.0#1.1",
+        "DRIP-001@1.0#1.16",
+        "DRIP-001@1.0#1.8",
+        "DRIP-002@1.0#2.6",
+        "DRIP-001@1.0#1.4",
+        "DRIP-002@1.0#2.9",
+        "DRIP-001@1.0#1.13",
+        "DRIP-001@1.0#1.2",
+        "DRIP-002@1.0#2.7"
+      ],
+      "latency_ms": 782.2199999936856,
+      "top_score": -4.040722846984863,
+      "metrics": {
+        "hit@1": 1.0,
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "experiment": "E4",
+      "question_id": "DEV-005-en",
+      "scenario_group": "authored-dev-005",
+      "language": "en",
+      "expected": [
+        "DRIP-001@1.0#1.15"
+      ],
+      "ranked_sections": [
+        "DRIP-001@1.0#1.15",
+        "DRIP-001@1.0#1.8",
+        "DRIP-001@1.0#1.13",
+        "DRIP-002@1.0#2.4",
+        "DRIP-002@1.0#2.5",
+        "DRIP-001@1.0#1.21",
+        "DRIP-002@1.0#2.8",
+        "DRIP-001@1.0#1.17",
+        "DRIP-001@1.0#1.7",
+        "DRIP-001@1.0#1.1"
+      ],
+      "latency_ms": 866.492399974959,
+      "top_score": -7.677534580230713,
+      "metrics": {
+        "hit@1": 1.0,
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "experiment": "E4",
+      "question_id": "DEV-005-fr",
+      "scenario_group": "authored-dev-005",
+      "language": "fr",
+      "expected": [
+        "DRIP-001@1.0#1.15"
+      ],
+      "ranked_sections": [
+        "DRIP-001@1.0#1.15",
+        "DRIP-001@1.0#1.8",
+        "DRIP-002@1.0#2.5",
+        "DRIP-001@1.0#1.7",
+        "DRIP-002@1.0#2.4",
+        "DRIP-001@1.0#1.13",
+        "DRIP-001@1.0#1.21",
+        "DRIP-001@1.0#1.1",
+        "DRIP-001@1.0#1.6",
+        "DRIP-002@1.0#2.8"
+      ],
+      "latency_ms": 781.7068999866024,
+      "top_score": -4.106499671936035,
+      "metrics": {
+        "hit@1": 1.0,
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "experiment": "E4",
+      "question_id": "DEV-006-en",
+      "scenario_group": "authored-dev-006",
+      "language": "en",
+      "expected": [
+        "DRIP-001@1.0#1.20"
+      ],
+      "ranked_sections": [
+        "DRIP-001@1.0#1.20",
+        "DRIP-001@1.0#1.14",
+        "DRIP-001@1.0#1.8",
+        "DRIP-001@1.0#1.7",
+        "DRIP-002@1.0#2.3",
+        "DRIP-001@1.0#1.16",
+        "DRIP-002@1.0#2.9",
+        "DRIP-001@1.0#1.13",
+        "DRIP-002@1.0#2.6",
+        "DRIP-002@1.0#2.7"
+      ],
+      "latency_ms": 690.0943999935407,
+      "top_score": 1.2911688089370728,
+      "metrics": {
+        "hit@1": 1.0,
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "experiment": "E4",
+      "question_id": "DEV-006-fr",
+      "scenario_group": "authored-dev-006",
+      "language": "fr",
+      "expected": [
+        "DRIP-001@1.0#1.20"
+      ],
+      "ranked_sections": [
+        "DRIP-001@1.0#1.20",
+        "DRIP-001@1.0#1.7",
+        "DRIP-002@1.0#2.1",
+        "DRIP-001@1.0#1.13",
+        "DRIP-001@1.0#1.1",
+        "DRIP-001@1.0#1.16",
+        "DRIP-002@1.0#2.3",
+        "DRIP-002@1.0#2.7",
+        "DRIP-002@1.0#2.6",
+        "DRIP-001@1.0#1.14"
+      ],
+      "latency_ms": 678.1191000191029,
+      "top_score": -0.5165969729423523,
+      "metrics": {
+        "hit@1": 1.0,
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "experiment": "E4",
+      "question_id": "DEV-007-en",
+      "scenario_group": "authored-dev-007",
+      "language": "en",
+      "expected": [
+        "DRIP-001@1.0#1.13"
+      ],
+      "ranked_sections": [
+        "DRIP-001@1.0#1.13",
+        "DRIP-002@1.0#2.8",
+        "DRIP-001@1.0#1.12",
+        "DRIP-001@1.0#1.8",
+        "DRIP-001@1.0#1.17",
+        "DRIP-002@1.0#2.4",
+        "DRIP-002@1.0#2.3",
+        "DRIP-002@1.0#2.6",
+        "DRIP-002@1.0#2.5",
+        "DRIP-001@1.0#1.7"
+      ],
+      "latency_ms": 693.817699997453,
+      "top_score": -4.732032299041748,
+      "metrics": {
+        "hit@1": 1.0,
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "experiment": "E4",
+      "question_id": "DEV-007-fr",
+      "scenario_group": "authored-dev-007",
+      "language": "fr",
+      "expected": [
+        "DRIP-001@1.0#1.13"
+      ],
+      "ranked_sections": [
+        "DRIP-001@1.0#1.13",
+        "DRIP-002@1.0#2.5",
+        "DRIP-001@1.0#1.8",
+        "DRIP-002@1.0#2.4",
+        "DRIP-001@1.0#1.5",
+        "DRIP-001@1.0#1.21",
+        "DRIP-001@1.0#1.17",
+        "DRIP-001@1.0#1.12",
+        "DRIP-002@1.0#2.8",
+        "DRIP-001@1.0#1.1"
+      ],
+      "latency_ms": 625.7774000114296,
+      "top_score": -3.8209736347198486,
+      "metrics": {
+        "hit@1": 1.0,
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "experiment": "E4",
+      "question_id": "DEV-008-en",
+      "scenario_group": "authored-dev-008",
+      "language": "en",
+      "expected": [
+        "DRIP-001@1.0#1.16"
+      ],
+      "ranked_sections": [
+        "DRIP-001@1.0#1.16",
+        "DRIP-002@1.0#2.5",
+        "DRIP-001@1.0#1.8",
+        "DRIP-001@1.0#1.7",
+        "DRIP-002@1.0#2.3",
+        "DRIP-001@1.0#1.13",
+        "DRIP-002@1.0#2.6",
+        "DRIP-001@1.0#1.21",
+        "DRIP-001@1.0#1.12",
+        "DRIP-002@1.0#2.8"
+      ],
+      "latency_ms": 712.3008000198752,
+      "top_score": -0.17839863896369934,
+      "metrics": {
+        "hit@1": 1.0,
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "experiment": "E4",
+      "question_id": "DEV-008-fr",
+      "scenario_group": "authored-dev-008",
+      "language": "fr",
+      "expected": [
+        "DRIP-001@1.0#1.16"
+      ],
+      "ranked_sections": [
+        "DRIP-001@1.0#1.16",
+        "DRIP-001@1.0#1.7",
+        "DRIP-002@1.0#2.5",
+        "DRIP-001@1.0#1.5",
+        "DRIP-002@1.0#2.3",
+        "DRIP-002@1.0#2.4",
+        "DRIP-001@1.0#1.12",
+        "DRIP-002@1.0#2.6",
+        "DRIP-001@1.0#1.17",
+        "DRIP-002@1.0#2.7"
+      ],
+      "latency_ms": 747.8558000002522,
+      "top_score": 0.37553560733795166,
+      "metrics": {
+        "hit@1": 1.0,
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "experiment": "E4",
+      "question_id": "DEV-009-en",
+      "scenario_group": "authored-dev-009",
+      "language": "en",
+      "expected": [
+        "DRIP-002@1.0#2.3"
+      ],
+      "ranked_sections": [
+        "DRIP-001@1.0#1.7",
+        "DRIP-002@1.0#2.3",
+        "DRIP-002@1.0#2.1",
+        "DRIP-002@1.0#2.5",
+        "DRIP-001@1.0#1.8",
+        "DRIP-001@1.0#1.16",
+        "DRIP-001@1.0#1.17",
+        "DRIP-002@1.0#2.6",
+        "DRIP-002@1.0#2.8",
+        "DRIP-001@1.0#1.13"
+      ],
+      "latency_ms": 766.428500006441,
+      "top_score": 2.9640393257141113,
+      "metrics": {
+        "hit@1": 0.0,
+        "recall@1": 0.0,
+        "precision@1": 0.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 0.5,
+        "ndcg@10": 0.6309297535714575
+      }
+    },
+    {
+      "experiment": "E4",
+      "question_id": "DEV-009-fr",
+      "scenario_group": "authored-dev-009",
+      "language": "fr",
+      "expected": [
+        "DRIP-002@1.0#2.3"
+      ],
+      "ranked_sections": [
+        "DRIP-001@1.0#1.7",
+        "DRIP-002@1.0#2.1",
+        "DRIP-001@1.0#1.8",
+        "DRIP-002@1.0#2.5",
+        "DRIP-001@1.0#1.13",
+        "DRIP-002@1.0#2.3",
+        "DRIP-002@1.0#2.4",
+        "DRIP-002@1.0#2.6",
+        "DRIP-001@1.0#1.17",
+        "DRIP-002@1.0#2.9"
+      ],
+      "latency_ms": 918.949100014288,
+      "top_score": 0.5750892758369446,
+      "metrics": {
+        "hit@1": 0.0,
+        "recall@1": 0.0,
+        "precision@1": 0.0,
+        "recall@3": 0.0,
+        "precision@3": 0.0,
+        "recall@5": 0.0,
+        "precision@5": 0.0,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 0.16666666666666666,
+        "ndcg@10": 0.3562071871080222
+      }
+    },
+    {
+      "experiment": "E4",
+      "question_id": "DEV-010-en",
+      "scenario_group": "authored-dev-010",
+      "language": "en",
+      "expected": [
+        "DRIP-002@1.0#2.5"
+      ],
+      "ranked_sections": [
+        "DRIP-002@1.0#2.5",
+        "DRIP-002@1.0#2.7",
+        "DRIP-002@1.0#2.6",
+        "DRIP-001@1.0#1.7",
+        "DRIP-001@1.0#1.8",
+        "DRIP-002@1.0#2.4",
+        "DRIP-002@1.0#2.3",
+        "DRIP-001@1.0#1.12",
+        "DRIP-001@1.0#1.20",
+        "DRIP-002@1.0#2.1"
+      ],
+      "latency_ms": 737.4158000166062,
+      "top_score": -1.3946086168289185,
+      "metrics": {
+        "hit@1": 1.0,
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "experiment": "E4",
+      "question_id": "DEV-010-fr",
+      "scenario_group": "authored-dev-010",
+      "language": "fr",
+      "expected": [
+        "DRIP-002@1.0#2.5"
+      ],
+      "ranked_sections": [
+        "DRIP-002@1.0#2.5",
+        "DRIP-001@1.0#1.8",
+        "DRIP-002@1.0#2.4",
+        "DRIP-001@1.0#1.7",
+        "DRIP-002@1.0#2.3",
+        "DRIP-001@1.0#1.1",
+        "DRIP-002@1.0#2.6",
+        "DRIP-001@1.0#1.16",
+        "DRIP-001@1.0#1.12",
+        "DRIP-001@1.0#1.6"
+      ],
+      "latency_ms": 673.8703000009991,
+      "top_score": -0.22124187648296356,
+      "metrics": {
+        "hit@1": 1.0,
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "experiment": "E4",
+      "question_id": "DEV-011-en",
+      "scenario_group": "authored-dev-011",
+      "language": "en",
+      "expected": [
+        "DRIP-001@1.0#1.18"
+      ],
+      "ranked_sections": [
+        "DRIP-001@1.0#1.18",
+        "DRIP-001@1.0#1.8",
+        "DRIP-002@1.0#2.4",
+        "DRIP-002@1.0#2.5",
+        "DRIP-002@1.0#2.3",
+        "DRIP-001@1.0#1.6",
+        "DRIP-001@1.0#1.4",
+        "DRIP-002@1.0#2.9",
+        "DRIP-002@1.0#2.7",
+        "DRIP-001@1.0#1.7"
+      ],
+      "latency_ms": 635.9741000051145,
+      "top_score": -0.29488176107406616,
+      "metrics": {
+        "hit@1": 1.0,
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "experiment": "E4",
+      "question_id": "DEV-011-fr",
+      "scenario_group": "authored-dev-011",
+      "language": "fr",
+      "expected": [
+        "DRIP-001@1.0#1.18"
+      ],
+      "ranked_sections": [
+        "DRIP-002@1.0#2.5",
+        "DRIP-001@1.0#1.8",
+        "DRIP-002@1.0#2.4",
+        "DRIP-002@1.0#2.9",
+        "DRIP-001@1.0#1.1",
+        "DRIP-001@1.0#1.16",
+        "DRIP-001@1.0#1.6",
+        "DRIP-001@1.0#1.17",
+        "DRIP-001@1.0#1.13",
+        "DRIP-001@1.0#1.18"
+      ],
+      "latency_ms": 656.671800010372,
+      "top_score": -2.3539388179779053,
+      "metrics": {
+        "hit@1": 0.0,
+        "recall@1": 0.0,
+        "precision@1": 0.0,
+        "recall@3": 0.0,
+        "precision@3": 0.0,
+        "recall@5": 0.0,
+        "precision@5": 0.0,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 0.1,
+        "ndcg@10": 0.2890648263178879
+      }
+    },
+    {
+      "experiment": "E4",
+      "question_id": "DEV-012-en",
+      "scenario_group": "authored-dev-012",
+      "language": "en",
+      "expected": [
+        "DRIP-001@1.0#1.19"
+      ],
+      "ranked_sections": [
+        "DRIP-001@1.0#1.19",
+        "DRIP-002@1.0#2.4",
+        "DRIP-001@1.0#1.8",
+        "DRIP-001@1.0#1.20",
+        "DRIP-001@1.0#1.6",
+        "DRIP-002@1.0#2.5",
+        "DRIP-001@1.0#1.13",
+        "DRIP-002@1.0#2.3",
+        "DRIP-001@1.0#1.21",
+        "DRIP-002@1.0#2.6"
+      ],
+      "latency_ms": 718.3254999981727,
+      "top_score": -4.098918437957764,
+      "metrics": {
+        "hit@1": 1.0,
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "experiment": "E4",
+      "question_id": "DEV-012-fr",
+      "scenario_group": "authored-dev-012",
+      "language": "fr",
+      "expected": [
+        "DRIP-001@1.0#1.19"
+      ],
+      "ranked_sections": [
+        "DRIP-001@1.0#1.8",
+        "DRIP-001@1.0#1.19",
+        "DRIP-002@1.0#2.4",
+        "DRIP-002@1.0#2.5",
+        "DRIP-001@1.0#1.21",
+        "DRIP-001@1.0#1.13",
+        "DRIP-001@1.0#1.15",
+        "DRIP-001@1.0#1.1",
+        "DRIP-001@1.0#1.12",
+        "DRIP-001@1.0#1.6"
+      ],
+      "latency_ms": 708.3789999887813,
+      "top_score": -2.2957980632781982,
+      "metrics": {
+        "hit@1": 0.0,
+        "recall@1": 0.0,
+        "precision@1": 0.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 0.5,
+        "ndcg@10": 0.6309297535714575
+      }
+    },
+    {
+      "experiment": "E4",
+      "question_id": "DEV-NA-1-en",
+      "scenario_group": "authored-dev-na-1",
+      "language": "en",
+      "expected": [],
+      "ranked_sections": [
+        "DRIP-001@1.0#1.12",
+        "DRIP-001@1.0#1.13",
+        "DRIP-001@1.0#1.16",
+        "DRIP-002@1.0#2.5",
+        "DRIP-001@1.0#1.8",
+        "DRIP-001@1.0#1.3",
+        "DRIP-001@1.0#1.15",
+        "DRIP-001@1.0#1.17",
+        "DRIP-001@1.0#1.2",
+        "DRIP-001@1.0#1.1"
+      ],
+      "latency_ms": 667.0334000082221,
+      "top_score": -6.897536754608154
+    },
+    {
+      "experiment": "E4",
+      "question_id": "DEV-NA-1-fr",
+      "scenario_group": "authored-dev-na-1",
+      "language": "fr",
+      "expected": [],
+      "ranked_sections": [
+        "DRIP-001@1.0#1.13",
+        "DRIP-001@1.0#1.15",
+        "DRIP-001@1.0#1.12",
+        "DRIP-001@1.0#1.17",
+        "DRIP-001@1.0#1.8",
+        "DRIP-001@1.0#1.16",
+        "DRIP-001@1.0#1.3",
+        "DRIP-002@1.0#2.5",
+        "DRIP-002@1.0#2.6",
+        "DRIP-001@1.0#1.1"
+      ],
+      "latency_ms": 754.0988999826368,
+      "top_score": -4.999481201171875
+    },
+    {
+      "experiment": "E4",
+      "question_id": "DEV-NA-2-en",
+      "scenario_group": "authored-dev-na-2",
+      "language": "en",
+      "expected": [],
+      "ranked_sections": [
+        "DRIP-001@1.0#1.14",
+        "DRIP-001@1.0#1.17",
+        "DRIP-001@1.0#1.10",
+        "DRIP-001@1.0#1.8",
+        "DRIP-002@1.0#2.6",
+        "DRIP-001@1.0#1.1",
+        "DRIP-001@1.0#1.12",
+        "DRIP-001@1.0#1.21",
+        "DRIP-001@1.0#1.19",
+        "DRIP-001@1.0#1.16"
+      ],
+      "latency_ms": 737.5169000006281,
+      "top_score": -6.2891154289245605
+    },
+    {
+      "experiment": "E4",
+      "question_id": "DEV-NA-2-fr",
+      "scenario_group": "authored-dev-na-2",
+      "language": "fr",
+      "expected": [],
+      "ranked_sections": [
+        "DRIP-001@1.0#1.16",
+        "DRIP-002@1.0#2.7",
+        "DRIP-001@1.0#1.13",
+        "DRIP-001@1.0#1.12",
+        "DRIP-001@1.0#1.8",
+        "DRIP-002@1.0#2.5",
+        "DRIP-002@1.0#2.3",
+        "DRIP-001@1.0#1.10",
+        "DRIP-001@1.0#1.7",
+        "DRIP-002@1.0#2.6"
+      ],
+      "latency_ms": 736.4800999930594,
+      "top_score": -4.967018127441406
+    }
+  ]
+}

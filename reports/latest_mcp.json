@@ -1,0 +1,75 @@
+{
+  "corpus": "novaretail",
+  "transport": "stdio",
+  "discovered_tools": [
+    "search_policies",
+    "get_policy_section",
+    "compare_policy_versions"
+  ],
+  "successful_calls": 3,
+  "calls": [
+    {
+      "tool": "search_policies",
+      "arguments": {
+        "query": "My defective phone was refused for exchange four days after purchase.",
+        "incident_date": "2026-11-02",
+        "top_k": 3
+      },
+      "result": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"query\": \"My defective phone was refused for exchange four days after purchase.\",\n  \"incident_date\": \"2026-11-02\",\n  \"results\": [\n    {\n      \"chunk\": {\n        \"chunk_id\": \"5197f9b31abd9429b11f06945bdc242423b54fb750649b66334bfc52a1d125fb\",\n        \"text\": \"## 4.2 \u2014 Defective product exchange\\nDefective products may be exchanged within 14 calendar days of purchase, subject to proof of purchase and verification of the product condition. Accidental damage and customer misuse are excluded. If eligibility is uncertain, request inspection; do not promise an exchange.\",\n        \"metadata\": {\n          \"document_id\": \"RETURN-001-V2\",\n          \"policy_id\": \"RETURN-001\",\n          \"title\": \"Returns and Exchanges\",\n          \"category\": \"returns\",\n          \"department\": \"Customer Service\",\n          \"version\": \"2.0\",\n          \"effective_date\": \"2026-01-01\",\n          \"effective_until\": null,\n          \"language\": \"en\",\n          \"access_level\": \"internal\",\n          \"source\": \"NovaRetail fictional academic corpus; authored for ClaimGuard AI, not real legal policy\",\n          \"temporal_basis\": \"effective_date\",\n          \"source_revision\": null,\n          \"version_origin\": \"document\"\n        },\n        \"section\": \"4.2\",\n        \"page\": 1,\n        \"file_hash\": \"7a4c0d19b579ae4588d005f883ae1bc4addab4c30f21a9506a5b73e848ee46c3\",\n        \"source_file\": \"RETURN-001_2.0.md\",\n        \"source_line_start\": null,\n        \"source_line_end\": null,\n        \"section_title\": null,\n        \"section_origin\": \"document\"\n      },\n      \"score\": 2.2322466373443604,\n      \"stage\": \"reranker\"\n    },\n    {\n      \"chunk\": {\n        \"chunk_id\": \"91569cd7ba3dea94b75826d4f692c749fcadb77c07c115b95485ea4e9f0d62a9\",\n        \"text\": \"## 4.3 \u2014 Change of mind\\nUnused products in original packaging may be returned within 14 calendar days of purchase with proof of purchase. Opened hygiene accessories and activated digital licences are excluded. This section does not override verified defect claims under section 4.2.\",\n        \"metadata\": {\n          \"document_id\": \"RETURN-001-V2\",\n          \"policy_id\": \"RETURN-001\",\n          \"title\": \"Returns and Exchanges\",\n          \"category\": \"returns\",\n          \"department\": \"Customer Service\",\n          \"version\": \"2.0\",\n          \"effective_date\": \"2026-01-01\",\n          \"effective_until\": null,\n          \"language\": \"en\",\n          \"access_level\": \"internal\",\n          \"source\": \"NovaRetail fictional academic corpus; authored for ClaimGuard AI, not real legal policy\",\n          \"temporal_basis\": \"effective_date\",\n          \"source_revision\": null,\n          \"version_origin\": \"document\"\n        },\n        \"section\": \"4.3\",\n        \"page\": 1,\n        \"file_hash\": \"7a4c0d19b579ae4588d005f883ae1bc4addab4c30f21a9506a5b73e848ee46c3\",\n        \"source_file\": \"RETURN-001_2.0.md\",\n        \"source_line_start\": null,\n        \"source_line_end\": null,\n        \"section_title\": null,\n        \"section_origin\": \"document\"\n      },\n      \"score\": -4.845461368560791,\n      \"stage\": \"reranker\"\n    },\n    {\n      \"chunk\": {\n        \"chunk_id\": \"a623bf2d78e14bab15e18ac8e7597f016174083deada1a115c0a207c3f99a7f3\",\n        \"text\": \"## 4.4 \u2014 Exchange stock unavailable\\nWhen an eligible defect exchange cannot be completed because the same product is out of stock, offer the customer a refund review under REFUND-001 section 3.1. Do not impose store credit without customer agreement.\",\n        \"metadata\": {\n          \"document_id\": \"RETURN-001-V2\",\n          \"policy_id\": \"RETURN-001\",\n          \"title\": \"Returns and Exchanges\",\n          \"category\": \"returns\",\n          \"department\": \"Customer Service\",\n          \"version\": \"2.0\",\n          \"effective_date\": \"2026-01-01\",\n          \"effective_until\": null,\n          \"language\": \"en\",\n          \"access_level\": \"internal\",\n          \"source\": \"NovaRetail fictional academic corpus; authored for ClaimGuard AI, not real legal policy\",\n          \"temporal_basis\": \"effective_date\",\n          \"source_revision\": null,\n          \"version_origin\": \"document\"\n        },\n        \"section\": \"4.4\",\n        \"page\": 1,\n        \"file_hash\": \"7a4c0d19b579ae4588d005f883ae1bc4addab4c30f21a9506a5b73e848ee46c3\",\n        \"source_file\": \"RETURN-001_2.0.md\",\n        \"source_line_start\": null,\n        \"source_line_end\": null,\n        \"section_title\": null,\n        \"section_origin\": \"document\"\n      },\n      \"score\": -5.249546527862549,\n      \"stage\": \"reranker\"\n    }\n  ],\n  \"diagnostics\": {\n    \"profile\": \"validated\",\n    \"profile_fingerprint\": \"620af4f3e242b3f2bcd37be82aa2f22e72c5481d70e8a6030f9a0f589cc0d9cb\",\n    \"index\": \"policies_0066efac6c4e2b80\",\n    \"latency_ms\": 505.44770000851713,\n    \"ranking_unit\": \"section\",\n    \"engine_ready\": true\n  }\n}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structuredContent": null,
+        "isError": false
+      }
+    },
+    {
+      "tool": "get_policy_section",
+      "arguments": {
+        "policy_id": "RETURN-001",
+        "version": "2.0",
+        "section": "4.2"
+      },
+      "result": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"reference\": \"RETURN-001@2.0#4.2\",\n  \"chunks\": [\n    {\n      \"chunk_id\": \"5197f9b31abd9429b11f06945bdc242423b54fb750649b66334bfc52a1d125fb\",\n      \"text\": \"## 4.2 \u2014 Defective product exchange\\nDefective products may be exchanged within 14 calendar days of purchase, subject to proof of purchase and verification of the product condition. Accidental damage and customer misuse are excluded. If eligibility is uncertain, request inspection; do not promise an exchange.\",\n      \"metadata\": {\n        \"document_id\": \"RETURN-001-V2\",\n        \"policy_id\": \"RETURN-001\",\n        \"title\": \"Returns and Exchanges\",\n        \"category\": \"returns\",\n        \"department\": \"Customer Service\",\n        \"version\": \"2.0\",\n        \"effective_date\": \"2026-01-01\",\n        \"effective_until\": null,\n        \"language\": \"en\",\n        \"access_level\": \"internal\",\n        \"source\": \"NovaRetail fictional academic corpus; authored for ClaimGuard AI, not real legal policy\",\n        \"temporal_basis\": \"effective_date\",\n        \"source_revision\": null,\n        \"version_origin\": \"document\"\n      },\n      \"section\": \"4.2\",\n      \"page\": 1,\n      \"file_hash\": \"7a4c0d19b579ae4588d005f883ae1bc4addab4c30f21a9506a5b73e848ee46c3\",\n      \"source_file\": \"RETURN-001_2.0.md\",\n      \"source_line_start\": null,\n      \"source_line_end\": null,\n      \"section_title\": null,\n      \"section_origin\": \"document\"\n    }\n  ]\n}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structuredContent": null,
+        "isError": false
+      }
+    },
+    {
+      "tool": "compare_policy_versions",
+      "arguments": {
+        "policy_id": "RETURN-001",
+        "version_a": "1.0",
+        "version_b": "2.0"
+      },
+      "result": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"policy_id\": \"RETURN-001\",\n  \"versions\": [\n    \"1.0\",\n    \"2.0\"\n  ],\n  \"diff\": \"--- 1.0\\n+++ 2.0\\n@@ -1,9 +1,9 @@\\n ## 4.2 \u2014 Defective product exchange\\n-Defective products may be exchanged within 7 calendar days of purchase, subject to proof of purchase and verification of the product condition. Accidental damage and customer misuse are excluded. If eligibility is uncertain, request inspection; do not promise an exchange.\\n+Defective products may be exchanged within 14 calendar days of purchase, subject to proof of purchase and verification of the product condition. Accidental damage and customer misuse are excluded. If eligibility is uncertain, request inspection; do not promise an exchange.\\n ## 4.3 \u2014 Change of mind\\n-Unused products in original packaging may be returned within 7 calendar days of purchase with proof of purchase. Opened hygiene accessories and activated digital licences are excluded. This section does not override verified defect claims under section 4.2.\\n+Unused products in original packaging may be returned within 14 calendar days of purchase with proof of purchase. Opened hygiene accessories and activated digital licences are excluded. This section does not override verified defect claims under section 4.2.\\n ## 4.4 \u2014 Exchange stock unavailable\\n When an eligible defect exchange cannot be completed because the same product is out of stock, offer the customer a refund review under REFUND-001 section 3.1. Do not impose store credit without customer agreement.\\n # Returns and Exchanges\\n \\n-Fictional academic policy \u2014 NovaRetail. Version 1.0.\\n+Fictional academic policy \u2014 NovaRetail. Version 2.0.\"\n}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structuredContent": null,
+        "isError": false
+      }
+    }
+  ]
+}

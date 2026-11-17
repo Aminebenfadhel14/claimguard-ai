@@ -17,12 +17,14 @@ Les preuves sont les fichiers produits par l'exécution, et non une checklist d�
 | Protection du benchmark | Testée | Aucun scénario original dans l'entraînement ; champs privés exclus du RAG |
 | Serveur MCP et client | Testés | Deux outils appelés avec succès dans `mcp_demo.json` |
 | Streamlit | Testé | Recherche réelle et changement de corpus sans sources résiduelles |
-| Réécriture et génération Groq | Code intégré, non validé en réel | Absence de `GROQ_API_KEY` dans `live_rag_check.txt` |
+| Réécriture et génération Groq | Code intégré, non validé en réel | Aucune exécution réelle enregistrée ; lancer `scripts/live_rag_check.py --corpus drip_r` |
 | Abstention et faithfulness | Non mesurées | Aucun score fabriqué |
 | Comparaison historique DRIP-R | Non applicable aux données fournies | Un seul instantané sans dates de validité |
 | Classification / conformité Level 2 complète | En attente | Le retrieval ne remplace pas une décision métier |
 | Traitement des 400 scénarios | Exécuté | 2 000 références vérifiées ; preuves uniquement, aucun verdict |
 | Suite de tests | 29 réussis | `pytest_results.xml` et `tests_final.txt` |
-| Exécution Windows / Docker | Non effectuée | Commandes fournies ; validation faite sur Linux/Python 3.12 |
+| Exécution Windows / Docker | Windows : réalisée (Streamlit et interface React/FastAPI) ; Docker non effectué | Recherche réelle vérifiée sur Windows le 17/11/2026 via l’interface web |
 
 Les scores DRIP-R ne sont pas comparables directement à ceux de NovaRetail : corpus, questions et annotations différents. Les 400 scénarios ne sont pas 400 problèmes indépendants. Les preuves de recherche pour l'ensemble du dataset sont produites par `scripts/drip_batch.py`, sans verdict de conformité.
+
+Mesures à citer : `reports/drip_r/latest.json` (profil `validated`) — voir la section « Mesures actuelles » de `RESULTS.md`.

@@ -7,3 +7,4 @@ var/
 data/complaints/raw/
 models/
 *.log
+frontend/node_modules/

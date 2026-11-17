@@ -2,12 +2,13 @@
 import asyncio,json,os,sys
 import argparse
 from claimguard.corpora import paths, CORPORA
+from claimguard.settings import project_home
 from pathlib import Path
 from mcp import ClientSession, StdioServerParameters
 from mcp.client.stdio import stdio_client
 
 async def demonstrate(corpus='novaretail'):
-    home=Path(os.getenv('CLAIMGUARD_HOME','.')).resolve()
+    home=project_home()
     params=StdioServerParameters(command=sys.executable,args=['-m','claimguard.mcp.server'],env=dict(os.environ)|{'CLAIMGUARD_CORPUS':corpus})
     async with stdio_client(params) as (read,write):
         async with ClientSession(read,write) as session:
@@ -28,7 +29,7 @@ async def demonstrate(corpus='novaretail'):
                 assert not result.isError, result
                 calls.append({'tool':name,'arguments':args,'result':result.model_dump(mode='json')})
     report={'corpus':corpus,'transport':'stdio','discovered_tools':names,'successful_calls':len(calls),'calls':calls}
-    (paths(home,corpus)['reports']/'mcp_demo.json').write_text(json.dumps(report,indent=2))
+    (paths(home,corpus)['reports']/'latest_mcp.json').write_text(json.dumps(report,indent=2),encoding='utf-8')
     print(json.dumps({'tools':names,'successful_calls':len(calls)}))
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--corpus',choices=CORPORA,default='novaretail')

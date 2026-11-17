@@ -1,0 +1,6 @@
+{
+  "status": "not_evaluated",
+  "reason": "External Groq verification awaiting explicit approval for transmission of synthetic questions and retrieved policy excerpts; automatic approval review rejected this action.",
+  "rows": [],
+  "unknown_abstention_accuracy": null
+}

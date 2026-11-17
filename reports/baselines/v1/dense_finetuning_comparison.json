@@ -1,0 +1,1870 @@
+{
+  "baseline": {
+    "recall@1": 0.7867647058823529,
+    "precision@1": 0.8088235294117647,
+    "recall@3": 0.9117647058823529,
+    "precision@3": 0.32352941176470584,
+    "recall@5": 0.9852941176470589,
+    "precision@5": 0.21176470588235297,
+    "recall@10": 1.0,
+    "precision@10": 0.1073529411764706,
+    "mrr@10": 0.8771008403361344,
+    "ndcg@10": 0.9088429592452234
+  },
+  "fine_tuned": {
+    "recall@1": 0.7720588235294118,
+    "precision@1": 0.7941176470588235,
+    "recall@3": 0.9264705882352942,
+    "precision@3": 0.3284313725490196,
+    "recall@5": 0.9705882352941176,
+    "precision@5": 0.2088235294117647,
+    "recall@10": 1.0,
+    "precision@10": 0.1073529411764706,
+    "mrr@10": 0.8709967320261438,
+    "ndcg@10": 0.9022202641867599
+  },
+  "delta": {
+    "recall@1": -0.014705882352941124,
+    "precision@1": -0.014705882352941235,
+    "recall@3": 0.014705882352941235,
+    "precision@3": 0.004901960784313764,
+    "recall@5": -0.014705882352941235,
+    "precision@5": -0.0029411764705882526,
+    "recall@10": 0.0,
+    "precision@10": 0.0,
+    "mrr@10": -0.006104108309990641,
+    "ndcg@10": -0.006622695058463468
+  },
+  "per_question": [
+    {
+      "id": "Q001",
+      "ranked": [
+        "RETURN-001@2.0#4.2",
+        "RETURN-001@2.0#4.4",
+        "DELIVERY-001@1.0#5.2",
+        "DELIVERY-001@1.0#5.1",
+        "RETURN-001@2.0#4.3",
+        "DELIVERY-001@1.0#5.3",
+        "REFUND-001@1.0#3.1",
+        "WARRANTY-001@1.0#2.3",
+        "BILLING-001@1.0#6.2",
+        "SAFETY-001@1.0#8.3"
+      ],
+      "metrics": {
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "id": "Q002",
+      "ranked": [
+        "RETURN-001@2.0#4.2",
+        "RETURN-001@2.0#4.4",
+        "DELIVERY-001@1.0#5.2",
+        "WARRANTY-001@1.0#2.2",
+        "DELIVERY-001@1.0#5.3",
+        "RETURN-001@2.0#4.3",
+        "WARRANTY-001@1.0#2.3",
+        "DELIVERY-001@1.0#5.1",
+        "REFUND-001@1.0#3.1",
+        "WARRANTY-001@1.0#preamble"
+      ],
+      "metrics": {
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "id": "Q003",
+      "ranked": [
+        "RETURN-001@2.0#4.3",
+        "RETURN-001@2.0#4.2",
+        "DELIVERY-001@1.0#5.2",
+        "RETURN-001@2.0#4.4",
+        "DELIVERY-001@1.0#5.3",
+        "WARRANTY-001@1.0#2.2",
+        "BILLING-001@1.0#6.3",
+        "WARRANTY-001@1.0#2.1",
+        "SAFETY-001@1.0#8.1",
+        "WARRANTY-001@1.0#2.3"
+      ],
+      "metrics": {
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "id": "Q004",
+      "ranked": [
+        "RETURN-001@2.0#4.3",
+        "RETURN-001@2.0#4.2",
+        "RETURN-001@2.0#4.4",
+        "REFUND-001@1.0#3.1",
+        "BILLING-001@1.0#6.3",
+        "WARRANTY-001@1.0#2.2",
+        "SAFETY-001@1.0#8.2",
+        "DELIVERY-001@1.0#5.2",
+        "BILLING-001@1.0#preamble",
+        "WARRANTY-001@1.0#2.1"
+      ],
+      "metrics": {
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "id": "Q005",
+      "ranked": [
+        "BILLING-001@1.0#6.1",
+        "RETURN-001@2.0#4.4",
+        "RETURN-001@2.0#4.3",
+        "BILLING-001@1.0#6.3",
+        "DELIVERY-001@1.0#5.2",
+        "RETURN-001@2.0#4.2",
+        "REFUND-001@1.0#3.1",
+        "BILLING-001@1.0#6.2",
+        "REFUND-001@1.0#3.3",
+        "BILLING-001@1.0#preamble"
+      ],
+      "metrics": {
+        "recall@1": 0.0,
+        "precision@1": 0.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 0.5,
+        "ndcg@10": 0.6309297535714575
+      }
+    },
+    {
+      "id": "Q006",
+      "ranked": [
+        "RETURN-001@2.0#4.4",
+        "DELIVERY-001@1.0#5.2",
+        "WARRANTY-001@1.0#2.3",
+        "SERVICE-001@1.0#1.3",
+        "RETURN-001@2.0#4.3",
+        "RETURN-001@2.0#4.2",
+        "DELIVERY-001@1.0#5.1",
+        "WARRANTY-001@1.0#2.1",
+        "WARRANTY-001@1.0#2.2",
+        "BILLING-001@1.0#6.3"
+      ],
+      "metrics": {
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "id": "Q007",
+      "ranked": [
+        "REFUND-001@1.0#3.1",
+        "REFUND-001@1.0#3.2",
+        "REFUND-001@1.0#3.3",
+        "REFUND-001@1.0#preamble",
+        "ESCALATE-001@1.0#9.3",
+        "RETURN-001@2.0#4.2",
+        "PRIVACY-001@1.0#10.2",
+        "SERVICE-001@1.0#1.1",
+        "RETURN-001@2.0#4.3",
+        "BILLING-001@1.0#6.3"
+      ],
+      "metrics": {
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "id": "Q008",
+      "ranked": [
+        "REFUND-001@1.0#3.1",
+        "BILLING-001@1.0#6.1",
+        "REFUND-001@1.0#3.3",
+        "BILLING-001@1.0#6.3",
+        "REFUND-001@1.0#3.2",
+        "BILLING-001@1.0#6.2",
+        "BILLING-001@1.0#preamble",
+        "REFUND-001@1.0#preamble",
+        "RETURN-001@2.0#4.3",
+        "RETURN-001@2.0#4.2"
+      ],
+      "metrics": {
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "id": "Q009",
+      "ranked": [
+        "REFUND-001@1.0#3.2",
+        "REFUND-001@1.0#3.1",
+        "REFUND-001@1.0#3.3",
+        "REFUND-001@1.0#preamble",
+        "RETURN-001@2.0#4.4",
+        "RETURN-001@2.0#4.2",
+        "RETURN-001@2.0#4.3",
+        "RETURN-001@2.0#preamble",
+        "WARRANTY-001@1.0#2.3",
+        "SERVICE-001@1.0#1.3"
+      ],
+      "metrics": {
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "id": "Q010",
+      "ranked": [
+        "REFUND-001@1.0#3.1",
+        "BILLING-001@1.0#6.3",
+        "REFUND-001@1.0#3.2",
+        "RETURN-001@2.0#4.2",
+        "WARRANTY-001@1.0#2.2",
+        "BILLING-001@1.0#6.1",
+        "REFUND-001@1.0#3.3",
+        "WARRANTY-001@1.0#2.1",
+        "SAFETY-001@1.0#8.3",
+        "RETURN-001@2.0#4.4"
+      ],
+      "metrics": {
+        "recall@1": 0.0,
+        "precision@1": 0.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 0.3333333333333333,
+        "ndcg@10": 0.5
+      }
+    },
+    {
+      "id": "Q011",
+      "ranked": [
+        "REFUND-001@1.0#3.3",
+        "REFUND-001@1.0#3.1",
+        "BILLING-001@1.0#6.3",
+        "REFUND-001@1.0#3.2",
+        "REFUND-001@1.0#preamble",
+        "RETURN-001@2.0#4.4",
+        "RETURN-001@2.0#4.3",
+        "BILLING-001@1.0#6.2",
+        "RETURN-001@2.0#4.2",
+        "BILLING-001@1.0#preamble"
+      ],
+      "metrics": {
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "id": "Q012",
+      "ranked": [
+        "REFUND-001@1.0#3.3",
+        "REFUND-001@1.0#3.1",
+        "BILLING-001@1.0#preamble",
+        "REFUND-001@1.0#3.2",
+        "BILLING-001@1.0#6.1",
+        "BILLING-001@1.0#6.3",
+        "REFUND-001@1.0#preamble",
+        "BILLING-001@1.0#6.2",
+        "DELIVERY-001@1.0#5.3",
+        "PRIVACY-001@1.0#10.1"
+      ],
+      "metrics": {
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "id": "Q013",
+      "ranked": [
+        "DELIVERY-001@1.0#5.3",
+        "DELIVERY-001@1.0#5.2",
+        "WARRANTY-001@1.0#2.3",
+        "RETURN-001@2.0#4.3",
+        "WARRANTY-001@1.0#2.2",
+        "WARRANTY-001@1.0#2.1",
+        "WARRANTY-001@1.0#preamble",
+        "DELIVERY-001@1.0#5.1",
+        "RETURN-001@2.0#4.2",
+        "RETURN-001@2.0#4.4"
+      ],
+      "metrics": {
+        "recall@1": 0.0,
+        "precision@1": 0.0,
+        "recall@3": 0.0,
+        "precision@3": 0.0,
+        "recall@5": 0.0,
+        "precision@5": 0.0,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 0.16666666666666666,
+        "ndcg@10": 0.3562071871080222
+      }
+    },
+    {
+      "id": "Q014",
+      "ranked": [
+        "WARRANTY-001@1.0#2.1",
+        "WARRANTY-001@1.0#preamble",
+        "WARRANTY-001@1.0#2.3",
+        "WARRANTY-001@1.0#2.2",
+        "SERVICE-001@1.0#preamble",
+        "SERVICE-001@1.0#1.3",
+        "RETURN-001@2.0#4.3",
+        "RETURN-001@2.0#4.2",
+        "BILLING-001@1.0#preamble",
+        "REFUND-001@1.0#preamble"
+      ],
+      "metrics": {
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "id": "Q015",
+      "ranked": [
+        "DELIVERY-001@1.0#5.3",
+        "SAFETY-001@1.0#8.1",
+        "WARRANTY-001@1.0#2.2",
+        "RETURN-001@2.0#4.3",
+        "RETURN-001@2.0#4.2",
+        "SAFETY-001@1.0#8.2",
+        "SAFETY-001@1.0#8.3",
+        "BILLING-001@1.0#6.2",
+        "WARRANTY-001@1.0#preamble",
+        "PRIVACY-001@1.0#10.1"
+      ],
+      "metrics": {
+        "recall@1": 0.0,
+        "precision@1": 0.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 0.3333333333333333,
+        "ndcg@10": 0.5
+      }
+    },
+    {
+      "id": "Q016",
+      "ranked": [
+        "WARRANTY-001@1.0#2.2",
+        "WARRANTY-001@1.0#2.3",
+        "WARRANTY-001@1.0#2.1",
+        "WARRANTY-001@1.0#preamble",
+        "RETURN-001@2.0#4.2",
+        "RETURN-001@2.0#4.3",
+        "SERVICE-001@1.0#preamble",
+        "BILLING-001@1.0#6.2",
+        "SERVICE-001@1.0#1.1",
+        "BILLING-001@1.0#6.3"
+      ],
+      "metrics": {
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "id": "Q017",
+      "ranked": [
+        "WARRANTY-001@1.0#2.3",
+        "RETURN-001@2.0#4.2",
+        "SERVICE-001@1.0#1.3",
+        "RETURN-001@2.0#4.3",
+        "RETURN-001@2.0#4.4",
+        "SERVICE-001@1.0#1.1",
+        "WARRANTY-001@1.0#2.1",
+        "DELIVERY-001@1.0#5.2",
+        "WARRANTY-001@1.0#2.2",
+        "ESCALATE-001@1.0#9.2"
+      ],
+      "metrics": {
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "id": "Q018",
+      "ranked": [
+        "WARRANTY-001@1.0#2.3",
+        "REFUND-001@1.0#3.2",
+        "REFUND-001@1.0#3.1",
+        "RETURN-001@2.0#4.2",
+        "WARRANTY-001@1.0#2.2",
+        "SERVICE-001@1.0#1.3",
+        "RETURN-001@2.0#4.4",
+        "WARRANTY-001@1.0#2.1",
+        "RETURN-001@2.0#4.3",
+        "REFUND-001@1.0#3.3"
+      ],
+      "metrics": {
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "id": "Q019",
+      "ranked": [
+        "DELIVERY-001@1.0#5.1",
+        "SERVICE-001@1.0#1.3",
+        "DELIVERY-001@1.0#5.2",
+        "WARRANTY-001@1.0#2.3",
+        "REFUND-001@1.0#3.2",
+        "SERVICE-001@1.0#1.1",
+        "RETURN-001@2.0#4.3",
+        "RETURN-001@2.0#4.2",
+        "DELIVERY-001@1.0#preamble",
+        "DELIVERY-001@1.0#5.3"
+      ],
+      "metrics": {
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "id": "Q020",
+      "ranked": [
+        "DELIVERY-001@1.0#5.1",
+        "DELIVERY-001@1.0#5.3",
+        "DELIVERY-001@1.0#5.2",
+        "RETURN-001@2.0#4.2",
+        "DELIVERY-001@1.0#preamble",
+        "RETURN-001@2.0#4.3",
+        "SERVICE-001@1.0#1.3",
+        "SERVICE-001@1.0#1.1",
+        "ESCALATE-001@1.0#9.2",
+        "WARRANTY-001@1.0#2.3"
+      ],
+      "metrics": {
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "id": "Q021",
+      "ranked": [
+        "DELIVERY-001@1.0#5.2",
+        "DELIVERY-001@1.0#5.1",
+        "DELIVERY-001@1.0#5.3",
+        "SERVICE-001@1.0#1.1",
+        "REFUND-001@1.0#3.1",
+        "DELIVERY-001@1.0#preamble",
+        "BILLING-001@1.0#6.3",
+        "RETURN-001@2.0#4.2",
+        "ESCALATE-001@1.0#9.3",
+        "PRIVACY-001@1.0#10.1"
+      ],
+      "metrics": {
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "id": "Q022",
+      "ranked": [
+        "DELIVERY-001@1.0#5.2",
+        "REFUND-001@1.0#3.1",
+        "REFUND-001@1.0#3.3",
+        "RETURN-001@2.0#4.3",
+        "REFUND-001@1.0#3.2",
+        "RETURN-001@2.0#4.4",
+        "DELIVERY-001@1.0#5.3",
+        "RETURN-001@2.0#4.2",
+        "REFUND-001@1.0#preamble",
+        "DELIVERY-001@1.0#5.1"
+      ],
+      "metrics": {
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "id": "Q023",
+      "ranked": [
+        "DELIVERY-001@1.0#5.3",
+        "DELIVERY-001@1.0#5.2",
+        "DELIVERY-001@1.0#5.1",
+        "RETURN-001@2.0#4.2",
+        "RETURN-001@2.0#4.3",
+        "CONDUCT-001@1.0#7.2",
+        "WARRANTY-001@1.0#2.2",
+        "SAFETY-001@1.0#8.1",
+        "ESCALATE-001@1.0#9.1",
+        "WARRANTY-001@1.0#2.3"
+      ],
+      "metrics": {
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "id": "Q024",
+      "ranked": [
+        "DELIVERY-001@1.0#5.3",
+        "SAFETY-001@1.0#8.1",
+        "DELIVERY-001@1.0#5.2",
+        "SAFETY-001@1.0#preamble",
+        "RETURN-001@2.0#4.2",
+        "WARRANTY-001@1.0#2.2",
+        "RETURN-001@2.0#4.3",
+        "SAFETY-001@1.0#8.3",
+        "DELIVERY-001@1.0#preamble",
+        "DELIVERY-001@1.0#5.1"
+      ],
+      "metrics": {
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "id": "Q025",
+      "ranked": [
+        "BILLING-001@1.0#6.1",
+        "BILLING-001@1.0#6.3",
+        "REFUND-001@1.0#3.1",
+        "BILLING-001@1.0#6.2",
+        "BILLING-001@1.0#preamble",
+        "REFUND-001@1.0#3.2",
+        "DELIVERY-001@1.0#5.1",
+        "RETURN-001@2.0#4.2",
+        "DELIVERY-001@1.0#5.2",
+        "SAFETY-001@1.0#8.3"
+      ],
+      "metrics": {
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "id": "Q026",
+      "ranked": [
+        "BILLING-001@1.0#6.1",
+        "BILLING-001@1.0#6.2",
+        "WARRANTY-001@1.0#2.2",
+        "BILLING-001@1.0#preamble",
+        "BILLING-001@1.0#6.3",
+        "PRIVACY-001@1.0#10.2",
+        "SAFETY-001@1.0#8.1",
+        "WARRANTY-001@1.0#preamble",
+        "SAFETY-001@1.0#8.2",
+        "CONDUCT-001@1.0#7.2"
+      ],
+      "metrics": {
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "id": "Q027",
+      "ranked": [
+        "BILLING-001@1.0#6.2",
+        "BILLING-001@1.0#6.1",
+        "BILLING-001@1.0#preamble",
+        "BILLING-001@1.0#6.3",
+        "PRIVACY-001@1.0#10.3",
+        "RETURN-001@2.0#4.3",
+        "DELIVERY-001@1.0#5.2",
+        "REFUND-001@1.0#3.1",
+        "RETURN-001@2.0#4.2",
+        "WARRANTY-001@1.0#preamble"
+      ],
+      "metrics": {
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "id": "Q028",
+      "ranked": [
+        "BILLING-001@1.0#6.2",
+        "BILLING-001@1.0#6.1",
+        "BILLING-001@1.0#6.3",
+        "BILLING-001@1.0#preamble",
+        "REFUND-001@1.0#3.1",
+        "WARRANTY-001@1.0#2.3",
+        "PRIVACY-001@1.0#10.1",
+        "RETURN-001@2.0#4.3",
+        "RETURN-001@2.0#4.2",
+        "CONDUCT-001@1.0#7.2"
+      ],
+      "metrics": {
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "id": "Q029",
+      "ranked": [
+        "BILLING-001@1.0#6.3",
+        "RETURN-001@2.0#4.3",
+        "RETURN-001@2.0#4.2",
+        "RETURN-001@2.0#4.4",
+        "REFUND-001@1.0#3.1",
+        "WARRANTY-001@1.0#2.3",
+        "WARRANTY-001@1.0#2.2",
+        "DELIVERY-001@1.0#5.2",
+        "SERVICE-001@1.0#1.1",
+        "REFUND-001@1.0#3.3"
+      ],
+      "metrics": {
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "id": "Q030",
+      "ranked": [
+        "BILLING-001@1.0#6.3",
+        "PRIVACY-001@1.0#10.1",
+        "RETURN-001@2.0#preamble",
+        "RETURN-001@2.0#4.2",
+        "RETURN-001@2.0#4.3",
+        "BILLING-001@1.0#6.1",
+        "REFUND-001@1.0#3.3",
+        "BILLING-001@1.0#6.2",
+        "RETURN-001@2.0#4.4",
+        "REFUND-001@1.0#3.1"
+      ],
+      "metrics": {
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "id": "Q031",
+      "ranked": [
+        "SERVICE-001@1.0#1.1",
+        "ESCALATE-001@1.0#9.2",
+        "SERVICE-001@1.0#1.3",
+        "WARRANTY-001@1.0#2.3",
+        "CONDUCT-001@1.0#7.1",
+        "ESCALATE-001@1.0#preamble",
+        "ESCALATE-001@1.0#9.3",
+        "RETURN-001@2.0#4.3",
+        "ESCALATE-001@1.0#9.1",
+        "PRIVACY-001@1.0#10.2"
+      ],
+      "metrics": {
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "id": "Q032",
+      "ranked": [
+        "SERVICE-001@1.0#1.1",
+        "CONDUCT-001@1.0#7.1",
+        "CONDUCT-001@1.0#7.3",
+        "ESCALATE-001@1.0#9.3",
+        "ESCALATE-001@1.0#9.2",
+        "CONDUCT-001@1.0#7.2",
+        "CONDUCT-001@1.0#preamble",
+        "ESCALATE-001@1.0#preamble",
+        "PRIVACY-001@1.0#10.1",
+        "ESCALATE-001@1.0#9.1"
+      ],
+      "metrics": {
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "id": "Q033",
+      "ranked": [
+        "SERVICE-001@1.0#1.2",
+        "SERVICE-001@1.0#1.1",
+        "SERVICE-001@1.0#1.3",
+        "ESCALATE-001@1.0#9.2",
+        "ESCALATE-001@1.0#preamble",
+        "SERVICE-001@1.0#preamble",
+        "ESCALATE-001@1.0#9.3",
+        "ESCALATE-001@1.0#9.1",
+        "WARRANTY-001@1.0#preamble",
+        "DELIVERY-001@1.0#preamble"
+      ],
+      "metrics": {
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "id": "Q034",
+      "ranked": [
+        "SERVICE-001@1.0#1.2",
+        "PRIVACY-001@1.0#10.1",
+        "PRIVACY-001@1.0#preamble",
+        "SERVICE-001@1.0#preamble",
+        "CONDUCT-001@1.0#7.3",
+        "DELIVERY-001@1.0#5.3",
+        "SERVICE-001@1.0#1.1",
+        "BILLING-001@1.0#preamble",
+        "SAFETY-001@1.0#8.3",
+        "CONDUCT-001@1.0#preamble"
+      ],
+      "metrics": {
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "id": "Q035",
+      "ranked": [
+        "SERVICE-001@1.0#1.3",
+        "CONDUCT-001@1.0#7.2",
+        "PRIVACY-001@1.0#10.2",
+        "ESCALATE-001@1.0#9.2",
+        "ESCALATE-001@1.0#9.3",
+        "WARRANTY-001@1.0#2.1",
+        "CONDUCT-001@1.0#7.3",
+        "ESCALATE-001@1.0#9.1",
+        "SERVICE-001@1.0#1.1",
+        "PRIVACY-001@1.0#10.1"
+      ],
+      "metrics": {
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "id": "Q036",
+      "ranked": [
+        "SERVICE-001@1.0#1.3",
+        "DELIVERY-001@1.0#5.1",
+        "SERVICE-001@1.0#1.1",
+        "WARRANTY-001@1.0#2.3",
+        "ESCALATE-001@1.0#9.3",
+        "WARRANTY-001@1.0#2.1",
+        "SERVICE-001@1.0#preamble",
+        "WARRANTY-001@1.0#2.2",
+        "ESCALATE-001@1.0#9.2",
+        "RETURN-001@2.0#4.3"
+      ],
+      "metrics": {
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "id": "Q037",
+      "ranked": [
+        "CONDUCT-001@1.0#7.1",
+        "RETURN-001@2.0#4.2",
+        "ESCALATE-001@1.0#9.2",
+        "ESCALATE-001@1.0#preamble",
+        "ESCALATE-001@1.0#9.1",
+        "RETURN-001@2.0#preamble",
+        "SERVICE-001@1.0#1.1",
+        "ESCALATE-001@1.0#9.3",
+        "RETURN-001@2.0#4.4",
+        "BILLING-001@1.0#6.3"
+      ],
+      "metrics": {
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "id": "Q038",
+      "ranked": [
+        "CONDUCT-001@1.0#7.1",
+        "CONDUCT-001@1.0#7.2",
+        "CONDUCT-001@1.0#preamble",
+        "CONDUCT-001@1.0#7.3",
+        "ESCALATE-001@1.0#9.2",
+        "ESCALATE-001@1.0#9.3",
+        "SERVICE-001@1.0#preamble",
+        "ESCALATE-001@1.0#preamble",
+        "SERVICE-001@1.0#1.1",
+        "PRIVACY-001@1.0#10.1"
+      ],
+      "metrics": {
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "id": "Q039",
+      "ranked": [
+        "CONDUCT-001@1.0#7.2",
+        "ESCALATE-001@1.0#9.3",
+        "CONDUCT-001@1.0#7.1",
+        "CONDUCT-001@1.0#7.3",
+        "CONDUCT-001@1.0#preamble",
+        "ESCALATE-001@1.0#preamble",
+        "PRIVACY-001@1.0#10.2",
+        "SERVICE-001@1.0#preamble",
+        "PRIVACY-001@1.0#preamble",
+        "PRIVACY-001@1.0#10.1"
+      ],
+      "metrics": {
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "id": "Q040",
+      "ranked": [
+        "CONDUCT-001@1.0#7.2",
+        "CONDUCT-001@1.0#7.3",
+        "CONDUCT-001@1.0#7.1",
+        "CONDUCT-001@1.0#preamble",
+        "ESCALATE-001@1.0#9.3",
+        "ESCALATE-001@1.0#preamble",
+        "PRIVACY-001@1.0#10.1",
+        "PRIVACY-001@1.0#10.2",
+        "REFUND-001@1.0#preamble",
+        "ESCALATE-001@1.0#9.1"
+      ],
+      "metrics": {
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "id": "Q041",
+      "ranked": [
+        "CONDUCT-001@1.0#7.1",
+        "CONDUCT-001@1.0#7.3",
+        "CONDUCT-001@1.0#7.2",
+        "CONDUCT-001@1.0#preamble",
+        "SERVICE-001@1.0#preamble",
+        "SERVICE-001@1.0#1.1",
+        "PRIVACY-001@1.0#10.2",
+        "ESCALATE-001@1.0#9.3",
+        "WARRANTY-001@1.0#2.2",
+        "PRIVACY-001@1.0#10.1"
+      ],
+      "metrics": {
+        "recall@1": 0.0,
+        "precision@1": 0.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 0.5,
+        "ndcg@10": 0.6309297535714575
+      }
+    },
+    {
+      "id": "Q042",
+      "ranked": [
+        "CONDUCT-001@1.0#7.3",
+        "CONDUCT-001@1.0#7.2",
+        "CONDUCT-001@1.0#7.1",
+        "CONDUCT-001@1.0#preamble",
+        "ESCALATE-001@1.0#9.3",
+        "SAFETY-001@1.0#preamble",
+        "PRIVACY-001@1.0#10.2",
+        "ESCALATE-001@1.0#preamble",
+        "ESCALATE-001@1.0#9.1",
+        "PRIVACY-001@1.0#preamble"
+      ],
+      "metrics": {
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "id": "Q043",
+      "ranked": [
+        "SAFETY-001@1.0#8.1",
+        "BILLING-001@1.0#6.1",
+        "BILLING-001@1.0#6.3",
+        "DELIVERY-001@1.0#5.3",
+        "BILLING-001@1.0#preamble",
+        "WARRANTY-001@1.0#preamble",
+        "SERVICE-001@1.0#1.3",
+        "DELIVERY-001@1.0#5.2",
+        "WARRANTY-001@1.0#2.2",
+        "WARRANTY-001@1.0#2.3"
+      ],
+      "metrics": {
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "id": "Q044",
+      "ranked": [
+        "SAFETY-001@1.0#8.1",
+        "ESCALATE-001@1.0#9.2",
+        "SERVICE-001@1.0#1.1",
+        "DELIVERY-001@1.0#5.3",
+        "SERVICE-001@1.0#preamble",
+        "ESCALATE-001@1.0#9.3",
+        "ESCALATE-001@1.0#9.1",
+        "CONDUCT-001@1.0#7.2",
+        "ESCALATE-001@1.0#preamble",
+        "CONDUCT-001@1.0#7.3"
+      ],
+      "metrics": {
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "id": "Q045",
+      "ranked": [
+        "SAFETY-001@1.0#8.2",
+        "REFUND-001@1.0#3.1",
+        "REFUND-001@1.0#3.3",
+        "REFUND-001@1.0#preamble",
+        "SERVICE-001@1.0#preamble",
+        "WARRANTY-001@1.0#2.2",
+        "RETURN-001@2.0#4.3",
+        "DELIVERY-001@1.0#5.2",
+        "SERVICE-001@1.0#1.1",
+        "SERVICE-001@1.0#1.3"
+      ],
+      "metrics": {
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "id": "Q046",
+      "ranked": [
+        "SAFETY-001@1.0#8.2",
+        "RETURN-001@2.0#4.3",
+        "SERVICE-001@1.0#1.1",
+        "SAFETY-001@1.0#8.3",
+        "REFUND-001@1.0#3.3",
+        "WARRANTY-001@1.0#2.2",
+        "REFUND-001@1.0#3.1",
+        "PRIVACY-001@1.0#10.1",
+        "SAFETY-001@1.0#preamble",
+        "BILLING-001@1.0#6.3"
+      ],
+      "metrics": {
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "id": "Q047",
+      "ranked": [
+        "SAFETY-001@1.0#8.3",
+        "PRIVACY-001@1.0#10.3",
+        "PRIVACY-001@1.0#10.1",
+        "REFUND-001@1.0#3.1",
+        "BILLING-001@1.0#6.1",
+        "ESCALATE-001@1.0#9.1",
+        "PRIVACY-001@1.0#10.2",
+        "SAFETY-001@1.0#8.2",
+        "SERVICE-001@1.0#1.3",
+        "BILLING-001@1.0#6.3"
+      ],
+      "metrics": {
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "id": "Q048",
+      "ranked": [
+        "SAFETY-001@1.0#8.3",
+        "PRIVACY-001@1.0#10.3",
+        "PRIVACY-001@1.0#preamble",
+        "PRIVACY-001@1.0#10.1",
+        "SAFETY-001@1.0#preamble",
+        "PRIVACY-001@1.0#10.2",
+        "BILLING-001@1.0#preamble",
+        "CONDUCT-001@1.0#7.2",
+        "CONDUCT-001@1.0#preamble",
+        "ESCALATE-001@1.0#9.1"
+      ],
+      "metrics": {
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "id": "Q049",
+      "ranked": [
+        "PRIVACY-001@1.0#10.1",
+        "DELIVERY-001@1.0#5.3",
+        "ESCALATE-001@1.0#9.1",
+        "PRIVACY-001@1.0#preamble",
+        "SERVICE-001@1.0#preamble",
+        "CONDUCT-001@1.0#7.2",
+        "ESCALATE-001@1.0#9.3",
+        "SAFETY-001@1.0#8.3",
+        "SERVICE-001@1.0#1.3",
+        "CONDUCT-001@1.0#7.3"
+      ],
+      "metrics": {
+        "recall@1": 0.0,
+        "precision@1": 0.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 0.3333333333333333,
+        "ndcg@10": 0.5
+      }
+    },
+    {
+      "id": "Q050",
+      "ranked": [
+        "ESCALATE-001@1.0#9.1",
+        "ESCALATE-001@1.0#9.2",
+        "ESCALATE-001@1.0#9.3",
+        "ESCALATE-001@1.0#preamble",
+        "PRIVACY-001@1.0#10.1",
+        "PRIVACY-001@1.0#10.2",
+        "CONDUCT-001@1.0#7.3",
+        "SERVICE-001@1.0#1.3",
+        "PRIVACY-001@1.0#10.3",
+        "DELIVERY-001@1.0#5.3"
+      ],
+      "metrics": {
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "id": "Q051",
+      "ranked": [
+        "SERVICE-001@1.0#1.1",
+        "ESCALATE-001@1.0#9.2",
+        "ESCALATE-001@1.0#preamble",
+        "ESCALATE-001@1.0#9.3",
+        "SERVICE-001@1.0#preamble",
+        "SERVICE-001@1.0#1.3",
+        "ESCALATE-001@1.0#9.1",
+        "RETURN-001@2.0#4.3",
+        "DELIVERY-001@1.0#5.2",
+        "RETURN-001@2.0#4.2"
+      ],
+      "metrics": {
+        "recall@1": 0.0,
+        "precision@1": 0.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 0.5,
+        "ndcg@10": 0.6309297535714575
+      }
+    },
+    {
+      "id": "Q052",
+      "ranked": [
+        "ESCALATE-001@1.0#9.2",
+        "ESCALATE-001@1.0#preamble",
+        "ESCALATE-001@1.0#9.3",
+        "ESCALATE-001@1.0#9.1",
+        "SERVICE-001@1.0#1.1",
+        "CONDUCT-001@1.0#7.3",
+        "SERVICE-001@1.0#preamble",
+        "CONDUCT-001@1.0#preamble",
+        "PRIVACY-001@1.0#10.1",
+        "CONDUCT-001@1.0#7.1"
+      ],
+      "metrics": {
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "id": "Q053",
+      "ranked": [
+        "REFUND-001@1.0#3.1",
+        "REFUND-001@1.0#3.3",
+        "REFUND-001@1.0#3.2",
+        "REFUND-001@1.0#preamble",
+        "ESCALATE-001@1.0#9.3",
+        "BILLING-001@1.0#preamble",
+        "BILLING-001@1.0#6.3",
+        "RETURN-001@2.0#4.4",
+        "BILLING-001@1.0#6.1",
+        "RETURN-001@2.0#4.2"
+      ],
+      "metrics": {
+        "recall@1": 0.0,
+        "precision@1": 0.0,
+        "recall@3": 0.0,
+        "precision@3": 0.0,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 0.2,
+        "ndcg@10": 0.38685280723454163
+      }
+    },
+    {
+      "id": "Q054",
+      "ranked": [
+        "CONDUCT-001@1.0#7.2",
+        "CONDUCT-001@1.0#7.3",
+        "CONDUCT-001@1.0#7.1",
+        "ESCALATE-001@1.0#9.3",
+        "SERVICE-001@1.0#1.1",
+        "PRIVACY-001@1.0#10.1",
+        "PRIVACY-001@1.0#10.2",
+        "ESCALATE-001@1.0#9.2",
+        "ESCALATE-001@1.0#preamble",
+        "ESCALATE-001@1.0#9.1"
+      ],
+      "metrics": {
+        "recall@1": 0.0,
+        "precision@1": 0.0,
+        "recall@3": 0.0,
+        "precision@3": 0.0,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 0.25,
+        "ndcg@10": 0.43067655807339306
+      }
+    },
+    {
+      "id": "Q055",
+      "ranked": [
+        "PRIVACY-001@1.0#10.1",
+        "PRIVACY-001@1.0#preamble",
+        "ESCALATE-001@1.0#9.3",
+        "BILLING-001@1.0#preamble",
+        "SERVICE-001@1.0#preamble",
+        "PRIVACY-001@1.0#10.3",
+        "SERVICE-001@1.0#1.1",
+        "SAFETY-001@1.0#preamble",
+        "SAFETY-001@1.0#8.2",
+        "CONDUCT-001@1.0#7.2"
+      ],
+      "metrics": {
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "id": "Q056",
+      "ranked": [
+        "PRIVACY-001@1.0#10.1",
+        "SAFETY-001@1.0#8.3",
+        "PRIVACY-001@1.0#10.3",
+        "CONDUCT-001@1.0#7.2",
+        "PRIVACY-001@1.0#10.2",
+        "CONDUCT-001@1.0#7.1",
+        "PRIVACY-001@1.0#preamble",
+        "CONDUCT-001@1.0#7.3",
+        "ESCALATE-001@1.0#9.3",
+        "ESCALATE-001@1.0#preamble"
+      ],
+      "metrics": {
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "id": "Q057",
+      "ranked": [
+        "PRIVACY-001@1.0#10.2",
+        "WARRANTY-001@1.0#2.1",
+        "SERVICE-001@1.0#1.3",
+        "WARRANTY-001@1.0#2.3",
+        "ESCALATE-001@1.0#9.2",
+        "RETURN-001@2.0#4.2",
+        "SERVICE-001@1.0#1.1",
+        "RETURN-001@2.0#4.3",
+        "BILLING-001@1.0#6.3",
+        "CONDUCT-001@1.0#7.3"
+      ],
+      "metrics": {
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "id": "Q058",
+      "ranked": [
+        "PRIVACY-001@1.0#10.2",
+        "CONDUCT-001@1.0#7.2",
+        "PRIVACY-001@1.0#10.1",
+        "CONDUCT-001@1.0#7.1",
+        "CONDUCT-001@1.0#7.3",
+        "CONDUCT-001@1.0#preamble",
+        "SERVICE-001@1.0#1.1",
+        "ESCALATE-001@1.0#9.3",
+        "PRIVACY-001@1.0#10.3",
+        "ESCALATE-001@1.0#9.2"
+      ],
+      "metrics": {
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "id": "Q059",
+      "ranked": [
+        "PRIVACY-001@1.0#10.2",
+        "PRIVACY-001@1.0#10.3",
+        "WARRANTY-001@1.0#2.3",
+        "WARRANTY-001@1.0#2.1",
+        "REFUND-001@1.0#3.1",
+        "BILLING-001@1.0#6.3",
+        "WARRANTY-001@1.0#2.2",
+        "REFUND-001@1.0#3.3",
+        "WARRANTY-001@1.0#preamble",
+        "SERVICE-001@1.0#1.3"
+      ],
+      "metrics": {
+        "recall@1": 0.0,
+        "precision@1": 0.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 0.5,
+        "ndcg@10": 0.6309297535714575
+      }
+    },
+    {
+      "id": "Q060",
+      "ranked": [
+        "PRIVACY-001@1.0#10.1",
+        "PRIVACY-001@1.0#10.3",
+        "PRIVACY-001@1.0#10.2",
+        "PRIVACY-001@1.0#preamble",
+        "SERVICE-001@1.0#1.2",
+        "SERVICE-001@1.0#preamble",
+        "SAFETY-001@1.0#8.3",
+        "SERVICE-001@1.0#1.3",
+        "CONDUCT-001@1.0#7.2",
+        "CONDUCT-001@1.0#7.3"
+      ],
+      "metrics": {
+        "recall@1": 0.0,
+        "precision@1": 0.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 0.5,
+        "ndcg@10": 0.6309297535714575
+      }
+    },
+    {
+      "id": "Q061",
+      "ranked": [
+        "RETURN-001@2.0#4.2",
+        "CONDUCT-001@1.0#7.1",
+        "DELIVERY-001@1.0#5.3",
+        "REFUND-001@1.0#3.1",
+        "DELIVERY-001@1.0#5.2",
+        "CONDUCT-001@1.0#7.2",
+        "CONDUCT-001@1.0#7.3",
+        "RETURN-001@2.0#4.3",
+        "RETURN-001@2.0#4.4",
+        "ESCALATE-001@1.0#9.3"
+      ],
+      "metrics": {
+        "recall@1": 0.5,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.6666666666666666,
+        "recall@5": 1.0,
+        "precision@5": 0.4,
+        "recall@10": 1.0,
+        "precision@10": 0.2,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "id": "Q062",
+      "ranked": [
+        "SERVICE-001@1.0#1.3",
+        "ESCALATE-001@1.0#9.2",
+        "PRIVACY-001@1.0#10.2",
+        "SERVICE-001@1.0#1.1",
+        "WARRANTY-001@1.0#2.3",
+        "ESCALATE-001@1.0#9.3",
+        "ESCALATE-001@1.0#preamble",
+        "ESCALATE-001@1.0#9.1",
+        "RETURN-001@2.0#4.2",
+        "RETURN-001@2.0#4.3"
+      ],
+      "metrics": {
+        "recall@1": 0.5,
+        "precision@1": 1.0,
+        "recall@3": 0.5,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.4,
+        "recall@10": 1.0,
+        "precision@10": 0.2,
+        "mrr@10": 1.0,
+        "ndcg@10": 0.8772153153380493
+      }
+    },
+    {
+      "id": "Q063",
+      "ranked": [
+        "WARRANTY-001@1.0#2.2",
+        "WARRANTY-001@1.0#2.1",
+        "WARRANTY-001@1.0#2.3",
+        "RETURN-001@2.0#4.2",
+        "WARRANTY-001@1.0#preamble",
+        "RETURN-001@2.0#4.3",
+        "RETURN-001@2.0#4.4",
+        "BILLING-001@1.0#6.3",
+        "SERVICE-001@1.0#1.3",
+        "SERVICE-001@1.0#preamble"
+      ],
+      "metrics": {
+        "recall@1": 0.0,
+        "precision@1": 0.0,
+        "recall@3": 0.5,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.4,
+        "recall@10": 1.0,
+        "precision@10": 0.2,
+        "mrr@10": 0.5,
+        "ndcg@10": 0.6509209298071326
+      }
+    },
+    {
+      "id": "Q064",
+      "ranked": [
+        "BILLING-001@1.0#6.1",
+        "REFUND-001@1.0#3.1",
+        "REFUND-001@1.0#3.3",
+        "REFUND-001@1.0#preamble",
+        "REFUND-001@1.0#3.2",
+        "BILLING-001@1.0#6.2",
+        "BILLING-001@1.0#6.3",
+        "RETURN-001@2.0#4.3",
+        "CONDUCT-001@1.0#7.2",
+        "RETURN-001@2.0#4.2"
+      ],
+      "metrics": {
+        "recall@1": 0.5,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.6666666666666666,
+        "recall@5": 1.0,
+        "precision@5": 0.4,
+        "recall@10": 1.0,
+        "precision@10": 0.2,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "id": "Q065",
+      "ranked": [
+        "REFUND-001@1.0#3.1",
+        "RETURN-001@2.0#4.4",
+        "REFUND-001@1.0#3.3",
+        "RETURN-001@2.0#4.3",
+        "RETURN-001@2.0#4.2",
+        "BILLING-001@1.0#6.3",
+        "DELIVERY-001@1.0#5.2",
+        "REFUND-001@1.0#preamble",
+        "BILLING-001@1.0#preamble",
+        "REFUND-001@1.0#3.2"
+      ],
+      "metrics": {
+        "recall@1": 0.0,
+        "precision@1": 0.0,
+        "recall@3": 1.0,
+        "precision@3": 0.6666666666666666,
+        "recall@5": 1.0,
+        "precision@5": 0.4,
+        "recall@10": 1.0,
+        "precision@10": 0.2,
+        "mrr@10": 0.5,
+        "ndcg@10": 0.6934264036172708
+      }
+    },
+    {
+      "id": "Q066",
+      "ranked": [
+        "RETURN-001@1.0#4.2",
+        "RETURN-001@1.0#4.4",
+        "RETURN-001@1.0#4.3",
+        "RETURN-001@1.0#preamble"
+      ],
+      "metrics": {
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "id": "Q067",
+      "ranked": [
+        "RETURN-001@2.0#4.2",
+        "RETURN-001@2.0#4.4",
+        "RETURN-001@2.0#4.3",
+        "DELIVERY-001@1.0#5.2",
+        "DELIVERY-001@1.0#5.3",
+        "RETURN-001@2.0#preamble",
+        "DELIVERY-001@1.0#5.1",
+        "BILLING-001@1.0#6.3",
+        "WARRANTY-001@1.0#2.3",
+        "WARRANTY-001@1.0#2.2"
+      ],
+      "metrics": {
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 1.0,
+        "ndcg@10": 1.0
+      }
+    },
+    {
+      "id": "Q068",
+      "ranked": [
+        "WARRANTY-001@1.0#2.2",
+        "WARRANTY-001@1.0#2.3",
+        "RETURN-001@2.0#4.3",
+        "WARRANTY-001@1.0#2.1",
+        "RETURN-001@2.0#4.4",
+        "SAFETY-001@1.0#8.2",
+        "SERVICE-001@1.0#1.2",
+        "ESCALATE-001@1.0#9.1",
+        "RETURN-001@2.0#4.2",
+        "CONDUCT-001@1.0#7.3"
+      ],
+      "metrics": {
+        "recall@1": 0.0,
+        "precision@1": 0.0,
+        "recall@3": 0.0,
+        "precision@3": 0.0,
+        "recall@5": 0.0,
+        "precision@5": 0.0,
+        "recall@10": 1.0,
+        "precision@10": 0.1,
+        "mrr@10": 0.1111111111111111,
+        "ndcg@10": 0.3010299956639812
+      }
+    }
+  ]
+}

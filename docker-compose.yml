@@ -12,7 +12,7 @@ services:
     environment:
       QDRANT_URL: http://qdrant:6333
     volumes:
-      - model_cache:/root/.cache
+      - model_cache:/app/models
       - catalog_data:/app/var
     depends_on:
       - qdrant
