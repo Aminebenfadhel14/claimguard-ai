@@ -1,9 +1,13 @@
 .env
 .venv/
+.runtime/
+.tools/
 __pycache__/
 .pytest_cache/
 *.egg-info/
-var/
-data/complaints/raw/
-models/
 *.log
+var/
+models/
+data/cfpb/raw/downloads/
+frontend/node_modules/
+*.tsbuildinfo

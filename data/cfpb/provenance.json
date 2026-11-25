@@ -1,0 +1,45 @@
+{
+  "built_at": "2026-11-17T14:49:08.994191+00:00",
+  "raw_manifest_sha256": "a653a22eabf1a2e856326088637129b589778a693aa10ffe5b1fa5c557c487c2",
+  "config_sha256": "e463507e3967c8665b4aa694fdfc31c10ce5c0332a5b558b35ca6e9df5874443",
+  "counts": {
+    "test": 201,
+    "train": 72,
+    "validation": 34,
+    "out_of_scope_test": 21,
+    "removed_duplicates": 2
+  },
+  "sources": {
+    "complaints": {
+      "publisher": "Consumer Financial Protection Bureau (CFPB) — Consumer Complaint Database, archive officielle des narratifs",
+      "page": "https://www.consumerfinance.gov/foia-requests/foia-electronic-reading-room/cfpb-consumer-complaint-database-narratives-archive/",
+      "licence": "US public domain (17 U.S.C. §105)",
+      "archives": {
+        "development": "https://files.consumerfinance.gov/f/documents/CCDB_Export_8_November_2024_through_December_2024.zip",
+        "test": "https://files.consumerfinance.gov/f/documents/CCDB_Export_9_January_2025_through_February_2025.zip"
+      },
+      "api": "https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1/",
+      "periods": {
+        "development": [
+          "2024-11-01",
+          "2024-12-31"
+        ],
+        "test": [
+          "2025-01-01",
+          "2025-02-28"
+        ]
+      }
+    },
+    "regulations": {
+      "publisher": "Electronic Code of Federal Regulations (eCFR), Office of the Federal Register",
+      "api": "https://www.ecfr.gov/api/versioner/v1",
+      "licence": "US public domain"
+    }
+  },
+  "notes": [
+    "Plaintes réelles, narratifs publiés par la CFPB avec consentement et expurgés (XXXX).",
+    "Les narratifs ne sont pas vérifiés par la CFPB ; ce sont des déclarations de consommateurs.",
+    "Labels de pertinence : correspondance déterministe catégorie CFPB → paragraphe réglementaire, sans revue juridique.",
+    "Split temporel : entraînement/validation nov.–déc. 2024, test janv.–févr. 2025."
+  ]
+}

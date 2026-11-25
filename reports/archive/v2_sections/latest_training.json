@@ -1,0 +1,133 @@
+{
+  "created_at": "2026-11-17T14:56:18.367940+00:00",
+  "profile": "baseline",
+  "checkpoint": "models/experiments/20261117T144926",
+  "best_epoch": 1,
+  "production_eligible": true,
+  "automatically_promoted": false,
+  "validation_end_to_end": {
+    "E4_baseline": {
+      "hit@1": 0.23529411764705882,
+      "recall@1": 0.10784313725490197,
+      "precision@1": 0.23529411764705882,
+      "recall@3": 0.25,
+      "precision@3": 0.1764705882352941,
+      "recall@5": 0.3284313725490196,
+      "precision@5": 0.1411764705882353,
+      "recall@10": 0.5392156862745098,
+      "precision@10": 0.11470588235294119,
+      "mrr@10": 0.37270074696545286,
+      "ndcg@10": 0.3537173387971595,
+      "policy_hit@1": 0.3235294117647059,
+      "policy_recall@5": 0.7058823529411765
+    },
+    "E5_fine_tuned": {
+      "hit@1": 0.2647058823529412,
+      "recall@1": 0.11764705882352941,
+      "precision@1": 0.2647058823529412,
+      "recall@3": 0.27941176470588236,
+      "precision@3": 0.2156862745098039,
+      "recall@5": 0.3872549019607843,
+      "precision@5": 0.17058823529411765,
+      "recall@10": 0.5980392156862745,
+      "precision@10": 0.12941176470588237,
+      "mrr@10": 0.4222105508870215,
+      "ndcg@10": 0.40262973847526945,
+      "policy_hit@1": 0.3235294117647059,
+      "policy_recall@5": 0.7352941176470589
+    }
+  },
+  "selection": "MRR@10 puis Recall@5 sur la validation ; époque 0 incluse",
+  "loss": "triplet cosinus, marge 0.25",
+  "seed": 42,
+  "epochs": 3,
+  "learning_rate": 2e-05,
+  "batch_size": 8,
+  "device": "cpu",
+  "training_seconds": 407.260816279,
+  "sizes": {
+    "train_complaints": 72,
+    "triplets": 144,
+    "validation": 34,
+    "test": 201
+  },
+  "dataset_sha256": {
+    "train.jsonl": "f8be22d86cc38f5706ee189b3ba7d56c3ebe24803f3c81fb326ee262f7add8da",
+    "validation.jsonl": "49a071b4d5027d493400c8af28a33db87aacc024fad06cb5ae7e4562eb9f8587"
+  },
+  "logs": [
+    {
+      "epoch": 0,
+      "validation_metrics": {
+        "hit@1": 0.29411764705882354,
+        "recall@1": 0.14215686274509803,
+        "precision@1": 0.29411764705882354,
+        "recall@3": 0.29901960784313725,
+        "precision@3": 0.20588235294117643,
+        "recall@5": 0.338235294117647,
+        "precision@5": 0.14117647058823532,
+        "recall@10": 0.5833333333333333,
+        "precision@10": 0.1264705882352941,
+        "mrr@10": 0.4452380952380952,
+        "ndcg@10": 0.4059268908855924
+      }
+    },
+    {
+      "epoch": 1,
+      "train_loss": 0.23108121545778382,
+      "validation_metrics": {
+        "hit@1": 0.5,
+        "recall@1": 0.22549019607843135,
+        "precision@1": 0.5,
+        "recall@3": 0.35784313725490197,
+        "precision@3": 0.2647058823529412,
+        "recall@5": 0.5049019607843137,
+        "precision@5": 0.21764705882352942,
+        "recall@10": 0.6617647058823529,
+        "precision@10": 0.14705882352941177,
+        "mrr@10": 0.5813725490196079,
+        "ndcg@10": 0.5291884289783143
+      }
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.07115539784232776,
+      "validation_metrics": {
+        "hit@1": 0.35294117647058826,
+        "recall@1": 0.15196078431372548,
+        "precision@1": 0.35294117647058826,
+        "recall@3": 0.35784313725490197,
+        "precision@3": 0.27450980392156865,
+        "recall@5": 0.5539215686274509,
+        "precision@5": 0.23529411764705882,
+        "recall@10": 0.6715686274509803,
+        "precision@10": 0.14705882352941174,
+        "mrr@10": 0.5040382819794584,
+        "ndcg@10": 0.48704354975395225
+      }
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.031961131013102,
+      "validation_metrics": {
+        "hit@1": 0.2647058823529412,
+        "recall@1": 0.1323529411764706,
+        "precision@1": 0.2647058823529412,
+        "recall@3": 0.3480392156862745,
+        "precision@3": 0.24509803921568624,
+        "recall@5": 0.5490196078431372,
+        "precision@5": 0.24705882352941172,
+        "recall@10": 0.7647058823529411,
+        "precision@10": 0.17352941176470588,
+        "mrr@10": 0.4852941176470588,
+        "ndcg@10": 0.5121052458512771
+      }
+    }
+  ],
+  "limitations": [
+    "Peu d’exemples (une centaine de plaintes)",
+    "Mêmes règlements en entraînement et en test",
+    "Labels par règle de correspondance, sans revue juridique"
+  ],
+  "promoted_to": "models/cfpb-embedding"
+}

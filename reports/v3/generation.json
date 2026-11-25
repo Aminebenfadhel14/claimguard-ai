@@ -1,0 +1,2012 @@
+{
+  "created_at": "2026-11-23T00:41:44.210925+00:00",
+  "model": "openai/gpt-oss-120b",
+  "collection": "claimguard_c1000_o100",
+  "options": {
+    "mode": "hybrid",
+    "rerank": true,
+    "rewrite": false,
+    "k": 5,
+    "n_candidates": 20
+  },
+  "summary": {
+    "total": 56,
+    "generation_failures": 0,
+    "rewrite_failures": 0,
+    "passages_kept_on_generation_error": true,
+    "citation_verified_rate": 0.9041095890410958,
+    "groups": {
+      "documents": {
+        "count": 20,
+        "failures": 0,
+        "abstention_rate": 0.05,
+        "answered_with_verified_citation": 0.95,
+        "reference_numbers_in_answer": 0.5555555555555556
+      },
+      "cfpb_in_scope": {
+        "count": 15,
+        "failures": 0,
+        "abstention_rate": 0.3333333333333333,
+        "answered_with_verified_citation": 0.6666666666666666
+      },
+      "cfpb_out_of_scope": {
+        "count": 21,
+        "failures": 0,
+        "abstention_rate": 0.6190476190476191,
+        "answered_with_verified_citation": 0.38095238095238093
+      }
+    }
+  },
+  "rows": [
+    {
+      "group": "documents",
+      "id": "D001",
+      "search_query": "According to Regulation Z's special credit card provisions, what must occur before a credit card can be issued to a person?",
+      "rewrite_error": null,
+      "generation_error": null,
+      "retrieved": [
+        "REGZ-012@2.0#a",
+        "REGF-034@1.0#c",
+        "REGF-034@1.0#c",
+        "REGZ-012@2.0#b",
+        "REGZ-012@2.0#b"
+      ],
+      "passages_kept_on_error": null,
+      "warnings": [],
+      "timings_ms": {
+        "retrieval": 667.5967000192031,
+        "answer_llm": 964.9330999236554
+      },
+      "answer": "A credit card may be issued only if it is issued in response to an oral or written request or application for the card, or as a renewal of, or substitute for, an accepted credit card.",
+      "abstained": false,
+      "citations": [
+        {
+          "passage": 1,
+          "quote": "no credit card shall be issued to any person except: (1) In response to an oral or written request or application for the card; or (2) As a renewal of, or substitute for, an accepted credit card.",
+          "verified": true,
+          "chunk_id": "4e1ea8fd-b320-5227-8f55-ff1322869cbe",
+          "citation": "12 CFR 1026.12(a)"
+        }
+      ],
+      "verified_citations": 1,
+      "reference_numbers_in_answer": null
+    },
+    {
+      "group": "documents",
+      "id": "D002",
+      "search_query": "Under Regulation Z, what are the two permissible circumstances for issuing a credit card as a renewal or substitute?",
+      "rewrite_error": null,
+      "generation_error": null,
+      "retrieved": [
+        "REGZ-012@2.0#a",
+        "REGZ-012@2.0#b",
+        "REGE-006@1.0#b",
+        "REGF-034@1.0#c",
+        "REGZ-012@2.0#g"
+      ],
+      "passages_kept_on_error": null,
+      "warnings": [],
+      "timings_ms": {
+        "retrieval": 713.8060999568552,
+        "answer_llm": 609.3408000888303
+      },
+      "answer": "Under Regulation Z, a credit card may be issued only (1) in response to an oral or written request or application for the card, or (2) as a renewal of, or substitute for, an accepted credit card.",
+      "abstained": false,
+      "citations": [
+        {
+          "passage": 1,
+          "quote": "In response to an oral or written request or application for the card; or (2) As a renewal of, or substitute for, an accepted credit card.",
+          "verified": true,
+          "chunk_id": "4e1ea8fd-b320-5227-8f55-ff1322869cbe",
+          "citation": "12 CFR 1026.12(a)"
+        }
+      ],
+      "verified_citations": 1,
+      "reference_numbers_in_answer": null
+    },
+    {
+      "group": "documents",
+      "id": "D003",
+      "search_query": "According to Regulation Z's special credit card provisions, what is the maximum amount a cardholder can be held liable for unauthorized use?",
+      "rewrite_error": null,
+      "generation_error": null,
+      "retrieved": [
+        "REGZ-012@2.0#b",
+        "REGZ-012@2.0#b",
+        "REGZ-012@2.0#b",
+        "REGE-006@1.0#b",
+        "REGZ-012@2.0#g"
+      ],
+      "passages_kept_on_error": null,
+      "warnings": [],
+      "timings_ms": {
+        "retrieval": 802.6181999593973,
+        "answer_llm": 925.4923000698909
+      },
+      "answer": "The maximum liability for a cardholder is the lesser of $50 or the amount obtained before the card issuer is notified, which means the cap is $50.",
+      "abstained": false,
+      "citations": [
+        {
+          "passage": 1,
+          "quote": "The liability of a cardholder for unauthorized use of a credit card shall not exceed the lesser of $50 or the amount of money, property, labor, or services obtained by the unauthorized use before notification to the card issuer",
+          "verified": true,
+          "chunk_id": "50811f46-e316-5ded-9fd0-40dc498888e3",
+          "citation": "12 CFR 1026.12(b)"
+        }
+      ],
+      "verified_citations": 1,
+      "reference_numbers_in_answer": true
+    },
+    {
+      "group": "documents",
+      "id": "D004",
+      "search_query": "What three conditions must be met for a cardholder to be liable for unauthorized use of a credit card under Regulation Z?",
+      "rewrite_error": null,
+      "generation_error": null,
+      "retrieved": [
+        "REGZ-012@2.0#b",
+        "REGZ-012@2.0#b",
+        "REGZ-012@2.0#g",
+        "REGE-006@1.0#a",
+        "REGZ-012@2.0#b"
+      ],
+      "passages_kept_on_error": null,
+      "warnings": [],
+      "timings_ms": {
+        "retrieval": 672.2395000979304,
+        "answer_llm": 705.252300016582
+      },
+      "answer": "",
+      "abstained": true,
+      "citations": [],
+      "verified_citations": 0,
+      "reference_numbers_in_answer": null
+    },
+    {
+      "group": "documents",
+      "id": "D011",
+      "search_query": "According to Regulation Z's special credit card provisions, what is prohibited for a card issuer regarding discounts offered to consumers who pay by cash, check, or similar means?",
+      "rewrite_error": null,
+      "generation_error": null,
+      "retrieved": [
+        "REGZ-012@2.0#f",
+        "REGZ-012@2.0#d",
+        "REGZ-013@2.0#d",
+        "REGZ-012@2.0#a",
+        "REGZ-013@2.0#d"
+      ],
+      "passages_kept_on_error": null,
+      "warnings": [],
+      "timings_ms": {
+        "retrieval": 762.3548000119627,
+        "answer_llm": 847.1313000191003
+      },
+      "answer": "A card issuer may not, by contract or otherwise, prohibit any person who honors the credit card from offering a discount to a consumer to induce the consumer to pay by cash, check, or similar means rather than by use of the credit card.",
+      "abstained": false,
+      "citations": [
+        {
+          "passage": 1,
+          "quote": "No card issuer may, by contract or otherwise: (1) Prohibit any person who honors a credit card from offering a discount to a consumer to induce the consumer to pay by cash, check, or similar means rather than by use of a credit card...",
+          "verified": true,
+          "chunk_id": "693e5a2f-7956-5697-a19a-cc7f3edec673",
+          "citation": "12 CFR 1026.12(f)"
+        }
+      ],
+      "verified_citations": 1,
+      "reference_numbers_in_answer": false
+    },
+    {
+      "group": "documents",
+      "id": "D012",
+      "search_query": "What condition may a card issuer impose on requiring a card‑honoring person to open or maintain an additional account or service under Regulation Z?",
+      "rewrite_error": null,
+      "generation_error": null,
+      "retrieved": [
+        "REGZ-012@2.0#f",
+        "REGZ-012@2.0#c",
+        "REGF-034@1.0#c",
+        "REGZ-012@2.0#c",
+        "REGZ-012@2.0#b"
+      ],
+      "passages_kept_on_error": null,
+      "warnings": [],
+      "timings_ms": {
+        "retrieval": 843.1382999988273,
+        "answer_llm": 850.9077999042347
+      },
+      "answer": "A card issuer may require a card‑honoring person to open or maintain an additional account or service only if the maintenance of an account for clearing purposes is determined to be essential to the operation of the credit card plan, and only if no service charges or minimum‑balance requirements are imposed.",
+      "abstained": false,
+      "citations": [
+        {
+          "passage": 1,
+          "quote": "Require any person who honors the card issuer's credit card to open or maintain any account or obtain any other service not essential to the operation of the credit card plan ... If maintenance of an account for clearing purposes is determined to be essential to the operation of the credit card plan, it may be required only if no service charges or minimum balance requirements are imposed.",
+          "verified": true,
+          "chunk_id": "693e5a2f-7956-5697-a19a-cc7f3edec673",
+          "citation": "12 CFR 1026.12(f)"
+        }
+      ],
+      "verified_citations": 1,
+      "reference_numbers_in_answer": null
+    },
+    {
+      "group": "documents",
+      "id": "D013",
+      "search_query": "According to Regulation Z, which regulation provides guidance on whether Regulation Z or Regulation E applies when a transaction involves both credit and electronic fund transfer aspects?",
+      "rewrite_error": null,
+      "generation_error": null,
+      "retrieved": [
+        "REGZ-012@2.0#g",
+        "REGZ-013@2.0#i",
+        "REGZ-013@2.0#i",
+        "REGE-011@2.0#c",
+        "REGE-011@2.0#c"
+      ],
+      "passages_kept_on_error": null,
+      "warnings": [],
+      "timings_ms": {
+        "retrieval": 647.4856999702752,
+        "answer_llm": 615.5464999610558
+      },
+      "answer": "Regulation E provides the guidance on whether Regulation Z or Regulation E applies when a transaction involves both credit and electronic fund transfer aspects.",
+      "abstained": false,
+      "citations": [
+        {
+          "passage": 1,
+          "quote": "For guidance on whether Regulation Z (12 CFR part 1026) or Regulation E (12 CFR part 1005) applies in instances involving both credit and electronic fund transfer aspects, refer to Regulation E, 12 CFR 1005.12(a) regarding issuance and liability for unauthorized use.",
+          "verified": true,
+          "chunk_id": "a6c8906e-62df-526c-910c-3f7160d6c10b",
+          "citation": "12 CFR 1026.12(g)"
+        }
+      ],
+      "verified_citations": 1,
+      "reference_numbers_in_answer": false
+    },
+    {
+      "group": "documents",
+      "id": "D014",
+      "search_query": "Under Regulation Z, which aspects of combined credit/electronic fund transfer transactions are governed by this section, aside from issuance and liability?",
+      "rewrite_error": null,
+      "generation_error": null,
+      "retrieved": [
+        "REGZ-012@2.0#g",
+        "REGZ-013@2.0#i",
+        "REGE-006@1.0#a",
+        "REGE-006@1.0#b",
+        "REGE-006@1.0#b"
+      ],
+      "passages_kept_on_error": null,
+      "warnings": [],
+      "timings_ms": {
+        "retrieval": 682.7560999663547,
+        "answer_llm": 927.4705999996513
+      },
+      "answer": "Aside from issuance and liability, Regulation Z applies to the credit aspects of combined credit/electronic fund transfer transactions.",
+      "abstained": false,
+      "citations": [
+        {
+          "passage": 1,
+          "quote": "On matters other than issuance and liability, this section applies to the credit aspects of combined credit/electronic fund transfer transactions, as applicable.",
+          "verified": true,
+          "chunk_id": "a6c8906e-62df-526c-910c-3f7160d6c10b",
+          "citation": "12 CFR 1026.12(g)"
+        }
+      ],
+      "verified_citations": 1,
+      "reference_numbers_in_answer": null
+    },
+    {
+      "group": "documents",
+      "id": "D017",
+      "search_query": "According to Regulation Z billing error resolution, what is the time limit for a consumer's written billing error notice to be received by the creditor?",
+      "rewrite_error": null,
+      "generation_error": null,
+      "retrieved": [
+        "REGZ-013@2.0#c",
+        "REGZ-013@2.0#b",
+        "REGZ-013@2.0#e",
+        "REGE-011@2.0#b",
+        "REGE-011@2.0#b"
+      ],
+      "passages_kept_on_error": null,
+      "warnings": [],
+      "timings_ms": {
+        "retrieval": 760.7309999875724,
+        "answer_llm": 579.8123000422493
+      },
+      "answer": "The consumer’s written billing error notice must be received by the creditor no later than 60 days after the creditor transmitted the first periodic statement that reflects the alleged billing error.",
+      "abstained": false,
+      "citations": [
+        {
+          "passage": 2,
+          "quote": "Is received by a creditor at the address disclosed under § 1026.7(a)(9) or (b)(9), as applicable, no later than 60 days after the creditor transmitted the first periodic statement that reflects the alleged billing error;",
+          "verified": true,
+          "chunk_id": "5bacdd09-9eef-53e4-b352-645d1eead6da",
+          "citation": "12 CFR 1026.13(b)"
+        }
+      ],
+      "verified_citations": 1,
+      "reference_numbers_in_answer": true
+    },
+    {
+      "group": "documents",
+      "id": "D018",
+      "search_query": "What information must a billing error notice include to enable the creditor to identify the consumer under Regulation Z?",
+      "rewrite_error": null,
+      "generation_error": null,
+      "retrieved": [
+        "REGZ-013@2.0#b",
+        "REGF-034@1.0#c",
+        "REGE-011@2.0#b",
+        "REGF-034@1.0#c",
+        "REGV-043@1.0#d"
+      ],
+      "passages_kept_on_error": null,
+      "warnings": [],
+      "timings_ms": {
+        "retrieval": 693.6404999578372,
+        "answer_llm": 6778.229099931195
+      },
+      "answer": "A billing error notice must enable the creditor to identify the consumer’s name and account number.",
+      "abstained": false,
+      "citations": [
+        {
+          "passage": 1,
+          "quote": "Enables the creditor to identify the consumer's name and account number",
+          "verified": true,
+          "chunk_id": "5bacdd09-9eef-53e4-b352-645d1eead6da",
+          "citation": "12 CFR 1026.13(b)"
+        }
+      ],
+      "verified_citations": 1,
+      "reference_numbers_in_answer": null
+    },
+    {
+      "group": "documents",
+      "id": "D023",
+      "search_query": "According to Regulation Z billing error resolution, what actions must a creditor take if it determines that a billing error occurred as asserted?",
+      "rewrite_error": null,
+      "generation_error": null,
+      "retrieved": [
+        "REGZ-013@2.0#e",
+        "REGZ-013@2.0#f",
+        "REGZ-013@2.0#h",
+        "REGZ-013@2.0#d",
+        "REGZ-013@2.0#b"
+      ],
+      "passages_kept_on_error": null,
+      "warnings": [],
+      "timings_ms": {
+        "retrieval": 661.256399936974,
+        "answer_llm": 7012.236499926075
+      },
+      "answer": "If a creditor determines that a billing error occurred as asserted, it must, within the time limits in paragraph (c)(2), (1) correct the billing error and credit the consumer’s account with any disputed amount and related finance or other charges, as applicable, and (2) mail or deliver a correction notice to the consumer.",
+      "abstained": false,
+      "citations": [
+        {
+          "passage": 1,
+          "quote": "If a creditor determines that a billing error occurred as asserted, it shall within the time limits in paragraph (c)(2) of this section:\n(1) Correct the billing error and credit the consumer's account with any disputed amount and related finance or other charges, as applicable; and\n(2) Mail or deliver a correction notice to the consumer.",
+          "verified": true,
+          "chunk_id": "e126b9b8-b084-513a-82f5-0670a4447927",
+          "citation": "12 CFR 1026.13(e)"
+        }
+      ],
+      "verified_citations": 1,
+      "reference_numbers_in_answer": null
+    },
+    {
+      "group": "documents",
+      "id": "D024",
+      "search_query": "Under Regulation Z, within what deadline must a creditor correct a billing error and notify the consumer after determining the error occurred as asserted?",
+      "rewrite_error": null,
+      "generation_error": null,
+      "retrieved": [
+        "REGZ-013@2.0#e",
+        "REGZ-013@2.0#f",
+        "REGE-011@2.0#c",
+        "REGZ-013@2.0#b",
+        "REGZ-013@2.0#c"
+      ],
+      "passages_kept_on_error": null,
+      "warnings": [
+        "Nombres absents des passages et de la question : 1026.13"
+      ],
+      "timings_ms": {
+        "retrieval": 628.7423999747261,
+        "answer_llm": 6015.049700043164
+      },
+      "answer": "Under Regulation Z, if a creditor determines that a billing error occurred as asserted, it must correct the error and mail or deliver a correction notice within the time limits set in paragraph (c)(2) of §1026.13. Paragraph (c)(2) requires the creditor to complete the appropriate resolution procedures within two complete billing cycles, but in no event later than 90 days after receiving the billing error notice.",
+      "abstained": false,
+      "citations": [
+        {
+          "passage": 1,
+          "quote": "If a creditor determines that a billing error occurred as asserted, it shall within the time limits in paragraph (c)(2) of this section: (1) Correct the billing error...; and (2) Mail or deliver a correction notice to the consumer.",
+          "verified": true,
+          "chunk_id": "e126b9b8-b084-513a-82f5-0670a4447927",
+          "citation": "12 CFR 1026.13(e)"
+        },
+        {
+          "passage": 5,
+          "quote": "The creditor shall comply with the appropriate resolution procedures of paragraphs (e) and (f) of this section, as applicable, within 2 complete billing cycles (but in no event later than 90 days) after receiving a billing error notice.",
+          "verified": true,
+          "chunk_id": "889805e1-c28d-50ee-b4cd-fdd87805990c",
+          "citation": "12 CFR 1026.13(c)"
+        }
+      ],
+      "verified_citations": 2,
+      "reference_numbers_in_answer": true
+    },
+    {
+      "group": "documents",
+      "id": "D025",
+      "search_query": "According to Regulation Z billing error resolution, what must a creditor do if, after a reasonable investigation, it determines that the billing error alleged by the consumer is incorrect?",
+      "rewrite_error": null,
+      "generation_error": null,
+      "retrieved": [
+        "REGZ-013@2.0#f",
+        "REGZ-013@2.0#e",
+        "REGZ-013@2.0#d",
+        "REGZ-013@2.0#g",
+        "REGZ-013@2.0#h"
+      ],
+      "passages_kept_on_error": null,
+      "warnings": [],
+      "timings_ms": {
+        "retrieval": 818.5589999193326,
+        "answer_llm": 8214.495999971405
+      },
+      "answer": "The creditor must, within the time limits in paragraph (c)(2), (1) mail or deliver to the consumer an explanation setting forth the reasons why the creditor believes the alleged billing error is incorrect in whole or in part; (2) furnish copies of documentary evidence of the consumer's indebtedness if the consumer requests them; and (3) if a different billing error occurred, correct that error and credit the consumer’s account with any disputed amount and related finance or other charges, as applicable.",
+      "abstained": false,
+      "citations": [
+        {
+          "passage": 1,
+          "quote": "If, after conducting a reasonable investigation, a creditor determines that no billing error occurred or that a different billing error occurred from that asserted, the creditor shall within the time limits in paragraph (c)(2) of this section:\n(1) Mail or deliver to the consumer an explanation that sets forth the reasons for the creditor's belief that the billing error alleged by the consumer is incorrect in whole or in part;\n(2) Furnish copies of documentary evidence of the consumer's indebtedness, if the consumer so requests; and\n(3) If a different billing error occurred, correct the billing error and credit the consumer's account with any disputed amount and related finance or other charges, as applicable.",
+          "verified": true,
+          "chunk_id": "c1b9c571-31f6-51c1-8018-298636750f28",
+          "citation": "12 CFR 1026.13(f)"
+        }
+      ],
+      "verified_citations": 1,
+      "reference_numbers_in_answer": null
+    },
+    {
+      "group": "documents",
+      "id": "D026",
+      "search_query": "Under Regulation Z, what action is required when a creditor finds that a different billing error occurred than the one asserted by the consumer?",
+      "rewrite_error": null,
+      "generation_error": null,
+      "retrieved": [
+        "REGZ-013@2.0#f",
+        "REGZ-013@2.0#e",
+        "REGZ-013@2.0#h",
+        "REGE-011@2.0#d",
+        "REGZ-013@2.0#d"
+      ],
+      "passages_kept_on_error": null,
+      "warnings": [],
+      "timings_ms": {
+        "retrieval": 702.7663999469951,
+        "answer_llm": 8004.31099999696
+      },
+      "answer": "The creditor must, within the time limits in paragraph (c)(2), (1) mail or deliver to the consumer an explanation stating why the asserted billing error is incorrect in whole or in part; (2) provide copies of documentary evidence of the consumer's indebtedness if the consumer requests them; and (3) if a different billing error is found, correct that error and credit the consumer’s account for the disputed amount and any related finance or other charges.",
+      "abstained": false,
+      "citations": [
+        {
+          "passage": 1,
+          "quote": "If, after conducting a reasonable investigation, a creditor determines that no billing error occurred or that a different billing error occurred from that asserted, the creditor shall within the time limits in paragraph (c)(2) of this section:\n(1) Mail or deliver to the consumer an explanation that sets forth the reasons for the creditor's belief that the billing error alleged by the consumer is incorrect in whole or in part;\n(2) Furnish copies of documentary evidence of the consumer's indebtedness, if the consumer so requests; and\n(3) If a different billing error occurred, correct the billing error and credit the consumer's account with any disputed amount and related finance or other charges, as applicable.",
+          "verified": true,
+          "chunk_id": "c1b9c571-31f6-51c1-8018-298636750f28",
+          "citation": "12 CFR 1026.13(f)"
+        }
+      ],
+      "verified_citations": 1,
+      "reference_numbers_in_answer": null
+    },
+    {
+      "group": "documents",
+      "id": "D029",
+      "search_query": "According to Regulation Z's billing error resolution rules, what happens when a consumer reasserts substantially the same billing error after the creditor has fully complied?",
+      "rewrite_error": null,
+      "generation_error": null,
+      "retrieved": [
+        "REGZ-013@2.0#h",
+        "REGE-011@2.0#e",
+        "REGZ-013@2.0#c",
+        "REGZ-013@2.0#d",
+        "REGZ-013@2.0#e"
+      ],
+      "passages_kept_on_error": null,
+      "warnings": [],
+      "timings_ms": {
+        "retrieval": 779.3556998949498,
+        "answer_llm": 5685.555699979886
+      },
+      "answer": "The creditor has no further responsibilities under the billing‑error section after it has fully complied, even if the consumer later reasserts substantially the same billing error.",
+      "abstained": false,
+      "citations": [
+        {
+          "passage": 1,
+          "quote": "A creditor that has fully complied with the requirements of this section has no further responsibilities under this section (other than as provided in paragraph (g)(4) of this section) if a consumer reasserts substantially the same billing error.",
+          "verified": true,
+          "chunk_id": "6b89ffe6-505b-53b6-b50b-3fa2acc64fbe",
+          "citation": "12 CFR 1026.13(h)"
+        },
+        {
+          "passage": 2,
+          "quote": "A financial institution that has fully complied with the error resolution requirements has no further responsibilities under this section should the consumer later reassert the same error, except in the case of an error asserted by the consumer following receipt of information provided under paragraph (a)(1)(vii) of this section.",
+          "verified": true,
+          "chunk_id": "9fc42ed0-a7be-5f01-8ba6-7c15f315f1a3",
+          "citation": "12 CFR 1005.11(e)"
+        }
+      ],
+      "verified_citations": 2,
+      "reference_numbers_in_answer": false
+    },
+    {
+      "group": "documents",
+      "id": "D030",
+      "search_query": "Under Regulation Z, does a creditor retain any obligations after a consumer reasserts the same billing error, assuming the creditor has already met all section requirements?",
+      "rewrite_error": null,
+      "generation_error": null,
+      "retrieved": [
+        "REGZ-013@2.0#h",
+        "REGE-011@2.0#e",
+        "REGZ-013@2.0#g",
+        "REGZ-013@2.0#f",
+        "REGZ-013@2.0#e"
+      ],
+      "passages_kept_on_error": null,
+      "warnings": [
+        "Nombres absents des passages et de la question : 1005.11, 12"
+      ],
+      "timings_ms": {
+        "retrieval": 784.5977999968454,
+        "answer_llm": 6129.667000030167
+      },
+      "answer": "No. Once a creditor has fully complied with the applicable section requirements, it has no further responsibilities under that section when the consumer reasserts the same billing error, except for the limited exceptions noted in paragraph (g)(4) of the section (Regulation Z) or the specific exception in 12 CFR 1005.11(e).",
+      "abstained": false,
+      "citations": [
+        {
+          "passage": 1,
+          "quote": "A creditor that has fully complied with the requirements of this section has no further responsibilities under this section (other than as provided in paragraph (g)(4) of this section) if a consumer reasserts substantially the same billing error.",
+          "verified": true,
+          "chunk_id": "6b89ffe6-505b-53b6-b50b-3fa2acc64fbe",
+          "citation": "12 CFR 1026.13(h)"
+        },
+        {
+          "passage": 2,
+          "quote": "A financial institution that has fully complied with the error resolution requirements has no further responsibilities under this section should the consumer later reassert the same error, except in the case of an error asserted by the consumer following receipt of information provided under paragraph (a)(1)(vii) of this section.",
+          "verified": true,
+          "chunk_id": "9fc42ed0-a7be-5f01-8ba6-7c15f315f1a3",
+          "citation": "12 CFR 1005.11(e)"
+        }
+      ],
+      "verified_citations": 2,
+      "reference_numbers_in_answer": true
+    },
+    {
+      "group": "documents",
+      "id": "D033",
+      "search_query": "Under Regulation E, when can a consumer be held liable for an unauthorized electronic fund transfer?",
+      "rewrite_error": null,
+      "generation_error": null,
+      "retrieved": [
+        "REGE-006@1.0#a",
+        "REGE-006@1.0#b",
+        "REGE-006@1.0#b",
+        "REGZ-012@2.0#g",
+        "REGZ-013@2.0#i"
+      ],
+      "passages_kept_on_error": null,
+      "warnings": [],
+      "timings_ms": {
+        "retrieval": 702.7365000685677,
+        "answer_llm": 7752.134999958798
+      },
+      "answer": "Under Regulation E a consumer can be held liable for an unauthorized electronic fund transfer only if the financial institution has given the required disclosures (§ 1005.7(b)(1)‑(3)) and the transfer involved an accepted access device that the institution can identify to the consumer (¶ 1). The amount of liability then depends on the consumer’s notice: \n• If the consumer notifies the institution within two business days of learning of loss or theft of the access device, liability is limited to the lesser of $50 or any unauthorized transfers that occurred before notice (¶ 3(b)(1)). \n• If notice is not given within two business days, liability is limited to the lesser of $500 or the sum of $50 (or the amount of unauthorized transfers within the two‑day period, whichever is less) plus any additional amounts under paragraph (b)(2) (¶ 3(b)(2)). \n• For transfers appearing on a periodic statement, the consumer must report them within 60 days of the statement’s transmission to avoid liability for subsequent transfers; otherwise liability is limited to transfers occurring after the 60‑day period (¶ 2(b)(3)). \n• If the consumer’s delay was due to extenuating circumstances, the institution must extend the time limits to a reasonable period (¶ 2(b)(4)).",
+      "abstained": false,
+      "citations": [
+        {
+          "passage": 1,
+          "quote": "A consumer may be held liable, within the limitations described in paragraph (b) of this section, for an unauthorized electronic fund transfer involving the consumer's account only if the financial institution has provided the disclosures required by § 1005.7(b)(1), (2), and (3). If the unauthorized transfer involved an access device, it must be an accepted access device and the financial institution must have provided a means to identify the consumer to whom it was issued.",
+          "verified": true,
+          "chunk_id": "f5f935ae-2f7f-56a4-b437-1229afe2caf7",
+          "citation": "12 CFR 1005.6(a)"
+        },
+        {
+          "passage": 3,
+          "quote": "Timely notice given. If the consumer notifies the financial institution within two business days after learning of the loss or theft of the access device, the consumer's liability shall not exceed the lesser of $50 or the amount of unauthorized transfers that occur before notice to the financial institution.",
+          "verified": true,
+          "chunk_id": "ecaa7074-9929-5377-889e-6c5a70a4c7ef",
+          "citation": "12 CFR 1005.6(b)"
+        },
+        {
+          "passage": 3,
+          "quote": "Timely notice not given. If the consumer fails to notify the financial institution within two business days after learning of the loss or theft of the access device, the consumer's liability shall not exceed the lesser of $500 or the sum of: (i) $50 or the amount of unauthorized transfers that occur within the two business days, whichever is less;",
+          "verified": true,
+          "chunk_id": "ecaa7074-9929-5377-889e-6c5a70a4c7ef",
+          "citation": "12 CFR 1005.6(b)"
+        },
+        {
+          "passage": 2,
+          "quote": "A consumer must report an unauthorized electronic fund transfer that appears on a periodic statement within 60 days of the financial institution's transmittal of the statement to avoid liability for subsequent transfers.",
+          "verified": true,
+          "chunk_id": "7964e57d-6de4-520f-a0f0-ca427f099545",
+          "citation": "12 CFR 1005.6(b)"
+        },
+        {
+          "passage": 2,
+          "quote": "If the consumer's delay in notifying the financial institution was due to extenuating circumstances, the institution shall extend the times specified above to a reasonable period.",
+          "verified": true,
+          "chunk_id": "7964e57d-6de4-520f-a0f0-ca427f099545",
+          "citation": "12 CFR 1005.6(b)"
+        }
+      ],
+      "verified_citations": 5,
+      "reference_numbers_in_answer": true
+    },
+    {
+      "group": "documents",
+      "id": "D034",
+      "search_query": "According to Regulation E, what additional requirement applies if the unauthorized transfer involved an access device?",
+      "rewrite_error": null,
+      "generation_error": null,
+      "retrieved": [
+        "REGE-006@1.0#a",
+        "REGE-006@1.0#b",
+        "REGZ-012@2.0#g",
+        "REGE-006@1.0#b",
+        "REGE-006@1.0#b"
+      ],
+      "passages_kept_on_error": null,
+      "warnings": [],
+      "timings_ms": {
+        "retrieval": 703.530199942179,
+        "answer_llm": 7632.669899961911
+      },
+      "answer": "If the unauthorized transfer involved an access device, Regulation E requires that the device be an accepted access device and that the financial institution must have provided a means to identify the consumer to whom the device was issued.",
+      "abstained": false,
+      "citations": [
+        {
+          "passage": 1,
+          "quote": "If the unauthorized transfer involved an access device, it must be an accepted access device and the financial institution must have provided a means to identify the consumer to whom it was issued.",
+          "verified": true,
+          "chunk_id": "f5f935ae-2f7f-56a4-b437-1229afe2caf7",
+          "citation": "12 CFR 1005.6(a)"
+        }
+      ],
+      "verified_citations": 1,
+      "reference_numbers_in_answer": null
+    },
+    {
+      "group": "documents",
+      "id": "D037",
+      "search_query": "According to Regulation E, what types of transfers or inquiries are defined as an “error”?",
+      "rewrite_error": null,
+      "generation_error": null,
+      "retrieved": [
+        "REGE-011@2.0#a",
+        "REGE-011@2.0#a",
+        "REGZ-013@2.0#i",
+        "REGZ-012@2.0#g",
+        "REGE-011@2.0#c"
+      ],
+      "passages_kept_on_error": null,
+      "warnings": [],
+      "timings_ms": {
+        "retrieval": 649.0220000268891,
+        "answer_llm": 6442.8335999837145
+      },
+      "answer": "The term “error” includes: (i) an unauthorized electronic fund transfer; (ii) an incorrect electronic fund transfer to or from the consumer’s account; (iii) the omission of an electronic fund transfer from a periodic statement; (iv) a computational or bookkeeping error made by the financial institution relating to an electronic fund transfer; (v) the consumer’s receipt of an incorrect amount of money from an electronic terminal; (vi) an electronic fund transfer not identified in accordance with § 1005.9 or § 1005.10(a); and (vii) the consumer’s request for documentation required by § 1005.9 or § 1005.10(a) or for additional information or clarification concerning an electronic fund transfer, including a request to determine whether an error exists.",
+      "abstained": false,
+      "citations": [
+        {
+          "passage": 1,
+          "quote": "The term “error” means: (i) An unauthorized electronic fund transfer; (ii) An incorrect electronic fund transfer to or from the consumer's account; (iii) The omission of an electronic fund transfer from a periodic statement; (iv) A computational or bookkeeping error made by the financial institution relating to an electronic fund transfer; (v) The consumer's receipt of an incorrect amount of money from an electronic terminal; (vi) An electronic fund transfer not identified in accordance with § 1005.9 or § 1005.10(a); or (vii) The consumer's request for documentation required by § 1005.9 or § 1005.10(a) or for additional information or clarification concerning an electronic fund transfer, including a request the consumer makes to determine whether an error exists under paragraphs (a)(1)(i) through (vi) of this section.",
+          "verified": true,
+          "chunk_id": "3be4ea8d-aad8-587c-b0c6-5261c07d1b4a",
+          "citation": "12 CFR 1005.11(a)"
+        }
+      ],
+      "verified_citations": 1,
+      "reference_numbers_in_answer": false
+    },
+    {
+      "group": "documents",
+      "id": "D038",
+      "search_query": "Under Regulation E, which inquiries are specifically excluded from being considered an “error”?",
+      "rewrite_error": null,
+      "generation_error": null,
+      "retrieved": [
+        "REGE-011@2.0#a",
+        "REGE-011@2.0#a",
+        "REGZ-013@2.0#i",
+        "REGE-011@2.0#e",
+        "REGZ-013@2.0#a"
+      ],
+      "passages_kept_on_error": null,
+      "warnings": [],
+      "timings_ms": {
+        "retrieval": 661.3106000004336,
+        "answer_llm": 6621.065799961798
+      },
+      "answer": "Under Regulation E, the term “error” does not include routine inquiries about the consumer’s account balance, requests for information for tax or other recordkeeping purposes, or requests for duplicate copies of documentation.",
+      "abstained": false,
+      "citations": [
+        {
+          "passage": 1,
+          "quote": "The term “error” does not include: (i) A routine inquiry about the consumer's account balance; (ii) A request for information for tax or other recordkeeping purposes; or (iii) A request for duplicate copies of documentation.",
+          "verified": true,
+          "chunk_id": "5145954c-1738-5ca4-8b16-7027f05e0e78",
+          "citation": "12 CFR 1005.11(a)"
+        }
+      ],
+      "verified_citations": 1,
+      "reference_numbers_in_answer": null
+    },
+    {
+      "group": "cfpb_in_scope",
+      "id": "CFPB-12106107",
+      "search_query": "Date of Transaction : XX/XX/year> Type : purchase of coffee and cake at hotel in XXXX XXXX for {$15.00} Issue : I was charged a XXXX cash advance fee for this purchase even thought it was clearly not a cash advance. I requested a waiver of the fee or a credit of the XXXX. I was told the merchant rang it up as lottery ticket or casino chips and the system would not allow that to be waived. Spoke with XXXX, she also said the system would not allow her issue a waiver or credit. Obviously the charge was done incorrectly but was told there was no way to issue a credit back for me, because the system would not allow this. \nWe all know a credit can be issued, they just dont want to be bothered. \nI simply want a credit of the XXXX dollars. \nCompany : Synchrony Bank. Phone # XXXX These companies make XXXX  on consumers per year, they should not be allowed to take advantage of us for any reason like the system wont let me. What kind of nonsensical reason is that? Thank you so much",
+      "rewrite_error": null,
+      "generation_error": null,
+      "retrieved": [
+        "REGF-034@1.0#b",
+        "REGZ-012@2.0#c",
+        "REGE-011@2.0#a",
+        "REGF-034@1.0#c",
+        "REGZ-012@2.0#e"
+      ],
+      "passages_kept_on_error": null,
+      "warnings": [
+        "Citation non retrouvée mot pour mot dans le passage 3.",
+        "Nombres absents des passages et de la question : 1026.12, 12"
+      ],
+      "timings_ms": {
+        "retrieval": 1342.7351000718772,
+        "answer_llm": 8393.681999994442
+      },
+      "answer": "Under the Regulation E error‑resolution rules, a charge that was incorrectly processed as a cash‑advance fee may be treated as an “error” because it is an incorrect electronic fund transfer (12 CFR 1005.11(a)(1)(ii)). The cardholder can dispute the charge by notifying the card issuer and, if the creditor (the merchant) accepts a return or forgives the fee, the creditor must transmit a credit statement within 7 business days and the card issuer must credit the account within 3 business days (12 CFR 1026.12(e)). Therefore, the consumer should formally dispute the fee as an error and request that the creditor issue a credit statement so the card issuer can post the credit to the account.",
+      "abstained": false,
+      "citations": [
+        {
+          "passage": 3,
+          "quote": "The term “error” means: (ii) An incorrect electronic fund transfer to or from the consumer's account;",
+          "verified": false,
+          "chunk_id": "3be4ea8d-aad8-587c-b0c6-5261c07d1b4a",
+          "citation": "12 CFR 1005.11(a)"
+        },
+        {
+          "passage": 5,
+          "quote": "(e) Prompt notification of returns and crediting of refunds. (1) When a creditor other than the card issuer accepts the return of property or forgives a debt for services that is to be reflected as a credit to the consumer's credit card account, that creditor shall, within 7 business days from accepting the return or forgiving the debt, transmit a credit statement to the card issuer through the card issuer's normal channels for credit statements.",
+          "verified": true,
+          "chunk_id": "5f01f86d-31f8-5729-b832-7fab29fc9868",
+          "citation": "12 CFR 1026.12(e)"
+        },
+        {
+          "passage": 5,
+          "quote": "(2) The card issuer shall, within 3 business days from receipt of a credit statement, credit the consumer's account with the amount of the refund.",
+          "verified": true,
+          "chunk_id": "5f01f86d-31f8-5729-b832-7fab29fc9868",
+          "citation": "12 CFR 1026.12(e)"
+        }
+      ],
+      "verified_citations": 2
+    },
+    {
+      "group": "cfpb_in_scope",
+      "id": "CFPB-11576144",
+      "search_query": "Filed a dispute with TD for a XXXX charge from XXXX. Their dispute department is not reachable by phone, online, or by email, only mail and fax. Initial information take by phone, but then a fax sent the same day for documentation of issue. For no explainable reason by TD, they took XXXX XXXX XXXX XXXX XXXX XXXX XXXXXXXX XXXX ) on behalf of XXXX for XXXX random recent refunds in the amounts of XXXX and XXXX on XX/XX/year>, despite never even receiving a credit for the disputed amount. Despite several calls and secure messages no one can explain the rebills, and they can not access the disputes department to resolve this- they are linking it to the initial dispute, and saying it can take up to 90 days. They essentially stole this money and are doing nothing to resolve this issue.",
+      "rewrite_error": null,
+      "generation_error": null,
+      "retrieved": [
+        "REGF-038@1.0#d",
+        "REGV-043@1.0#f",
+        "REGZ-013@2.0#d",
+        "REGF-034@1.0#c",
+        "REGF-034@1.0#a"
+      ],
+      "passages_kept_on_error": null,
+      "warnings": [
+        "Nombres absents des passages et de la question : 1006.38, 1026.13, 12"
+      ],
+      "timings_ms": {
+        "retrieval": 1197.1603001002222,
+        "answer_llm": 13279.927000054158
+      },
+      "answer": "Under 12 CFR 1006.38(d)(2), once a consumer submits a written dispute the debt collector must cease collection of the disputed portion of the debt until it provides the required validation. Additionally, 12 CFR 1026.13(d)(1) gives the consumer the right to withhold payment of any amount that is the subject of the dispute, and the creditor may not attempt to collect that amount. Therefore, TD must stop any collection activity on the disputed charge until it supplies the validation information, and you may withhold payment of the disputed amount while the dispute is being resolved.",
+      "abstained": false,
+      "citations": [
+        {
+          "passage": 1,
+          "quote": "Upon receipt of a dispute submitted by the consumer in writing within the validation period, a debt collector must cease collection of the debt, or any disputed portion of the debt, until the debt collector: (i) Sends a copy either of verification of the debt...",
+          "verified": true,
+          "chunk_id": "9c19ddbb-5fa0-5ae3-8a1d-c4cbfc256632",
+          "citation": "12 CFR 1006.38(d)"
+        },
+        {
+          "passage": 3,
+          "quote": "Consumer's right to withhold disputed amount; collection action prohibited. The consumer need not pay (and the creditor may not try to collect) any portion of any required payment that the consumer believes is related to the disputed amount...",
+          "verified": true,
+          "chunk_id": "08417509-7722-5cac-ada8-4cbf7167eb8f",
+          "citation": "12 CFR 1026.13(d)"
+        }
+      ],
+      "verified_citations": 2
+    },
+    {
+      "group": "cfpb_in_scope",
+      "id": "CFPB-11356707",
+      "search_query": "Consumer Financial Protection Bureau ( CFPB ) Complaint Your Information : XXXX XXXX XXXX XXXX XXXX # XXXX XXXXXXXX XXXX XXXXXXXX XXXX XXXX Date : XX/XX/XXXX To : Consumer Financial Protection Bureau XXXX XXXX XXXX XXXX XXXXXXXX XXXX Subject : Complaint Regarding Unauthorized Charges on Nordstrom Credit Card Dear CFPB Representative, I am writing to file a complaint regarding unauthorized charges that have appeared on my Nordstrom credit card account between XXXX - XXXX of XXXX. The total amount of these charges exceeds {$2000.00}, and neither I, XXXX XXXX, nor my authorized user, XXXX XXXX, authorized these transactions. \n\nThe charges in question were made online at XXXX, and we did not receive any benefits or products from these transactions. Additionally, the packages associated with these charges were delivered to an address that is not my current residence. I have not signed for, ordered, or authorized any purchases from XXXX. \n\nI have previously disputed these charges with XXXX, but my dispute has not been resolved satisfactorily. Therefore, I am requesting that XXXX reopen my billing dispute regarding these fraudulent charges and issue the appropriate credit as per my credit card agreement. Alternatively, I would appreciate if they could offer arbitration to resolve this matter. \n\nIt is concerning that unauthorized transactions have been processed on my account without my consent, and I am seeking your assistance in ensuring that this issue is addressed promptly. \n\nThank you for your attention to this matter. I look forward to your assistance in resolving this issue. \n\nSincerely, XXXX XXXX XXXX XXXX XXXX",
+      "rewrite_error": null,
+      "generation_error": null,
+      "retrieved": [
+        "REGV-043@1.0#f",
+        "REGE-011@2.0#a",
+        "REGF-034@1.0#c",
+        "REGZ-013@2.0#h",
+        "REGZ-012@2.0#c"
+      ],
+      "passages_kept_on_error": null,
+      "warnings": [
+        "Nombres absents des passages et de la question : $2,000, 1026.12, 12"
+      ],
+      "timings_ms": {
+        "retrieval": 1477.0831000059843,
+        "answer_llm": 9479.257100028917
+      },
+      "answer": "The consumer alleges that unauthorized charges exceeding $2,000 were posted to their Nordstrom credit card and that the issuer has not resolved the dispute to their satisfaction. Under 12 CFR § 1005.11(a)(1)(i), an “unauthorized electronic fund transfer” is defined as an error, which covers the type of transaction the consumer describes. Additionally, 12 CFR § 1026.12(c)(1) gives the cardholder the right to assert claims against the card issuer when a dispute over property or services purchased with the credit card is not satisfactorily resolved, including the ability to withhold payment for the disputed amount. These provisions support the consumer’s request to have the dispute reopened and to receive appropriate credit for the alleged unauthorized charges.",
+      "abstained": false,
+      "citations": [
+        {
+          "passage": 2,
+          "quote": "The term “error” means: (i) An unauthorized electronic fund transfer;",
+          "verified": true,
+          "chunk_id": "3be4ea8d-aad8-587c-b0c6-5261c07d1b4a",
+          "citation": "12 CFR 1005.11(a)"
+        },
+        {
+          "passage": 5,
+          "quote": "When a person who honors a credit card fails to resolve satisfactorily a dispute as to property or services purchased with the credit card in a consumer credit transaction, the cardholder may assert against the card issuer all claims (other than tort claims) and defenses arising out of the transaction and relating to the failure to resolve the dispute.",
+          "verified": true,
+          "chunk_id": "e89adb9c-8dba-5b3b-8459-9463e68cf230",
+          "citation": "12 CFR 1026.12(c)"
+        }
+      ],
+      "verified_citations": 2
+    },
+    {
+      "group": "cfpb_in_scope",
+      "id": "CFPB-12222919",
+      "search_query": "Charges were made that were not authorized. Discover refused to show proof of transaction authorization or remove the charge.Card was cancelled and balance for unauthorized transaction is outstanding and now in default. Pending litigation with merchant, an accountant. See copy of NJ accounting board investigation.",
+      "rewrite_error": null,
+      "generation_error": null,
+      "retrieved": [
+        "REGZ-013@2.0#d",
+        "REGE-011@2.0#a",
+        "REGE-011@2.0#c",
+        "REGE-011@2.0#c",
+        "REGZ-013@2.0#h"
+      ],
+      "passages_kept_on_error": null,
+      "warnings": [
+        "Nombres absents des passages et de la question : 1005.11, 1026.13"
+      ],
+      "timings_ms": {
+        "retrieval": 840.0542000308633,
+        "answer_llm": 8246.255899895914
+      },
+      "answer": "Under the Fair Credit Billing Act, a creditor must investigate an alleged unauthorized electronic fund transfer and, unless it has a reasonable basis to withhold a small amount, must provisionally credit the consumer’s account within 10 business days of receiving the notice of error (12 CFR 1005.11(c)(i)). The investigation must be completed within 90 days for certain electronic fund transfers (12 CFR 1005.11(c)(ii)). While the creditor may continue to collect any undisputed portion of the balance, it may not refuse to provide proof of authorization or withhold the disputed amount without complying with these requirements (12 CFR 1026.13(d)). Therefore, Discover should have provisionally credited the disputed charge, provided a written explanation of the transaction, and completed its investigation within the statutory time frame.",
+      "abstained": false,
+      "citations": [
+        {
+          "passage": 4,
+          "quote": "Provisionally credits the consumer's account in the amount of the alleged error (including interest where applicable) within 10 business days of receiving the error notice.",
+          "verified": true,
+          "chunk_id": "b075ec40-3c3a-5a59-a2c0-657fa6fd839f",
+          "citation": "12 CFR 1005.11(c)"
+        },
+        {
+          "passage": 3,
+          "quote": "The applicable time is 90 days in place of 45 days ... for completing an investigation, if a notice of error involves an electronic fund transfer ...",
+          "verified": true,
+          "chunk_id": "a91af41c-d030-5e84-94b3-72a3359054f6",
+          "citation": "12 CFR 1005.11(c)"
+        },
+        {
+          "passage": 1,
+          "quote": "A creditor is not prohibited from taking action to collect any undisputed portion of the item or bill ...",
+          "verified": true,
+          "chunk_id": "26b76f09-9d19-50c7-ba2d-4de560170272",
+          "citation": "12 CFR 1026.13(d)"
+        }
+      ],
+      "verified_citations": 3
+    },
+    {
+      "group": "cfpb_in_scope",
+      "id": "CFPB-12241455",
+      "search_query": "On XX/XX/XXXX I sent somebody {$160.00} through XXXX to buy a XXXX. They said they never received this payment even though it processed. They then said that they needed my Bank account login, Debit card information, XXXX login, and address to start a refund. When I gave them this information they then made multiple payments on my account through XXXX and XXXX. I did not dispute them until now because he said that is what XXXX support told him to do. He used the address I gave him to mimic my IP Address with a VPN. He also used something to mimic my device and I'm not sure what it was. He did this so when he made payments he would not trigger any fraud alerts. There were multiple payments he made, but the ones that went through were {$93.00} on XXXX, {$220.00} on XXXX made on XX/XX/year>, {$270.00} on XXXX made on XX/XX/XXXX, {$90.00} on XXXX made on XX/XX/XXXX, {$110.00} on XXXX made on XX/XX/XXXX, {$70.00} on XXXX made on XX/XX/XXXX, {$30.00} on XXXX made on XX/XX/XXXX, {$5.00} on XXXX made on XX/XX/XXXX, and {$250.00} dollars on XXXX made on XX/XX/XXXX. There were XXXX transactions he made where he forgot to use his VPN and they both triggered fraud alerts. The XXXX transactions were the {$250.00} on XXXX, and a denied {$280.00} payment on XXXX on XX/XX/XXXX. They locked my account and had me get a new debit card. This proves that he had access to my account to make transactions without my authorization. I did not know that these classified as fraud when submitting my initial claims to Chase so I filed some incorrectly. I have filed an XXXX complaint already. I have attached the screenshots of me giving him my Bank account login, XXXX account login, Debit Card information, Address ; The Bank account login from a different device, The failed {$280.00} XXXX payment and The XXXX Complaint.",
+      "rewrite_error": null,
+      "generation_error": null,
+      "retrieved": [
+        "REGE-006@1.0#b",
+        "REGZ-013@2.0#f",
+        "REGZ-012@2.0#c",
+        "REGV-043@1.0#b",
+        "REGZ-013@2.0#d"
+      ],
+      "passages_kept_on_error": null,
+      "warnings": [
+        "Nombres absents des passages et de la question : 1005.6, 12"
+      ],
+      "timings_ms": {
+        "retrieval": 1417.311800061725,
+        "answer_llm": 10527.768800035119
+      },
+      "answer": "Under 12 CFR 1005.6(b), the consumer’s liability for the unauthorized electronic fund transfers depends on whether the consumer gave timely notice to the financial institution. If notice was given within two business days of learning of the loss or theft of the access device, liability is limited to the lesser of $50 or the amount of unauthorized transfers that occurred before notice. If notice was not given within that two‑business‑day window, liability is limited to the lesser of $500 or the sum of $50 plus the amount of unauthorized transfers that occurred within the first two days, whichever is less. Because the passages do not indicate whether the consumer provided notice within two business days, the exact liability amount cannot be determined.",
+      "abstained": false,
+      "citations": [
+        {
+          "passage": 1,
+          "quote": "(1) Timely notice given. If the consumer notifies the financial institution within two business days after learning of the loss or theft of the access device, the consumer's liability shall not exceed the lesser of $50 or the amount of unauthorized transfers that occur before notice to the financial institution.",
+          "verified": true,
+          "chunk_id": "ecaa7074-9929-5377-889e-6c5a70a4c7ef",
+          "citation": "12 CFR 1005.6(b)"
+        },
+        {
+          "passage": 1,
+          "quote": "(2) Timely notice not given. If the consumer fails to notify the financial institution within two business days after learning of the loss or theft of the access device, the consumer's liability shall not exceed the lesser of $500 or the sum of: (i) $50 or the amount of unauthorized transfers that occur within the two business days, whichever is less;",
+          "verified": true,
+          "chunk_id": "ecaa7074-9929-5377-889e-6c5a70a4c7ef",
+          "citation": "12 CFR 1005.6(b)"
+        }
+      ],
+      "verified_citations": 2
+    },
+    {
+      "group": "cfpb_in_scope",
+      "id": "CFPB-11606128",
+      "search_query": "whenever iused cash app and a problem happened i could never peak with a live person. At one point they didnt even have a customer service center or XXXX number to call. Federal law states that you must have live agents. after cash app got fined in 2017 they created fake customer service bots and these bots asked for personal information which lead to a security breech into my credit report",
+      "rewrite_error": null,
+      "generation_error": null,
+      "retrieved": [
+        "REGV-043@1.0#a",
+        "REGZ-012@2.0#b",
+        "REGZ-012@2.0#b",
+        "REGZ-013@2.0#d",
+        "REGV-043@1.0#b"
+      ],
+      "passages_kept_on_error": null,
+      "warnings": [],
+      "timings_ms": {
+        "retrieval": 943.4958000201732,
+        "answer_llm": 7593.596199993044
+      },
+      "answer": "",
+      "abstained": true,
+      "citations": [],
+      "verified_citations": 0
+    },
+    {
+      "group": "cfpb_in_scope",
+      "id": "CFPB-11585647",
+      "search_query": "I have been using XXXX XXXX since 2017 when I first opened my business, thoughout the period since I began my business until current day my main source of outgoing and incoming funds was through Zelle. I was informed of the recent lawsuit and would like to get information on the process and how to file my claim, I also experienced several instances thoughout my period using Zelle where I suffered losses. Thank you.",
+      "rewrite_error": null,
+      "generation_error": null,
+      "retrieved": [
+        "REGE-006@1.0#b",
+        "REGF-034@1.0#c",
+        "REGV-043@1.0#a",
+        "REGE-011@2.0#c",
+        "REGZ-013@2.0#c"
+      ],
+      "passages_kept_on_error": null,
+      "warnings": [],
+      "timings_ms": {
+        "retrieval": 895.5972000258043,
+        "answer_llm": 3773.8074000226334
+      },
+      "answer": "",
+      "abstained": true,
+      "citations": [],
+      "verified_citations": 0
+    },
+    {
+      "group": "cfpb_in_scope",
+      "id": "CFPB-11777971",
+      "search_query": "The contract related to this account is unverifiable and and according to TILA violations, the debt collectors intent is not relevant. The debt collector needs to be thoroughly reinvestigated for an accuracies and violations of the Consumer Financial Protection Act by engaging in unfair and deceptive practices the debt collector also failed to provide the original truth and lending disclosure statement.",
+      "rewrite_error": null,
+      "generation_error": null,
+      "retrieved": [
+        "REGZ-013@2.0#d",
+        "REGF-034@1.0#c",
+        "REGF-034@1.0#d",
+        "REGF-034@1.0#d",
+        "REGZ-013@2.0#d"
+      ],
+      "passages_kept_on_error": null,
+      "warnings": [],
+      "timings_ms": {
+        "retrieval": 965.3881000122055,
+        "answer_llm": 10359.487399924546
+      },
+      "answer": "The provided regulations do not contain any requirements for a debt collector to provide the original Truth‑in‑Lending disclosure statement, nor do they address TILA violations or the relevance of the collector’s intent. The cited sections only describe permissible creditor actions, validation information that must be provided, and prohibitions on adverse reporting and account acceleration.",
+      "abstained": true,
+      "citations": [
+        {
+          "passage": 1,
+          "quote": "A creditor is not prohibited from taking action to collect any undisputed portion of the item or bill; ... provided that the creditor indicates on or with the periodic statement that payment of any disputed amount and related finance or other charges is not required pending the creditor's compliance with this section.",
+          "verified": true,
+          "chunk_id": "26b76f09-9d19-50c7-ba2d-4de560170272",
+          "citation": "12 CFR 1026.13(d)"
+        },
+        {
+          "passage": 2,
+          "quote": "Pursuant to paragraph (a)(1) of this section, a debt collector must provide the following validation information... (ii) The consumer's name and mailing address... (vii) The amount of the debt on the itemization date.",
+          "verified": true,
+          "chunk_id": "cefc21a8-c1ab-5520-a56d-f59314a2dabd",
+          "citation": "12 CFR 1006.34(c)"
+        },
+        {
+          "passage": 5,
+          "quote": "The creditor or its agent shall not (directly or indirectly) make or threaten to make an adverse report to any person about the consumer's credit standing... A creditor shall not accelerate any part of the consumer's indebtedness or restrict or close a consumer's account solely because the consumer has exercised in good faith rights provided by this section.",
+          "verified": true,
+          "chunk_id": "f7b59f41-881f-5c27-8a10-5fddb2c7e493",
+          "citation": "12 CFR 1026.13(d)"
+        }
+      ],
+      "verified_citations": 3
+    },
+    {
+      "group": "cfpb_in_scope",
+      "id": "CFPB-11702236",
+      "search_query": "This is a dent incurred at the hands of frontier communications for Internet equipment. I canceled services XXXX XXXX of XXXX. I was told they would send me a box and shipping label to return equipment. This did not happen! Then in XXXX of XXXX I received a letter from collection agency with whom I had several different communications with stating the issue! They gave me a number to which I called, they gave another number because I requested corporate contact. This corporate contact I think was phony because I requested the box and label again to which they said they would gladly send but never did! I further tried to return by driving to several different frontier communication locations in the XXXX XXXX and XXXX area just to find they were all for the workers installers and I was unable to return on site anywhere! I even asked a client of mine who works for frontier and he said hes not allowed to do that. He also stated he himself was having a problem very similar with frontier, they reported him and he returned the equipment and he works there. It honestly is a shame that cable companies get away with this continuously! How is it that I am requesting ( the ability you provide to Customers when cancelling service ) to return your equipment and you dont follow through and I take the hit! That is horrible business practice and very wrong!",
+      "rewrite_error": null,
+      "generation_error": null,
+      "retrieved": [
+        "REGE-006@1.0#b",
+        "REGV-043@1.0#b",
+        "REGF-034@1.0#c",
+        "REGZ-012@2.0#e",
+        "REGF-034@1.0#d"
+      ],
+      "passages_kept_on_error": null,
+      "warnings": [],
+      "timings_ms": {
+        "retrieval": 1451.9506000215188,
+        "answer_llm": 8844.766600057483
+      },
+      "answer": "The provided regulatory passages do not contain any rules or requirements that address a service provider's obligation to send a return box and shipping label for equipment, nor do they cover the consumer's right to return equipment after canceling service. Therefore, based on the available information, no specific regulatory guidance can be applied to the consumer's situation.",
+      "abstained": true,
+      "citations": [],
+      "verified_citations": 0
+    },
+    {
+      "group": "cfpb_in_scope",
+      "id": "CFPB-11669169",
+      "search_query": "I'VE REQUESTED VERTIFICATION OF THIS DEBT AS REQUIRED UNDER THE FAIR DEBT COLLECTION PRACTICES ACT ( FDCPA ) 15USC1692G. I'VE REQUESTED THE FOLLOWING INFORMATION : 1. THE AMT OF THE DEBT - TO INCLUDE A BREAKDOWN OF THE TOTAL AMT OWED INCLUDING ANY FEES OR INTEREST. 2. THE NAME OF THE ORIGINAL CREDITOR. 3. PROOF OF DEBT - DOCUMENTATION OR SIGNED COPIES OF ANY CONTRACT AGREEMENT, THE DATE OF THE ORIGINAL DEBT AND THE DATE OF THE LAST PAYMENT, OR ANY OTHER EVIDENCE THAT CONFIRM I AGREED TO THIS DEBT. 4. A STATEMENT CONFIRMING THE DEBT IS VALID, ACCURATE, AND LEGALLY ENFORCEABLE. \n\nI HAVE NOT HEARD BACK WITH AN ANSWER.",
+      "rewrite_error": null,
+      "generation_error": null,
+      "retrieved": [
+        "REGF-038@1.0#c",
+        "REGF-034@1.0#c",
+        "REGF-034@1.0#d",
+        "REGF-038@1.0#d",
+        "REGZ-013@2.0#d"
+      ],
+      "passages_kept_on_error": null,
+      "warnings": [
+        "Citation non retrouvée mot pour mot dans le passage 1.",
+        "Citation non retrouvée mot pour mot dans le passage 2.",
+        "Nombres absents des passages et de la question : 1006.38, 12"
+      ],
+      "timings_ms": {
+        "retrieval": 1389.7427999181673,
+        "answer_llm": 9785.588099970482
+      },
+      "answer": "Under the FDCPA, when a consumer submits a written request for validation of a debt—including the amount owed, a breakdown of fees and interest, the name and address of the original creditor, and documentation proving the debt—the debt collector must cease all collection activity until it provides the requested information. 12 CFR 1006.38(c) requires the collector to stop collection until it sends the consumer the name and address of the original creditor (or confirms the original creditor is the same as the current creditor). 12 CFR 1006.34(c)(ix) obligates the collector to disclose the current amount of the debt, and the broader validation requirements in § 1006.34 require the collector to furnish the verification information the consumer has asked for. Because the consumer reports that no response has been received, the collector is currently in violation of these statutory duties.",
+      "abstained": false,
+      "citations": [
+        {
+          "passage": 1,
+          "quote": "Upon receipt of a request for the name and address of the original creditor submitted by the consumer in writing within the validation period, a debt collector must cease collection of the debt until the debt collector: (1) Sends the name and address of the original creditor to the consumer in writing...",
+          "verified": false,
+          "chunk_id": "58f0673b-778f-5c42-8855-0832c1005808",
+          "citation": "12 CFR 1006.38(c)"
+        },
+        {
+          "passage": 2,
+          "quote": "(ix) The current amount of the debt.",
+          "verified": true,
+          "chunk_id": "7ebfcdfc-dd4d-521e-baf9-625e254cacc1",
+          "citation": "12 CFR 1006.34(c)"
+        },
+        {
+          "passage": 2,
+          "quote": "the date that the debt collector will consider the end date of the validation period and a statement that, if the consumer requests in writing on or before that date the name and address of the original creditor, the debt collector must cease collection of the debt until the debt collector sends the consumer the name and address of the original creditor...",
+          "verified": false,
+          "chunk_id": "7ebfcdfc-dd4d-521e-baf9-625e254cacc1",
+          "citation": "12 CFR 1006.34(c)"
+        }
+      ],
+      "verified_citations": 1
+    },
+    {
+      "group": "cfpb_in_scope",
+      "id": "CFPB-11880961",
+      "search_query": "This Complaint is two-parts, a complaint against the hospital provider, XXXX XXXX XXXX XXXX XXXXXXXX, XXXX, and secondly against Ability Recovery Services XXXX I received the following notification from Ability Recovery Services. The last thing I knew about this medical debt was the the Provider was supposed to be rebilling my Insurance Carrier, and they were going to follow-up with me, which they never did. This debt stemmed from I was admitted to XXXX XXXX XXXX in XXXX, VA in XX/XX/XXXX after a fall. All of the departments within the hospital were billed in-network, however, the attending physician was out-of-network, but I did not know that until I received a bill from the provider. I never had a chance to deny being treated by that doctor. I followed up with my Insurance carrier for over a year to rectify this and they said they sent a check for the bill, and I never received any correspondence about settling any debt after speaking with them and saying they would rebill my insurance. Additionally, I have never received anything in writing from this debt collection company so that I can verify or dispute this amount. I only found out because I received a notification from XXXX. Now, they are trying to call me after the fact, but I have not spoken with them. \n\nABILITY RECOVERY SERVI has flagged your account as Collections on XX/XX/XXXX. \n\nSource : XXXX XXXX  : ABILITY RECOVERY SERVI Address : XXXX XXXX XXXX, XXXX, PA XXXX Phone : ( XXXX ) XXXX Activity : XXXX XXXX XXXX ( Collections ) Balance Date : XX/XX/XXXX Balance : {$760.00}",
+      "rewrite_error": null,
+      "generation_error": null,
+      "retrieved": [
+        "REGF-034@1.0#c",
+        "REGF-038@1.0#c",
+        "REGZ-012@2.0#c",
+        "REGZ-013@2.0#f",
+        "REGF-034@1.0#a"
+      ],
+      "passages_kept_on_error": null,
+      "warnings": [
+        "Nombres absents des passages et de la question : 1006.38, 12"
+      ],
+      "timings_ms": {
+        "retrieval": 1425.4173999652267,
+        "answer_llm": 10728.171200025827
+      },
+      "answer": "Under the Fair Debt Collection Practices Act (12 CFR § 1006), the collector must provide you with validation information, including the current amount of the debt (see 12 CFR 1006.34(c)(ix)). You also have the right to request, in writing and within the validation period, the name and address of the original creditor; the collector must cease collection until it provides that information (see 12 CFR 1006.38(c)). Because you have not received any written validation or original‑creditor details from Ability Recovery Services, you can send a written request for this information. Until the collector complies, it must stop collection activities on the disputed portion of the debt.",
+      "abstained": false,
+      "citations": [
+        {
+          "passage": 1,
+          "quote": "The current amount of the debt.",
+          "verified": true,
+          "chunk_id": "7ebfcdfc-dd4d-521e-baf9-625e254cacc1",
+          "citation": "12 CFR 1006.34(c)"
+        },
+        {
+          "passage": 1,
+          "quote": "The date that the debt collector will consider the end date of the validation period and a statement that, if the consumer notifies the debt collector in writing on or before that date that the debt, or any portion of the debt, is disputed, the debt collector must cease collection of the debt, or the disputed portion of the debt, until the debt collector sends the consumer either verification of the debt or a copy of a judgment.",
+          "verified": true,
+          "chunk_id": "7ebfcdfc-dd4d-521e-baf9-625e254cacc1",
+          "citation": "12 CFR 1006.34(c)"
+        },
+        {
+          "passage": 1,
+          "quote": "The date that the debt collector will consider the end date of the validation period and a statement that, if the consumer requests in writing on or before that date the name and address of the original creditor, the debt collector must cease collection of the debt until the debt collector sends the consumer the name and address of the original creditor, if different from the current creditor.",
+          "verified": true,
+          "chunk_id": "7ebfcdfc-dd4d-521e-baf9-625e254cacc1",
+          "citation": "12 CFR 1006.34(c)"
+        },
+        {
+          "passage": 2,
+          "quote": "Upon receipt of a request for the name and address of the original creditor submitted by the consumer in writing within the validation period, a debt collector must cease collection of the debt until the debt collector ... Sends the name and address of the original creditor to the consumer in writing or electronically ...",
+          "verified": true,
+          "chunk_id": "58f0673b-778f-5c42-8855-0832c1005808",
+          "citation": "12 CFR 1006.38(c)"
+        }
+      ],
+      "verified_citations": 4
+    },
+    {
+      "group": "cfpb_in_scope",
+      "id": "CFPB-12182606",
+      "search_query": "On XX/XX/year> I received a notification from XXXX that a collection account was added to my credit report. I immediately disputed the information with XXXX. The collection shows it was reported on XX/XX/year> by XXXX XXXX & XXXX at XXXX XXXX XXXX XXXX  XXXX TX XXXX. I was never notified of such debt nor did I get a chance to validate the debt before it was added to my credit report.",
+      "rewrite_error": null,
+      "generation_error": null,
+      "retrieved": [
+        "REGZ-012@2.0#b",
+        "REGZ-013@2.0#d",
+        "REGF-034@1.0#b",
+        "REGF-038@1.0#b",
+        "REGF-034@1.0#c"
+      ],
+      "passages_kept_on_error": null,
+      "warnings": [
+        "Nombres absents des passages et de la question : 1006.38, 12"
+      ],
+      "timings_ms": {
+        "retrieval": 1004.4733000686392,
+        "answer_llm": 9144.746700068936
+      },
+      "answer": "Under the Fair Debt Collection Practices Act, a debt collector must provide you with a written validation notice that includes the information required by 12 CFR 1006.34(c). The validation period begins when that notice is provided and runs for 30 days (12 CFR 1006.34(b)‑(5)). During that period the collector may not engage in collection activities that “overshadow or are inconsistent with the disclosure of the consumer's rights to dispute the debt and to request the name and address of the original creditor” (12 CFR 1006.38(b)(1)). Because you state you never received such a validation notice, the collector may have violated these requirements, and you retain the right to dispute the debt and request the original‑creditor information within the validation period.",
+      "abstained": false,
+      "citations": [
+        {
+          "passage": 3,
+          "quote": "Validation period means the period starting on the date that a debt collector provides the validation information required by paragraph (c) of this section and ending 30 days after the consumer receives or is assumed to receive the validation information.",
+          "verified": true,
+          "chunk_id": "435f2172-f96c-579e-b7c4-10933f435715",
+          "citation": "12 CFR 1006.34(b)"
+        },
+        {
+          "passage": 4,
+          "quote": "During the validation period, a debt collector must not engage in any collection activities or communications that overshadow or are inconsistent with the disclosure of the consumer's rights to dispute the debt and to request the name and address of the original creditor.",
+          "verified": true,
+          "chunk_id": "7a95c3ce-32ee-55c6-89d2-f55ef807ccbb",
+          "citation": "12 CFR 1006.38(b)"
+        }
+      ],
+      "verified_citations": 2
+    },
+    {
+      "group": "cfpb_in_scope",
+      "id": "CFPB-11454656",
+      "search_query": "I kindly ask for your help to investigate accounts from companies incorrectly reporting late payments. When I was laid off, I requested that these payments be forgiven, and they agreed, but they are still listed as late. I have contacted them multiple times without receiving any updates, so I am reaching out to you as a last resort.",
+      "rewrite_error": null,
+      "generation_error": null,
+      "retrieved": [
+        "REGE-011@2.0#c",
+        "REGZ-013@2.0#f",
+        "REGZ-013@2.0#g",
+        "REGE-011@2.0#c",
+        "REGE-011@2.0#c"
+      ],
+      "passages_kept_on_error": null,
+      "warnings": [
+        "Citation non retrouvée mot pour mot dans le passage 2.",
+        "Citation non retrouvée mot pour mot dans le passage 3.",
+        "Nombres absents des passages et de la question : 1005.11, 12"
+      ],
+      "timings_ms": {
+        "retrieval": 852.4679000256583,
+        "answer_llm": 8982.351300073788
+      },
+      "answer": "Under the Fair Credit Reporting Act regulations, a creditor must investigate a consumer’s dispute about a reported late payment promptly. According to 12 CFR 1005.11(c) the creditor must determine whether an error occurred within 10 business days of receiving the notice and must report the results to the consumer within three business days after completing the investigation (and correct the error within one business day if it is found)【5†(c)(1)】. If the investigation cannot be completed within 10 days, the creditor may extend the investigation to up to 45 days【5†(2)】. \nIf, after a reasonable investigation, the creditor concludes that no billing error occurred, it must mail or deliver to the consumer an explanation of why the alleged error is incorrect and, if requested, provide documentary evidence of the indebtedness【2†(f)(1‑2)】. \nAdditionally, the creditor may not report the account as delinquent if the consumer notifies the creditor in writing that any portion of the billing error is still in dispute, provided the creditor promptly reports the dispute and notifies the consumer of the parties to whom the report is made【3†(4)(i‑ii)】. \nTherefore, you can request that the creditor complete its investigation within the statutory time frames, provide a written explanation if they determine no error, and correct the reporting if an error is found. If they fail to comply, you may file a complaint with the Consumer Financial Protection Bureau or consider further legal action.",
+      "abstained": false,
+      "citations": [
+        {
+          "passage": 5,
+          "quote": "A financial institution shall investigate promptly and, except as otherwise provided in this paragraph (c), shall determine whether an error occurred within 10 business days of receiving a notice of error. The institution shall report the results to the consumer within three business days after completing its investigation. The institution shall correct the error within one business day after determining that an error occurred.",
+          "verified": true,
+          "chunk_id": "9e7a347e-98c3-5758-87b6-e38b1145bdc4",
+          "citation": "12 CFR 1005.11(c)"
+        },
+        {
+          "passage": 5,
+          "quote": "If the financial institution is unable to complete its investigation within 10 business days, the institution may take up to 45 days from receipt of a notice of error to investigate and determine whether an error occurred",
+          "verified": true,
+          "chunk_id": "9e7a347e-98c3-5758-87b6-e38b1145bdc4",
+          "citation": "12 CFR 1005.11(c)"
+        },
+        {
+          "passage": 2,
+          "quote": "If, after conducting a reasonable investigation, a creditor determines that no billing error occurred or that a different billing error occurred from that asserted, the creditor shall within the time limits ... Mail or deliver to the consumer an explanation that sets forth the reasons for the creditor's belief that the billing error alleged by the consumer is incorrect in whole or in part; Furnish copies of documentary evidence of the consumer's indebtedness, if the consumer so requests;",
+          "verified": false,
+          "chunk_id": "c1b9c571-31f6-51c1-8018-298636750f28",
+          "citation": "12 CFR 1026.13(f)"
+        },
+        {
+          "passage": 3,
+          "quote": "May not report that an amount or account is delinquent because the amount due ... remains unpaid, if the creditor receives (within the time allowed for payment ...) further written notice from the consumer that any portion of the billing error is still in dispute, unless the creditor also: Promptly reports that the amount or account is in dispute; Mails or delivers to the consumer ... a written notice of the name and address of each person to whom the creditor makes a report;",
+          "verified": false,
+          "chunk_id": "48156460-8e85-572f-99c5-cd83ec8ae052",
+          "citation": "12 CFR 1026.13(g)"
+        }
+      ],
+      "verified_citations": 2
+    },
+    {
+      "group": "cfpb_in_scope",
+      "id": "CFPB-12100429",
+      "search_query": "In XX/XX/year> I purchased XXXX lights for {$59.00} from Home Depot and used my Home Depot credit card. The allure of getting a discount if I use my card lured me in. I had a {$0.00} balance on this card. With every creditor I have I always request a paper statement and turn on auto-pay. I used this card years back so figured autopay was still on and I'd receive a reminder letter. I've been working XXXX hours a week at work, have been sick, and it was XXXX so I did not have time to followup. Also we purchased additional lights that day and returned some of the lights so in the back of mind I assumed I was back to {$0.00} and didn't question it. \n\nOn XX/XX/XXXX, I received a call from Citibank saying I had a past-due {$130.00} balance. I thought it was a phishing attempt so hung up and called right to Home Depot-Citibank. They told me I was already reported to the credit bureau for being over 30 days late for an original balance of {$59.00} which was now {$130.00}. I was devastated, confused and upset. Home Depot-Citibank told me somehow e-statements got turned on. In addition, the email they have on file for me is old and gets nothing but spam/phishing. I have had an account with Home Depot for many years and have never been late, not once. Neither have I been late with my other creditors. Now, I have seven years with this one {$59.00} charge ( paid off now ) on my report. Citibank was able to contact me easily AFTER they added on the late fees and interest on the late fees and reported to the credit bureau- but they made no attempt to find me as this would have been unusual for my credit history.\n\nI admit technically yes I was late, but because I was sick, and with only {$59.00} I ask that they give me grace and remove this one late payment from my credit report as I thought my auto-pay was on and I would have received a paper statement.",
+      "rewrite_error": null,
+      "generation_error": null,
+      "retrieved": [
+        "REGZ-012@2.0#c",
+        "REGZ-013@2.0#f",
+        "REGZ-012@2.0#b",
+        "REGZ-013@2.0#a",
+        "REGZ-013@2.0#g"
+      ],
+      "passages_kept_on_error": null,
+      "warnings": [],
+      "timings_ms": {
+        "retrieval": 1411.475400091149,
+        "answer_llm": 14809.17370005045
+      },
+      "answer": "",
+      "abstained": true,
+      "citations": [],
+      "verified_citations": 0
+    },
+    {
+      "group": "cfpb_in_scope",
+      "id": "CFPB-11740688",
+      "search_query": "Dear Barclays, I am writing to dispute the inaccurate \" 30-59 Days Late '' mark on my credit report for the account ending in XXXX. This designation is completely unjustified, and I respectfully request that you immediately update my account status to \" current. '' For clarification, my account was frozen in XXXX due to a new credit card application. As a result, I was unable to make payments online or by phone. I made multiple attempts to resolve the security freeze, but each time my efforts were denied for reasons such as an \" unsigned Social Security card '' or \" image too dark. '' It took two months of back-and-forth communication to finally resolve the freeze. Once the clearance was granted, I promptly logged in and paid the account in full this month. \n\nGiven these circumstances, I kindly ask that you review my case and take the necessary steps to correct my credit report. \n\nThank you for your attention to this matter. Please confirm once the correction has been made. \n\nSincerely,",
+      "rewrite_error": null,
+      "generation_error": null,
+      "retrieved": [
+        "REGZ-012@2.0#c",
+        "REGZ-013@2.0#g",
+        "REGZ-013@2.0#g",
+        "REGV-043@1.0#b",
+        "REGZ-012@2.0#d"
+      ],
+      "passages_kept_on_error": null,
+      "warnings": [
+        "Nombres absents des passages et de la question : 12"
+      ],
+      "timings_ms": {
+        "retrieval": 1345.8323000231758,
+        "answer_llm": 9194.921700051054
+      },
+      "answer": "Under 12 CFR §1026.13(g)(3)‑(4), a creditor may not report an account as delinquent if the consumer provides written notice that any portion of the billing error is still in dispute, provided the creditor also promptly reports the dispute and notifies the consumer of the reporting parties. Because you have notified Barclays in writing that the 30‑59‑day‑late mark is inaccurate and that the delay was due to a security freeze, the creditor must treat the account as being in dispute and may not continue to report it as delinquent until the dispute is resolved.",
+      "abstained": false,
+      "citations": [
+        {
+          "passage": 3,
+          "quote": "May not report that an amount or account is delinquent because the amount due ... remains unpaid, if the creditor receives (within the time allowed for payment ...) further written notice from the consumer that any portion of the billing error is still in dispute, unless the creditor also: (i) Promptly reports that the amount or account is in dispute; (ii) Mails or delivers to the consumer ... a written notice of the name and address of each person to whom the creditor makes a report;",
+          "verified": true,
+          "chunk_id": "48156460-8e85-572f-99c5-cd83ec8ae052",
+          "citation": "12 CFR 1026.13(g)"
+        }
+      ],
+      "verified_citations": 1
+    },
+    {
+      "group": "cfpb_out_of_scope",
+      "id": "CFPB-11368452",
+      "search_query": "loandepot is holding insurance proceeds needed to pay a contractor to start work on a repair that is covered by my insurer. \n\nXX/XX/XXXX, XXXX Our home suffered water damage, the incident was covered by my insurer and they agreed to pay for water mitigation and repairs ( {$26000.00} ) XXXX XXXX, XXXX Water mitigation was completed and XXXX paid {$5300.00} XXXX Service Master for their work XX/XX/XXXX, XXXX Contractors have been selected and a check for {$10000.00} was sent from XXXX Insurance to loandepot for XXXX XXXX \n\nXX/XX/XXXX, XXXX loandepot advised that they would not release the funds needed to pay our contractors to purchase material. \n\nXX/XX/XXXX, XXXX loandepot reqeusted an inspection of the completed work, which indicated that 30 % of the job was finished ( the water mitigation ). Our insurance claim XXXX emailed loandepot advising that they release funds so the work could be started, and also stated that XXXX is holding on to the final check until the work is completed. \n\nXX/XX/XXXX, XXXX loandepot stated that they will not release any funds, because more than 25 % of the total value had already been released. I explained that the water mitigation company had already been paid, and their calculations should be based on the remaining work, which is with a new XXXX. We have only been paid 16.74 % of the total value as of XX/XX/year>. \n\nXX/XX/XXXX, XXXX XXXX XXXX loandepot that the total {$10000.00} needs to be release for work to begin, loandepot again advised that they would not release funds until progress is made on the repairs.",
+      "rewrite_error": null,
+      "generation_error": null,
+      "retrieved": [
+        "REGZ-012@2.0#c",
+        "REGF-034@1.0#a",
+        "REGE-006@1.0#b",
+        "REGZ-013@2.0#h",
+        "REGZ-013@2.0#i"
+      ],
+      "passages_kept_on_error": null,
+      "warnings": [],
+      "timings_ms": {
+        "retrieval": 1438.5166999418288,
+        "answer_llm": 8014.371700002812
+      },
+      "answer": "",
+      "abstained": true,
+      "citations": [],
+      "verified_citations": 0
+    },
+    {
+      "group": "cfpb_out_of_scope",
+      "id": "CFPB-11949064",
+      "search_query": "Shellpoint Mortgage failed to pay my home insurance with XXXX XXXX  XXXX for XXXX and XXXX, despite my consistent mortgage payments, which include escrow fees. When I spoke with their agent, XXXX XXXX, she admitted she didnt know why the payment hadnt been made. She also mentioned that Shellpoint plans to make the XXXX payment with the escrow funds. However, due to their non-payment, my home insurance policy has now been canceled. \n\nXXXX, an agent from XXXX XXXX XXXXXXXX, informed me that they sent Shellpoint a non-payment notice on XX/XX/XXXX, but received no response. I followed up with Shellpoint today, XX/XX/XXXX, referencing the case number they provided last week. They had promised to call me back this week, but I have not received any follow-up. \n\nDuring todays call, I spoke with an agent named XXXX, who informed me that it takes Shellpoint 3060 days just to review a case. This is unacceptable. Shellpoints poor service, lack of communication, and negligence have resulted in the cancellation of my insurance. Their customer service logs need to be reviewed, and given their consistently negative reviews, I no longer wish to have my mortgage serviced by this company",
+      "rewrite_error": null,
+      "generation_error": null,
+      "retrieved": [
+        "REGF-034@1.0#e",
+        "REGE-006@1.0#b",
+        "REGZ-013@2.0#c",
+        "REGE-011@2.0#c",
+        "REGZ-013@2.0#h"
+      ],
+      "passages_kept_on_error": null,
+      "warnings": [],
+      "timings_ms": {
+        "retrieval": 1481.8446999415755,
+        "answer_llm": 6613.878999953158
+      },
+      "answer": "",
+      "abstained": true,
+      "citations": [],
+      "verified_citations": 0
+    },
+    {
+      "group": "cfpb_out_of_scope",
+      "id": "CFPB-11374012",
+      "search_query": "Called my mortgage company XX/XX/XXXX as I received a notice they would begin charging me hazard insurance, despite me having proof of insurance. At this time, it was confirmed on the call I was being charged hazard insurance my XXXX, despite having proof of insurance all years. \n- I had to re-upload proof of insurance at that time to confirm all years. And was confirmed on the call the total over the years was {$6800.00}, and I would be receiving a reimbursement check to compensate. \n\nI never received a check, called several times through summer to confirm and was told it would be processed shortly. \n\nXX/XX/XXXX I called again outlining I never received a check, so they took my bank account information for direct deposit. I was told due to XXXX holiday there XXXX be a process delay and I should expect the deposit XXXX following the holiday. \n\nI received no direct deposit, called again XX/XX/XXXX, on a call spanning XXXX hour, XXXX minutes and XXXX departments, confirming I would receive a direct deposit ( this time confirmed in the total of {$7100.00} ), The deposit would be processed for XX/XX/XXXX, due to the holiday I should receive this XX/XX/XXXX. I did not receive any deposit. \n\nI called XX/XX/XXXX confirming I did not receive payment. They identified a check was issued on XX/XX/XXXX ( which I did not request and was not discussed/confirmed on XX/XX/XXXX call ) for the total of {$2800.00}. \n- On this call they told me a check was issued for a smaller amount, and there was a ticket under review for the total amount of {$6800.00} from the original XX/XX/XXXX call, which was already confirmed I would be receiving several times. \n\nAcross 9 months, several phone call attempts, and hours working with them I have still received no reimbursement payment for the money they incorrectly charged me. They also will not send any email/written confirmation of the reimbursement when I speak with them, even if they confirm they will send.",
+      "rewrite_error": null,
+      "generation_error": null,
+      "retrieved": [
+        "REGE-006@1.0#b",
+        "REGE-011@2.0#a",
+        "REGZ-013@2.0#f",
+        "REGE-011@2.0#b",
+        "REGZ-013@2.0#g"
+      ],
+      "passages_kept_on_error": null,
+      "warnings": [
+        "Nombres absents des passages et de la question : $2,800, $6,800,, $7,100,, 1026.13, 12"
+      ],
+      "timings_ms": {
+        "retrieval": 1421.8019000254571,
+        "answer_llm": 10469.96440005023
+      },
+      "answer": "Under the regulations, the consumer’s situation is treated as a billing error. After the creditor conducts a reasonable investigation, if it determines that an error occurred, it must correct the error and credit the consumer’s account for the disputed amount and any related charges (12 CFR §1026.13(f)(3)). The creditor must also provide the consumer with a written explanation of its findings (12 CFR §1026.13(f)(1)) and, if the consumer requests, furnish documentary evidence of the indebtedness (12 CFR §1026.13(f)(2)). Because the consumer has repeatedly been told a reimbursement would be issued but has not received any payment, the creditor is required to credit the consumer’s account for the full disputed amounts ($6,800, $7,100, and $2,800) and provide written confirmation of this credit.",
+      "abstained": false,
+      "citations": [
+        {
+          "passage": 3,
+          "quote": "If, after conducting a reasonable investigation, a creditor determines that no billing error occurred or that a different billing error occurred from that asserted, the creditor shall ... (3) If a different billing error occurred, correct the billing error and credit the consumer's account with any disputed amount and related finance or other charges, as applicable.",
+          "verified": true,
+          "chunk_id": "c1b9c571-31f6-51c1-8018-298636750f28",
+          "citation": "12 CFR 1026.13(f)"
+        },
+        {
+          "passage": 3,
+          "quote": "(1) Mail or deliver to the consumer an explanation that sets forth the reasons for the creditor's belief that the billing error alleged by the consumer is incorrect in whole or in part;",
+          "verified": true,
+          "chunk_id": "c1b9c571-31f6-51c1-8018-298636750f28",
+          "citation": "12 CFR 1026.13(f)"
+        },
+        {
+          "passage": 3,
+          "quote": "(2) Furnish copies of documentary evidence of the consumer's indebtedness, if the consumer so requests;",
+          "verified": true,
+          "chunk_id": "c1b9c571-31f6-51c1-8018-298636750f28",
+          "citation": "12 CFR 1026.13(f)"
+        }
+      ],
+      "verified_citations": 3
+    },
+    {
+      "group": "cfpb_out_of_scope",
+      "id": "CFPB-12133825",
+      "search_query": "We have a mortgage with Shellpoint Mortgage Servicing and I have sent several written requests through the online portal to request an appraisal of our property so we can raise the value of our property and eliminate our PMI. I have also called at least 4 times and spoken with multiple supervisors, and have been told that a letter was being sent that day giving me all the information on how to request that loan re-appraisal through Shellpoint. Only to then get a letter in the mail 2 weeks later letting us know that we do not meet the requirements to terminate our PMI. I have not had anyone be able to give me direct contact with anyone in the PMI department, not even a manager or supervisor. Our property is worth at least double what we purchased it for now, 20 years later, and yet there is no channel of communication available to me to request this appraisal.",
+      "rewrite_error": null,
+      "generation_error": null,
+      "retrieved": [
+        "REGV-043@1.0#f",
+        "REGV-043@1.0#b",
+        "REGF-034@1.0#c",
+        "REGF-034@1.0#a",
+        "REGZ-013@2.0#g"
+      ],
+      "passages_kept_on_error": null,
+      "warnings": [],
+      "timings_ms": {
+        "retrieval": 1287.8172000637278,
+        "answer_llm": 8792.280100053176
+      },
+      "answer": "",
+      "abstained": true,
+      "citations": [],
+      "verified_citations": 0
+    },
+    {
+      "group": "cfpb_out_of_scope",
+      "id": "CFPB-11720589",
+      "search_query": "XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXXXX/XX/XXXX Consumer Financial Protection Bureau XXXX XXXX XXXX XXXX XXXX XXXX Subject : Complaint Regarding Mortgage Companys Failure to Process Tax Bracket Adjustment and Refund To Whom It May Concern, I am writing to formally request your assistance with an ongoing issue involving my mortgage company, Selene Finance XXXX They have failed to complete a tax bracket adjustment and issue a refund in a timely manner, despite repeated follow-ups and assurances that these processes would be resolved quickly. \n\nIn XX/XX/XXXX, I contacted Selene Finance to request a tax bracket adjustment after receiving a 100 % XXXX rating. I was told this process would take only 10 days, but as of XX/XX/XXXX, it is still unresolved. All required documentation was submitted, and there is no valid reason for the delay. \n\nAdditionally, we were supposed to receive a {$3000.00} refund in XX/XX/XXXX, which has yet to be issued. This refund amount should now be even higher, as it is accruing additional funds due to the delay in processing the tax bracket adjustment. Despite contacting the mortgage company multiple times, there has been no meaningful progress or explanation for these delays. \n\nThis situation has caused unnecessary stress and financial strain on my family. The companys lack of action and transparency is unacceptable and a clear failure to meet their obligations. \n\nI am requesting the CFPBs intervention to resolve these issues promptly. Specifically, I ask that Selene Finance be required to : Complete the tax bracket adjustment immediately. \nIssue the refund owed, with any necessary corrections for the additional amount now due. \n\nThank you for your time and attention to this matter. I appreciate the CFPBs dedication to protecting consumers and ensuring fair practices by financial institutions. Please feel free to contact me at [ your phone number ] or [ your email address ] if you need further details or documentation. \n\nSincerely, XXXX XXXX",
+      "rewrite_error": null,
+      "generation_error": null,
+      "retrieved": [
+        "REGE-011@2.0#a",
+        "REGF-038@1.0#c",
+        "REGE-011@2.0#c",
+        "REGZ-013@2.0#f",
+        "REGE-011@2.0#b"
+      ],
+      "passages_kept_on_error": null,
+      "warnings": [
+        "Nombres absents des passages et de la question : 12"
+      ],
+      "timings_ms": {
+        "retrieval": 1403.4340000944212,
+        "answer_llm": 10383.633299963549
+      },
+      "answer": "Under 12 CFR 1005.11(c), a financial institution must investigate a notice of error promptly and determine whether an error occurred within 10 business days of receiving the notice, and must correct the error within one business day after finding that an error occurred. If the investigation cannot be completed within 10 business days, the institution may take up to 45 days, but must still provide a result to the consumer and correct any error thereafter. The consumer’s allegation that Selene Finance promised a 10‑day resolution for the tax‑bracket adjustment and has not completed the adjustment or issued the refund suggests the institution may be failing to meet these statutory time limits for investigating and correcting errors.",
+      "abstained": false,
+      "citations": [
+        {
+          "passage": 3,
+          "quote": "A financial institution shall investigate promptly and, except as otherwise provided in this paragraph (c), shall determine whether an error occurred within 10 business days of receiving a notice of error. The institution shall report the results to the consumer within three business days after completing its investigation. The institution shall correct the error within one business day after determining that an error occurred.",
+          "verified": true,
+          "chunk_id": "9e7a347e-98c3-5758-87b6-e38b1145bdc4",
+          "citation": "12 CFR 1005.11(c)"
+        },
+        {
+          "passage": 3,
+          "quote": "If the financial institution is unable to complete its investigation within 10 business days, the institution may take up to 45 days from receipt of a notice of error to investigate and determine whether an error occurred...",
+          "verified": true,
+          "chunk_id": "9e7a347e-98c3-5758-87b6-e38b1145bdc4",
+          "citation": "12 CFR 1005.11(c)"
+        }
+      ],
+      "verified_citations": 2
+    },
+    {
+      "group": "cfpb_out_of_scope",
+      "id": "CFPB-11363523",
+      "search_query": "XX/XX/year> mortgage companies allow up to XXXX  days to make a mortgage payment before it is considered late. \n\nWe never had a problem paying the mortgage. However, we get paid every XXXX weeks just like everyone else. Sometimes payday lands on the XXXX or XXXX. And depending when payday lands is when we would make our payment. Amerihome mortgage company never had an issue. \n\nFreedom Mortgage recently bought our home loan, required us to increase our home insurance ( now our monthly payment goes up ) and does not allow any grace period to make a payment. Its pretty much a scam or racketeering if you ask me. We have had enough and said XXXX it, we are selling the house because we are done. Its almost like if you bought a car from me and then I tell you hey, youre good on the insurance. Then someone else takes over the loan and says nahh, thats not enough you need more, and by the way, XXXX you pay me now. \n\nThats definitely another reason to push people out homeownership on top of all the other things they have to face.",
+      "rewrite_error": null,
+      "generation_error": null,
+      "retrieved": [
+        "REGV-043@1.0#f",
+        "REGE-006@1.0#b",
+        "REGF-034@1.0#a",
+        "REGF-034@1.0#c",
+        "REGF-034@1.0#b"
+      ],
+      "passages_kept_on_error": null,
+      "warnings": [],
+      "timings_ms": {
+        "retrieval": 1391.4001000812277,
+        "answer_llm": 10552.379600005224
+      },
+      "answer": "",
+      "abstained": true,
+      "citations": [],
+      "verified_citations": 0
+    },
+    {
+      "group": "cfpb_out_of_scope",
+      "id": "CFPB-11550766",
+      "search_query": "Subject : Failure to Provide Payoff Statement for Commercial Loan Issue Description : I am submitting this complaint regarding Shellpoint Mortgage Servicing, which has failed to provide a payoff statement for my commercial loan despite multiple requests. I initially communicated with Shellpoint on XX/XX/XXXX, regarding my request, and the first documented email was sent on XX/XX/XXXX. As of today, XX/XX/XXXX, I have not received the payoff statement. \n\nThis delay is preventing me from accessing the equity in the property for other investment opportunities. The loan is structured as a XXXX interest-only loan with a step-down provision. \n\nIn XXXX phone communication, Shellpoint stated that they are trying to calculate the payoff amount but are having difficulties determining some treasury rate necessary for their calculations. They admitted they are unsure how to proceed, which further suggests a lack of compliance with their obligations. \n\nAdditionally, attorneys with experience dealing with Shellpoint have suggested that this lack of responsiveness is not uncommon in their handling of commercial loans, as they believe Shellpoint may exploit the fact that commercial borrowers lack certain protections afforded to consumers.\n\nDespite my repeated attempts to resolve this matter, Shellpoint has been unresponsive, and I believe this failure to provide the payoff statement constitutes a violation of both the loan agreement and applicable consumer protection regulations. \n\nXXXX XXXX : I request the CFPBs assistance in compelling Shellpoint to provide the payoff statement promptly and to address any underlying issues causing the delay. Furthermore, I urge the CFPB to investigate whether Shellpoints actions reflect a pattern of noncompliance or negligence in handling commercial loans. \n\nAdditional Details : Lender Name : Shellpoint Mortgage Servicing Loan Type : Commercial Loan Term : XXXX interest-only with step-down provision Date of First Request for Payoff Statement : XX/XX/XXXX First Documented Request : XX/XX/XXXX Current Date : XX/XX/XXXX XXXX",
+      "rewrite_error": null,
+      "generation_error": null,
+      "retrieved": [
+        "REGF-038@1.0#c",
+        "REGE-011@2.0#a",
+        "REGZ-012@2.0#c",
+        "REGZ-013@2.0#f",
+        "REGZ-013@2.0#c"
+      ],
+      "passages_kept_on_error": null,
+      "warnings": [
+        "Citation non retrouvée mot pour mot dans le passage 2.",
+        "Nombres absents des passages et de la question : 12"
+      ],
+      "timings_ms": {
+        "retrieval": 1408.5526999551803,
+        "answer_llm": 9278.375600115396
+      },
+      "answer": "The provided regulations do not contain a specific requirement that a mortgage servicer must furnish a payoff statement for a commercial loan, nor do they set a deadline for providing such a statement. While 12 CFR 1005.11(a)(vii) recognizes a consumer's right to request documentation related to an electronic fund transfer, it does not address payoff statements for loan balances. Consequently, there is no regulatory basis in the cited passages to determine whether Shellpoint Mortgage Servicing violated a specific rule by not providing the payoff statement.",
+      "abstained": true,
+      "citations": [
+        {
+          "passage": 2,
+          "quote": "the consumer's request for documentation required by § 1005.9 or § 1005.10(a) or for additional information or clarification concerning an electronic fund transfer, including a request the consumer makes to determine whether an error exists",
+          "verified": false,
+          "chunk_id": "3be4ea8d-aad8-587c-b0c6-5261c07d1b4a",
+          "citation": "12 CFR 1005.11(a)"
+        }
+      ],
+      "verified_citations": 0
+    },
+    {
+      "group": "cfpb_out_of_scope",
+      "id": "CFPB-11503430",
+      "search_query": "On XX/XX/year>, I applied electronically through the XXXX website to switch from SAVE to XXXX. I received a notice from MOHELA XX/XX/year> that my application was received. I called MOHELA and requested to be placed on a processing forbearance. The request was denied. They said that per their guidance from the dept of education, they could not switch me off of the SAVE administrative forbearance until my ICR application was approved. This is nonsensical- why would I need a processing forbearance at the point when my application was approved?",
+      "rewrite_error": null,
+      "generation_error": null,
+      "retrieved": [
+        "REGF-034@1.0#d",
+        "REGF-034@1.0#d",
+        "REGF-034@1.0#c",
+        "REGZ-012@2.0#g",
+        "REGE-006@1.0#b"
+      ],
+      "passages_kept_on_error": null,
+      "warnings": [],
+      "timings_ms": {
+        "retrieval": 1131.1971999239177,
+        "answer_llm": 7637.953500030562
+      },
+      "answer": "",
+      "abstained": true,
+      "citations": [],
+      "verified_citations": 0
+    },
+    {
+      "group": "cfpb_out_of_scope",
+      "id": "CFPB-11466705",
+      "search_query": "I filed a school misconduct application for the discharge of my private student loans because they were forced on me by the XXXX XXXX when I attended. The XXXX XXXX and XXXX have been found to have engaged in fraudulent and deceptive practices and as a result, the federal government has discharged all federal loans for defrauded students like me. \n\nI applied for a school misconduct discharge of my XXXX XXXX loans on XX/XX/XXXX. In that application, I laid out XXXX pages of evidence and testimony as to why these loans should be discharged and refunded. \n\nThe original Principal on this loan was {$4800.00} I started payments on this loan on XX/XX/XXXX I have paid {$13000.00} to date My balance as of today is {$4800.00} Today, I received a blanket denial letter stating that I was not eligible for a discharge. \n\nThe letter gave a generic \" XXXX carefully considers a variety of factors in determining whether a private loan should be discharged based on school misconduct and you do not meet the requirements for discharge based on misconduct by your school. '' OK. Fine.\n\nI contacted MOHELA to get an explanation as to why my application was denied and was told that the reasons were \" Proprietary and confidential ''. \n\nAs a consumer, I have a right to know what led to the determination of my denial and should be allowed to rebut any reasons behind it. \n\nThe fact that MOHELA and XXXX both KNOW that these schools acted in a fraudulent matter and are denying discharges is acting in bad faith. They are making it even worse by not giving a reason for denying it, other than the generic blanket denial statement.",
+      "rewrite_error": null,
+      "generation_error": null,
+      "retrieved": [
+        "REGV-043@1.0#f",
+        "REGF-038@1.0#c",
+        "REGF-038@1.0#d",
+        "REGZ-013@2.0#f",
+        "REGZ-012@2.0#c"
+      ],
+      "passages_kept_on_error": null,
+      "warnings": [
+        "Nombres absents des passages et de la question : 1006.38, 1026.13, 12"
+      ],
+      "timings_ms": {
+        "retrieval": 1481.5115000819787,
+        "answer_llm": 9409.336499986239
+      },
+      "answer": "Under the regulations, a creditor (or debt collector) must provide you with an explanation of why it denied your request. 12 CFR 1026.13(f)(1) requires the creditor, after a reasonable investigation, to mail or deliver to the consumer “an explanation that sets forth the reasons for the creditor's belief that the billing error alleged by the consumer is incorrect in whole or in part.”  Similarly, 12 CFR 1006.38(d)(2) obligates a debt collector, upon receiving a written dispute, to either provide verification of the debt or, if the dispute is deemed duplicative, to notify the consumer in writing “that the dispute is duplicative, provides a brief statement of the reasons for the determination, and refers the consumer to the debt collector's response to the earlier dispute.” Therefore, you have a statutory right to receive a specific reason for the denial of your school‑misconduct discharge application, and the creditor must supply that explanation in writing.",
+      "abstained": false,
+      "citations": [
+        {
+          "passage": 4,
+          "quote": "Mail or deliver to the consumer an explanation that sets forth the reasons for the creditor's belief that the billing error alleged by the consumer is incorrect in whole or in part;",
+          "verified": true,
+          "chunk_id": "c1b9c571-31f6-51c1-8018-298636750f28",
+          "citation": "12 CFR 1026.13(f)"
+        },
+        {
+          "passage": 3,
+          "quote": "In the case of a dispute that the debt collector reasonably determines is a duplicative dispute, either: (A) Notifies the consumer in writing ... that the dispute is duplicative, provides a brief statement of the reasons for the determination, and refers the consumer to the debt collector's response to the earlier dispute;",
+          "verified": true,
+          "chunk_id": "9c19ddbb-5fa0-5ae3-8a1d-c4cbfc256632",
+          "citation": "12 CFR 1006.38(d)"
+        }
+      ],
+      "verified_citations": 2
+    },
+    {
+      "group": "cfpb_out_of_scope",
+      "id": "CFPB-12071115",
+      "search_query": "Violation of FERPA and the Privacy Act, when XXXX XXXX and his subordinates infiltrated the XXXX XXXX XXXX XXXX and Department of Education computer system on XXXX XX/XX/year>. I demand immediate investigation into this matter, as my loan servicer and the Department of Education are responsible for ensuring the security of my private data. If my rights under FERPA and the privacy Act have been violated, I expect appropriate legal and financial remedies including potential loan forgiveness for contract breach. I expect this to be resolved in a timely manner.",
+      "rewrite_error": null,
+      "generation_error": null,
+      "retrieved": [
+        "REGZ-013@2.0#g",
+        "REGZ-013@2.0#c",
+        "REGF-038@1.0#b",
+        "REGF-034@1.0#d",
+        "REGE-011@2.0#c"
+      ],
+      "passages_kept_on_error": null,
+      "warnings": [],
+      "timings_ms": {
+        "retrieval": 936.3724000286311,
+        "answer_llm": 8613.614499918185
+      },
+      "answer": "",
+      "abstained": true,
+      "citations": [],
+      "verified_citations": 0
+    },
+    {
+      "group": "cfpb_out_of_scope",
+      "id": "CFPB-12058901",
+      "search_query": "At the end of XXXX, I intended to make {$2500.00} in payments against the interest of my loans. I made XXXX payments, totaling exactly {$2500.00}, the last being on XX/XX/XXXX. I made these payments with the intent of them being applied \" interest only '' On XX/XX/XXXX, only after I received my 1098-E for XXXX from Nelnet did XXXX see that only ~ {$1300.00} was applied to interest did I reach out to Nelnet requesting an explanation and to have the payments corrected, which the servicer stated he would do to reallocate the full {$2500.00} to the interest and send a corrected XXXX. \n\nThe reallocation was made on XX/XX/XXXX. \n\nOn XX/XX/XXXX, however when I checked on the 1098-E, as I was told to do so by Nelnet, I was told by a different rep that they would not send a corrected 1098-E. When I inquired and requested explanation and a correction, I was sent to a different employee who seemed to be needlessly elongating the phone call, with long bouts of silence, seemingly in an attempt to have me hang up. He was named XXXX XXXX. \n\nAt one point, XXXX said \" the IRS says we can't do that, '' to which I responded \" can you cite me the PRS Publication stating that, '' to which he said \" No. I can't. But the IRS said we can't send a corrected form. '' XXXX XXXX was saying that his supervisor, XXXX, was the one telling him not to offer a corrected 1098-E. I had XXXX XXXX fill out an official complaint, citing his statement of the IRS and stating the relief I am requesting. \n\nRELEIF REQUESTED : A corrected 1098-E from Nelnet for XXXX showing {$2500.00} Reasoning : XXXX ) The payments were made in XXXX. \nXXXX ) The evidence ( {$2000.00} paid on XX/XX/XXXX ) demonstrates that the payments were intended to be completed before the XXXX tax deadline showing the payments made outside the suggested pay-schedule-amount were only intended for tax purposes. \nXXXX ) The sole reason the payments were not applied to interest was due to Nelnet 's software and online payment system improperly classifying the payments toward principal instead of being \" interest only '' payments XXXX ) Nelnet 's refusal to correct the 1098-E, mistaken because of their actions or inactions, are creating economic harm to the debtor, XXXX XXXX XXXX who has demonstrated good standing and proper adherence to payment schedules before they are due. \n\nI am requesting that the CFPB work with Nelnet to provide an updated 1098-E for XXXX showing {$2500.00} so I can accurately report this to the IRS.",
+      "rewrite_error": null,
+      "generation_error": null,
+      "retrieved": [
+        "REGF-034@1.0#e",
+        "REGF-034@1.0#c",
+        "REGF-038@1.0#c",
+        "REGZ-013@2.0#f",
+        "REGZ-013@2.0#d"
+      ],
+      "passages_kept_on_error": null,
+      "warnings": [],
+      "timings_ms": {
+        "retrieval": 1462.1503999223933,
+        "answer_llm": 9815.208500018343
+      },
+      "answer": "",
+      "abstained": true,
+      "citations": [],
+      "verified_citations": 0
+    },
+    {
+      "group": "cfpb_out_of_scope",
+      "id": "CFPB-11694241",
+      "search_query": "MOHELA DOES NOT LIST THE FULL ACCOUNT NUMBERS ANYWHERE. MY LOAN DETAILS ONLY SAYS XXXX, XXXX, XXXX, XXXX, XXXX, XXXX THOSE ARE NOT ACCOUNT NUMBERS. I NEED ACCOUNT NUMBERS. WAITING XXXX XXXX HOURS MEANS I HAVE TO QUIT MY FULL TIME JOB TO CALL MOHELA. FOR MOHELA TO PAY EXECUTIVES OVER XXXX XXXX XXXX A YEAR AND CALL WAIT TIMES OVER XXXX XXXX HOURS ON MULTIPLE OCCASSIONS IS UNACCEPTABLE.",
+      "rewrite_error": null,
+      "generation_error": null,
+      "retrieved": [
+        "REGZ-013@2.0#g",
+        "REGF-034@1.0#d",
+        "REGV-043@1.0#f",
+        "REGZ-013@2.0#d",
+        "REGF-034@1.0#c"
+      ],
+      "passages_kept_on_error": null,
+      "warnings": [],
+      "timings_ms": {
+        "retrieval": 1157.521800021641,
+        "answer_llm": 6672.394100110978
+      },
+      "answer": "",
+      "abstained": true,
+      "citations": [],
+      "verified_citations": 0
+    },
+    {
+      "group": "cfpb_out_of_scope",
+      "id": "CFPB-11881431",
+      "search_query": "My federal student loans were transitioned to Mohela in XXXX. In XX/XX/XXXX Mohela experienced a \" platform change '' that caused disruption to my autopay as well as an inaccurate reflection of my payment history. I am in need of an accurate payment history to provide proof of payment to my employer who is assisting me with a loan repayment program. I have been repeatedly contacting Mohela 's customer service line since XX/XX/XXXX requesting a letter that details an accurate payment history. When contacting the customer service line wait times have been upwards of XXXX hours. Often times when I finally get a call back I am then informed that the person is unable to assist me and that I will need to be transferred to another individual only to be placed again on hold for hours. There have even been instances where I did not receive a call back because my estimated wait time exceeded their hours of operation for that business day. My letter request has been submitted upwards of XXXX or more times and incorrectly completed each time despite my explanation that my payment history needs to be pulled from the \" old platform '' to accurately detail my monthly payments. After XXXX months of calling weekly, sometimes even more than once per week, I still have no resolution. I have been told that they are unable to correct my account history on their \" new platform '' so I can not personally access an accurate payment history to provide to my employer to continue with their loan repayment program.",
+      "rewrite_error": null,
+      "generation_error": null,
+      "retrieved": [
+        "REGF-038@1.0#c",
+        "REGF-034@1.0#e",
+        "REGE-006@1.0#b",
+        "REGF-034@1.0#a",
+        "REGZ-013@2.0#f"
+      ],
+      "passages_kept_on_error": null,
+      "warnings": [
+        "Nombres absents des passages et de la question : 1026.13, 12"
+      ],
+      "timings_ms": {
+        "retrieval": 1529.028999968432,
+        "answer_llm": 9366.014999919571
+      },
+      "answer": "Under 12 CFR 1026.13(f), if a consumer alleges an error in the billing or payment history, the creditor must conduct a reasonable investigation. After the investigation, the creditor must (1) mail or deliver an explanation of why it believes the alleged error is incorrect, (2) provide copies of documentary evidence of the consumer’s indebtedness if the consumer requests it, and (3) correct any billing error that is found and credit the account accordingly. Therefore, Mohela is required to investigate the alleged inaccurate payment history, explain its findings, and furnish you with the requested documentation of your payment history.",
+      "abstained": false,
+      "citations": [
+        {
+          "passage": 5,
+          "quote": "If, after conducting a reasonable investigation, a creditor determines that no billing error occurred or that a different billing error occurred from that asserted, the creditor shall within the time limits ... (1) Mail or deliver to the consumer an explanation ... (2) Furnish copies of documentary evidence of the consumer's indebtedness, if the consumer so requests; ...",
+          "verified": true,
+          "chunk_id": "c1b9c571-31f6-51c1-8018-298636750f28",
+          "citation": "12 CFR 1026.13(f)"
+        }
+      ],
+      "verified_citations": 1
+    },
+    {
+      "group": "cfpb_out_of_scope",
+      "id": "CFPB-11871084",
+      "search_query": "I applied to the XXXX program XX/XX/XXXX. My application was not approved before the federal injunction that paused all XXXX processing happened. On XX/XX/XXXX I received a letter from MOHELA stating : As a result of this ruling, XXXX has directed MOHELA to put your account into a forbearance because either : XXXX. XXXX. You are currently a borrower on XXXX. \n60 Days have passed since we received your XXXX application, and it has not yet been processed. \nWhat does this mean for me? \nWhile you are in this forbearance no payment is required on your account and your interest rate will be set to 0 %. This means no interest will accrue while you are in the forbearance. \n\nMy loans were not placed into a forbearance. I called MOHELA within the week and asked why my loans were not placed in this interest free forbearance. They were unable to give me an answer. On XX/XX/XXXX, I received the exact same letter. Again, my loans have not been placed into this interest free forbearance. I attempted to call MOHELA however my estimated wait time was XXXX hours upon calling. \n\nI have now been told twice that my loans would be placed in interest free forbearance. They have not been placed in this interest free forbearance. Not only are my loans not in this forbearance but interest has continued to accumulate when it shouldnt have been. MOHELA has not given me an answer as to why. MOHELA has been directed by a federal institution to do so, and they are not. I am now unable to contact MOHELA.",
+      "rewrite_error": null,
+      "generation_error": null,
+      "retrieved": [
+        "REGF-034@1.0#c",
+        "REGF-038@1.0#c",
+        "REGE-011@2.0#c",
+        "REGF-034@1.0#a",
+        "REGE-011@2.0#b"
+      ],
+      "passages_kept_on_error": null,
+      "warnings": [],
+      "timings_ms": {
+        "retrieval": 1499.6828000294045,
+        "answer_llm": 9707.426300039515
+      },
+      "answer": "",
+      "abstained": true,
+      "citations": [],
+      "verified_citations": 0
+    },
+    {
+      "group": "cfpb_out_of_scope",
+      "id": "CFPB-11532875",
+      "search_query": "I am writing a complaint against navy federal credit union regarding multiple overdraft fees I have occurred. Despite having sufficient when transactions were authorized, I was charged fees due to lagged posting of charges and credits. This issue aligns with the recent CFPB findings against Navy Federal for similar practices where transactions settled with insufficient balances despite initially available funds. I believe these practices are unfair and request an investigation into my account transactions.",
+      "rewrite_error": null,
+      "generation_error": null,
+      "retrieved": [
+        "REGE-011@2.0#d",
+        "REGZ-013@2.0#g",
+        "REGZ-013@2.0#d",
+        "REGE-011@2.0#d",
+        "REGZ-013@2.0#g"
+      ],
+      "passages_kept_on_error": null,
+      "warnings": [],
+      "timings_ms": {
+        "retrieval": 937.1298999758437,
+        "answer_llm": 6739.6994000300765
+      },
+      "answer": "The provided regulations do not contain specific rules or time limits regarding overdraft fees, lagged posting of charges, or the handling of insufficient funds when transactions were initially authorized. Therefore, I cannot determine whether the practices described are prohibited or require specific remedial action under the cited sections.",
+      "abstained": true,
+      "citations": [],
+      "verified_citations": 0
+    },
+    {
+      "group": "cfpb_out_of_scope",
+      "id": "CFPB-11631605",
+      "search_query": "Im writing to file a complaint against Navy Federal Credit Union regarding multiple overdraft fees I have incurred. Despite having significant funds when transactions were authorized, I was charged fees due to lagged posting of charges and credits. This issue aligns with the recent CFPB finding against Navy Federal for similar practices, where transactions settled with insufficient balances despite initially available funds. I believe these practices are unfair and request an investigation into my account transactions.",
+      "rewrite_error": null,
+      "generation_error": null,
+      "retrieved": [
+        "REGE-011@2.0#d",
+        "REGZ-013@2.0#g",
+        "REGZ-013@2.0#g",
+        "REGZ-013@2.0#d",
+        "REGE-011@2.0#c"
+      ],
+      "passages_kept_on_error": null,
+      "warnings": [
+        "Nombres absents des passages et de la question : 1005.11"
+      ],
+      "timings_ms": {
+        "retrieval": 897.5868000416085,
+        "answer_llm": 7365.449900040403
+      },
+      "answer": "According to 12 CFR 1005.11(c), the credit union must provisionally credit your account for the alleged error within 10 business days of receiving your notice of the overdraft fee dispute, and it may withhold up to $50 only if it has a reasonable basis to suspect an unauthorized electronic fund transfer. Additionally, 12 CFR 1005.11(d) requires the institution, after notifying you of the error, to honor checks, drafts, or similar items for five business days without charging you an overdraft fee for those items. You can therefore request that Navy Federal Credit Union provide the required provisional credit and honor any pending transactions for the five‑business‑day period while it investigates the alleged overdraft fee errors.",
+      "abstained": false,
+      "citations": [
+        {
+          "passage": 5,
+          "quote": "Provisionally credits the consumer's account in the amount of the alleged error (including interest where applicable) within 10 business days of receiving the error notice.",
+          "verified": true,
+          "chunk_id": "b075ec40-3c3a-5a59-a2c0-657fa6fd839f",
+          "citation": "12 CFR 1005.11(c)"
+        },
+        {
+          "passage": 1,
+          "quote": "Notify the consumer that the institution will honor checks, drafts, or similar instruments payable to third parties and preauthorized transfers from the consumer's account (without charge to the consumer as a result of an overdraft) for five business days after the notification.",
+          "verified": true,
+          "chunk_id": "172db4c0-6430-5375-a9e2-888029d663f4",
+          "citation": "12 CFR 1005.11(d)"
+        }
+      ],
+      "verified_citations": 2
+    },
+    {
+      "group": "cfpb_out_of_scope",
+      "id": "CFPB-11945142",
+      "search_query": "Complaint Details I am filing this complaint against Chase Bank regarding their unfair and deceptive overdraft practices, which have resulted in financial hardship during my period of unemployment. \n\nIn XX/XX/year>, I noticed that Chase allowed several transactions to be processed on my checking account, even though I do not have overdraft protection enabled. According to Chases policy, without overdraft protection, any transaction that exceeds my available balance should be declined. However, Chase approved these transactions and then charged me overdraft fees, which is inconsistent with their stated policies. \n\nAfter reviewing my account, I saw multiple overdraft fees assessed on transactions that should not have gone through in the first place. As a result, my account became negative by nearly {$300.00} in XXXX, and almost {$400.00} two weeks later, at the top of XX/XX/year>. These negative balances significantly affect my ability to cover necessary expenses such as transportation, utilities, and groceries. \n\nMy only source of income at the moment is my unemployment benefits, which amount to approximately {$2000.00} monthly. Because of these unfair fees, a substantial portion of my unemployment check is now being absorbed by exhorbitant penalties rather than covering my essential needs. \n\nI reached out to Chases customer service and spoke with representatives, including the escalation team, to request a reversal of these improperly charged fees. Despite explaining my situation and the banks error in allowing transactions that should have been declined, Chase refused to refund the overdraft fees, suggesting that they have the right to choose to approve transactions even if funds are not available. Their refusal is particularly harmful given my current financial situation and the fact that the fees were charged due to their own system allowing unauthorized transactions. The escalation representative indicated that only XXXX overdraft fees could be reversed in a calendar year, yet they have imposed more than XXXX illegal fees on my account since XX/XX/scrub>XXXX XXXX XXXX",
+      "rewrite_error": null,
+      "generation_error": null,
+      "retrieved": [
+        "REGE-006@1.0#b",
+        "REGE-011@2.0#a",
+        "REGZ-012@2.0#c",
+        "REGZ-013@2.0#f",
+        "REGZ-013@2.0#d"
+      ],
+      "passages_kept_on_error": null,
+      "warnings": [
+        "Citation non retrouvée mot pour mot dans le passage 4.",
+        "Nombres absents des passages et de la question : 1005.6, 1026.13, 12"
+      ],
+      "timings_ms": {
+        "retrieval": 1490.4348000418395,
+        "answer_llm": 11762.756900046952
+      },
+      "answer": "Under 12 CFR §1005.11(a) an overdraft fee that results from a transaction the bank should have declined can be treated as an “error” because it may constitute an unauthorized or incorrect electronic fund transfer. The consumer therefore has the right to dispute the fee as an error. If the bank determines that the fee was improperly assessed, 12 CFR §1026.13(f) requires the creditor to explain its position in writing and, if a different billing error is found, to correct the error and credit the consumer’s account for the disputed amount and any related charges. Moreover, if the consumer reported the problem within two business days, 12 CFR §1005.6(b)(1) limits the consumer’s liability for unauthorized transfers to the lesser of $50 or the amount of the unauthorized transfers, meaning the bank may be required to limit the consumer’s responsibility for the overdraft fees. The consumer should provide timely notice of the alleged error and request a written explanation and correction per the cited regulations.",
+      "abstained": false,
+      "citations": [
+        {
+          "passage": 2,
+          "quote": "The term “error” means: (i) An unauthorized electronic fund transfer; (ii) An incorrect electronic fund transfer to or from the consumer's account; ...",
+          "verified": true,
+          "chunk_id": "3be4ea8d-aad8-587c-b0c6-5261c07d1b4a",
+          "citation": "12 CFR 1005.11(a)"
+        },
+        {
+          "passage": 1,
+          "quote": "If the consumer notifies the financial institution within two business days after learning of the loss or theft of the access device, the consumer's liability shall not exceed the lesser of $50 or the amount of unauthorized transfers that occur before notice to the financial institution.",
+          "verified": true,
+          "chunk_id": "ecaa7074-9929-5377-889e-6c5a70a4c7ef",
+          "citation": "12 CFR 1005.6(b)"
+        },
+        {
+          "passage": 4,
+          "quote": "If, after conducting a reasonable investigation, a creditor determines that no billing error occurred or that a different billing error occurred ... the creditor shall ... (1) Mail or deliver to the consumer an explanation ...; (3) If a different billing error occurred, correct the billing error and credit the consumer's account with any disputed amount and related finance or other charges.",
+          "verified": false,
+          "chunk_id": "c1b9c571-31f6-51c1-8018-298636750f28",
+          "citation": "12 CFR 1026.13(f)"
+        }
+      ],
+      "verified_citations": 2
+    },
+    {
+      "group": "cfpb_out_of_scope",
+      "id": "CFPB-11694504",
+      "search_query": "I am writing to file a complaint against Navy Federal Credit Union regarding multiple overdraft fees I have incurred. Despite having sufficient funds when transactions were authorized, I was charged fees due to lagged posting of charges and credits. This issue aligns with CFPB findings against Navy Federal for similar practices, where transactions settled with insufficient balances despite initially available funds. I believe these practices are unfair and request an investigation into my account transactions.",
+      "rewrite_error": null,
+      "generation_error": null,
+      "retrieved": [
+        "REGE-011@2.0#d",
+        "REGZ-013@2.0#g",
+        "REGZ-013@2.0#g",
+        "REGZ-013@2.0#d",
+        "REGE-011@2.0#c"
+      ],
+      "passages_kept_on_error": null,
+      "warnings": [
+        "Nombres absents des passages et de la question : 1005.11"
+      ],
+      "timings_ms": {
+        "retrieval": 982.2837999090552,
+        "answer_llm": 9271.514300024137
+      },
+      "answer": "Under 12 CFR 1005.11(d), once the credit union determines that no error occurred it must notify you of the date and amount of the debiting and, for five business days after that notice, honor checks, drafts, or similar instruments payable to third parties and pre‑authorized transfers from your account without charging you an overdraft fee. Additionally, 12 CFR 1005.11(c)(i) requires the institution to provisionally credit your account for the alleged error within 10 business days of receiving your notice of error. These provisions mean the credit union should have either credited the disputed amounts promptly or, at a minimum, honored the transactions for five business days after notifying you, thereby preventing overdraft fees from being assessed.",
+      "abstained": false,
+      "citations": [
+        {
+          "passage": 1,
+          "quote": "Notify the consumer that the institution will honor checks, drafts, or similar instruments payable to third parties and preauthorized transfers from the consumer's account (without charge to the consumer as a result of an overdraft) for five business days after the notification.",
+          "verified": true,
+          "chunk_id": "172db4c0-6430-5375-a9e2-888029d663f4",
+          "citation": "12 CFR 1005.11(d)"
+        },
+        {
+          "passage": 5,
+          "quote": "Provisionally credits the consumer's account in the amount of the alleged error (including interest where applicable) within 10 business days of receiving the error notice.",
+          "verified": true,
+          "chunk_id": "b075ec40-3c3a-5a59-a2c0-657fa6fd839f",
+          "citation": "12 CFR 1005.11(c)"
+        }
+      ],
+      "verified_citations": 2
+    },
+    {
+      "group": "cfpb_out_of_scope",
+      "id": "CFPB-11544075",
+      "search_query": "I am willing to file a complaint by Navy Federal Union credit regarding multiple overdraft fees. I have Incurred. Despite having insufficient funds. When transition was authorized, I was charged fees due to lagged posting of charges and credit cards this issue aligns with the recent CFBP finding against Navy Federal for similar practices when transaction settled with insufficient balance, despite initially available fund I believe these practices are unfair and request an investigation into my transactions",
+      "rewrite_error": null,
+      "generation_error": null,
+      "retrieved": [
+        "REGE-011@2.0#d",
+        "REGZ-013@2.0#d",
+        "REGZ-013@2.0#g",
+        "REGZ-013@2.0#d",
+        "REGZ-012@2.0#c"
+      ],
+      "passages_kept_on_error": null,
+      "warnings": [
+        "Nombres absents des passages et de la question : 12"
+      ],
+      "timings_ms": {
+        "retrieval": 931.7530000116676,
+        "answer_llm": 7807.847400079481
+      },
+      "answer": "The provided regulations do not contain specific rules governing overdraft fees, lagged posting of charges, or the fairness of such practices by a credit union. Therefore, there is insufficient regulatory guidance in the cited passages to determine whether the described actions violate 12 CFR provisions.",
+      "abstained": true,
+      "citations": [],
+      "verified_citations": 0
+    },
+    {
+      "group": "cfpb_out_of_scope",
+      "id": "CFPB-11577760",
+      "search_query": "I am writing to file a complaint against Navy Federal Credit Union regarding multiple overdraft fees I incurred. Despite having sufficient funds when transactions were authorized, I was charged fees due to lagged posting of charges and credits. This issue aligns with recent CFPB findings against XXXX XXXX for similar practices, where transactions settled with insufficient balances Despite initially available funds. I believe these practices are unfair and require an investigation into my account transactions.",
+      "rewrite_error": null,
+      "generation_error": null,
+      "retrieved": [
+        "REGE-011@2.0#d",
+        "REGZ-013@2.0#g",
+        "REGZ-013@2.0#g",
+        "REGZ-013@2.0#d",
+        "REGF-034@1.0#c"
+      ],
+      "passages_kept_on_error": null,
+      "warnings": [],
+      "timings_ms": {
+        "retrieval": 905.3854000521824,
+        "answer_llm": 6657.880299957469
+      },
+      "answer": "",
+      "abstained": true,
+      "citations": [],
+      "verified_citations": 0
+    },
+    {
+      "group": "cfpb_out_of_scope",
+      "id": "CFPB-11579553",
+      "search_query": "I am filing a complaint for a second time regarding the multiple overdraft fees applied to my account. Despite having sufficient funds at the time the transactions were authorized, I was charged overdraft fees due to delays in the posting of charges and credits. \n\nThis situation mirrors the recent findings by the CFPB regarding XXXX XXXX 's practices, where overdraft fees were assessed on transactions that settled with insufficient balances, even though funds were available when the transactions were initiated. \n\nI believe these practices are unfair and respectfully request an investigation into my account and the specific transactions in question!",
+      "rewrite_error": null,
+      "generation_error": null,
+      "retrieved": [
+        "REGE-011@2.0#d",
+        "REGZ-013@2.0#i",
+        "REGZ-013@2.0#d",
+        "REGZ-013@2.0#g",
+        "REGE-011@2.0#c"
+      ],
+      "passages_kept_on_error": null,
+      "warnings": [
+        "Nombres absents des passages et de la question : 1005.11"
+      ],
+      "timings_ms": {
+        "retrieval": 1098.7368999049067,
+        "answer_llm": 6046.020000008866
+      },
+      "answer": "Under 12 CFR 1005.11(d), a financial institution must honor checks, drafts, or similar instruments for five business days after notifying the consumer of an error, and it must honor items as if the provisionally credited funds had not been debited. Additionally, 12 CFR 1005.11(c) requires the institution to provisionally credit the consumer’s account for the alleged error within 10 business days of receiving the error notice (subject to a $50 withholding limit). These provisions give you the right to have the overdraft fees investigated and, if appropriate, to receive provisional credit while the investigation is completed.",
+      "abstained": false,
+      "citations": [
+        {
+          "passage": 1,
+          "quote": "Notify the consumer that the institution will honor checks, drafts, or similar instruments payable to third parties and preauthorized transfers from the consumer's account (without charge to the consumer as a result of an overdraft) for five business days after the notification.",
+          "verified": true,
+          "chunk_id": "172db4c0-6430-5375-a9e2-888029d663f4",
+          "citation": "12 CFR 1005.11(d)"
+        },
+        {
+          "passage": 5,
+          "quote": "Provisionally credits the consumer's account in the amount of the alleged error (including interest where applicable) within 10 business days of receiving the error notice.",
+          "verified": true,
+          "chunk_id": "b075ec40-3c3a-5a59-a2c0-657fa6fd839f",
+          "citation": "12 CFR 1005.11(c)"
+        }
+      ],
+      "verified_citations": 2
+    }
+  ],
+  "notes": [
+    "Taux d’abstention et de réponses citées calculés sur toutes les questions du groupe, échecs de génération inclus au dénominateur.",
+    "Une citation vérifiée prouve seulement que les mots cités figurent dans le passage.",
+    "« reference_numbers_in_answer » est un indicateur lexical (nombres de la réponse de référence présents), pas un jugement de justesse."
+  ]
+}

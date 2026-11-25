@@ -1,0 +1,323 @@
+{
+  "description": "Corpus réel ClaimGuard : plaintes CFPB (domaine public US) et règlements fédéraux eCFR (Title 12). Ce fichier est la seule source des règles d'annotation : il est lu par l'importeur et cité dans la documentation.",
+  "sources": {
+    "complaints": {
+      "publisher": "Consumer Financial Protection Bureau (CFPB) — Consumer Complaint Database, archive officielle des narratifs",
+      "page": "https://www.consumerfinance.gov/foia-requests/foia-electronic-reading-room/cfpb-consumer-complaint-database-narratives-archive/",
+      "licence": "US public domain (17 U.S.C. §105)",
+      "archives": {
+        "development": "https://files.consumerfinance.gov/f/documents/CCDB_Export_8_November_2024_through_December_2024.zip",
+        "test": "https://files.consumerfinance.gov/f/documents/CCDB_Export_9_January_2025_through_February_2025.zip"
+      },
+      "api": "https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1/",
+      "periods": {
+        "development": [
+          "2024-11-01",
+          "2024-12-31"
+        ],
+        "test": [
+          "2025-01-01",
+          "2025-02-28"
+        ]
+      }
+    },
+    "regulations": {
+      "publisher": "Electronic Code of Federal Regulations (eCFR), Office of the Federal Register",
+      "api": "https://www.ecfr.gov/api/versioner/v1",
+      "licence": "US public domain"
+    }
+  },
+  "regulations": [
+    {
+      "policy_id": "REGZ-012",
+      "part": "1026",
+      "section": "1026.12",
+      "category": "credit_card",
+      "regulation": "Regulation Z — Truth in Lending",
+      "keep_versions": 2
+    },
+    {
+      "policy_id": "REGZ-013",
+      "part": "1026",
+      "section": "1026.13",
+      "category": "credit_card",
+      "regulation": "Regulation Z — Truth in Lending",
+      "keep_versions": 2
+    },
+    {
+      "policy_id": "REGE-006",
+      "part": "1005",
+      "section": "1005.6",
+      "category": "bank_account",
+      "regulation": "Regulation E — Electronic Fund Transfers",
+      "keep_versions": 1
+    },
+    {
+      "policy_id": "REGE-011",
+      "part": "1005",
+      "section": "1005.11",
+      "category": "bank_account",
+      "regulation": "Regulation E — Electronic Fund Transfers",
+      "keep_versions": 2
+    },
+    {
+      "policy_id": "REGF-034",
+      "part": "1006",
+      "section": "1006.34",
+      "category": "debt_collection",
+      "regulation": "Regulation F — Debt Collection Practices",
+      "keep_versions": 1
+    },
+    {
+      "policy_id": "REGF-038",
+      "part": "1006",
+      "section": "1006.38",
+      "category": "debt_collection",
+      "regulation": "Regulation F — Debt Collection Practices",
+      "keep_versions": 1
+    },
+    {
+      "policy_id": "REGV-042",
+      "part": "1022",
+      "section": "1022.42",
+      "category": "credit_reporting",
+      "regulation": "Regulation V — Fair Credit Reporting",
+      "keep_versions": 1
+    },
+    {
+      "policy_id": "REGV-043",
+      "part": "1022",
+      "section": "1022.43",
+      "category": "credit_reporting",
+      "regulation": "Regulation V — Fair Credit Reporting",
+      "keep_versions": 1
+    }
+  ],
+  "label_rules": [
+    {
+      "id": "R1",
+      "family": "credit_card",
+      "title": "Litige carte de crédit non résolu",
+      "product": [
+        "Credit card"
+      ],
+      "issue": [
+        "Problem with a purchase shown on your statement"
+      ],
+      "sub_issue": [
+        "Credit card company isn't resolving a dispute about a purchase on your statement"
+      ],
+      "relevant": [
+        "REGZ-013#a",
+        "REGZ-013#c",
+        "REGZ-013#f"
+      ],
+      "rationale": "Le litige porte sur une erreur de facturation (§1026.13(a)) ; l'émetteur doit respecter les délais (c) et, s'il refuse, les procédures (f)."
+    },
+    {
+      "id": "R2",
+      "family": "credit_card",
+      "title": "Achat non autorisé sur carte de crédit",
+      "product": [
+        "Credit card"
+      ],
+      "issue": [
+        "Problem with a purchase shown on your statement"
+      ],
+      "sub_issue": [
+        "Card was charged for something you did not purchase with the card"
+      ],
+      "relevant": [
+        "REGZ-012#b",
+        "REGZ-013#a"
+      ],
+      "rationale": "Usage non autorisé : plafond de responsabilité (§1026.12(b)) et erreur de facturation (§1026.13(a)(1))."
+    },
+    {
+      "id": "R3",
+      "family": "bank_account",
+      "title": "Prélèvement non autorisé sur compte bancaire",
+      "product": [
+        "Checking or savings account"
+      ],
+      "issue": [
+        "Problem with a lender or other company charging your account"
+      ],
+      "sub_issue": [
+        "Transaction was not authorized"
+      ],
+      "relevant": [
+        "REGE-006#b",
+        "REGE-011#a",
+        "REGE-011#c"
+      ],
+      "rationale": "Transfert électronique non autorisé : responsabilité limitée (§1005.6(b)), erreur au sens de §1005.11(a), enquête et crédit provisoire (c)."
+    },
+    {
+      "id": "R4",
+      "family": "bank_account",
+      "title": "Transfert d'argent non autorisé",
+      "product": [
+        "Money transfer, virtual currency, or money service"
+      ],
+      "issue": [
+        "Unauthorized transactions or other transaction problem"
+      ],
+      "sub_issue": [],
+      "relevant": [
+        "REGE-011#a",
+        "REGE-011#c",
+        "REGE-006#b"
+      ],
+      "rationale": "Les transferts depuis un compte ou portefeuille sont des transferts électroniques couverts par la procédure d'erreur de la Regulation E."
+    },
+    {
+      "id": "R5",
+      "family": "debt_collection",
+      "title": "Dette contestée (pas la sienne)",
+      "product": [
+        "Debt collection"
+      ],
+      "issue": [
+        "Attempts to collect debt not owed"
+      ],
+      "sub_issue": [
+        "Debt is not yours"
+      ],
+      "relevant": [
+        "REGF-038#d"
+      ],
+      "rationale": "Une contestation oblige le recouvreur à vérifier la dette avant de poursuivre (§1006.38(d))."
+    },
+    {
+      "id": "R6",
+      "family": "debt_collection",
+      "title": "Informations insuffisantes pour vérifier la dette",
+      "product": [
+        "Debt collection"
+      ],
+      "issue": [
+        "Written notification about debt"
+      ],
+      "sub_issue": [
+        "Didn't receive enough information to verify debt"
+      ],
+      "relevant": [
+        "REGF-034#c",
+        "REGF-038#d"
+      ],
+      "rationale": "Contenu obligatoire de l'avis de validation (§1006.34(c)) et vérification après contestation (§1006.38(d))."
+    },
+    {
+      "id": "R7",
+      "family": "debt_collection",
+      "title": "Pas d'avis du droit de contester",
+      "product": [
+        "Debt collection"
+      ],
+      "issue": [
+        "Written notification about debt"
+      ],
+      "sub_issue": [
+        "Didn't receive notice of right to dispute"
+      ],
+      "relevant": [
+        "REGF-034#a",
+        "REGF-034#c"
+      ],
+      "rationale": "Obligation d'envoyer l'information de validation (§1006.34(a)), dont les invites de contestation (§1006.34(c))."
+    },
+    {
+      "id": "R8",
+      "family": "credit_reporting",
+      "title": "Enquête du fournisseur n'a pas corrigé le rapport",
+      "product": [
+        "Credit card"
+      ],
+      "issue": [
+        "Problem with a company's investigation into an existing problem",
+        "Problem with a company's investigation into an existing issue"
+      ],
+      "sub_issue": [
+        "Their investigation did not fix an error on your report"
+      ],
+      "relevant": [
+        "REGV-043#a",
+        "REGV-043#e"
+      ],
+      "rationale": "L'émetteur de carte, en tant que fournisseur d'informations, doit enquêter sur une contestation directe (§1022.43(a)) et corriger (e)."
+    },
+    {
+      "id": "R9",
+      "family": "credit_reporting",
+      "title": "Statut de compte incorrect sur le rapport de crédit",
+      "product": [
+        "Credit card"
+      ],
+      "issue": [
+        "Incorrect information on your report"
+      ],
+      "sub_issue": [
+        "Account status incorrect"
+      ],
+      "relevant": [
+        "REGV-042#a",
+        "REGV-043#a"
+      ],
+      "rationale": "Exactitude des informations fournies (§1022.42(a)) et contestation directe (§1022.43(a))."
+    }
+  ],
+  "out_of_scope_rules": [
+    {
+      "id": "U1",
+      "title": "Prêt immobilier : problème de paiement",
+      "product": [
+        "Mortgage"
+      ],
+      "issue": [
+        "Trouble during payment process"
+      ],
+      "sub_issue": [],
+      "rationale": "Relève de la Regulation X (RESPA), absente du corpus."
+    },
+    {
+      "id": "U2",
+      "title": "Prêt étudiant : relation avec le gestionnaire",
+      "product": [
+        "Student loan"
+      ],
+      "issue": [
+        "Dealing with your lender or servicer"
+      ],
+      "sub_issue": [],
+      "rationale": "Aucune règle du corpus ne couvre la gestion des prêts étudiants."
+    },
+    {
+      "id": "U3",
+      "title": "Frais de découvert",
+      "product": [
+        "Checking or savings account"
+      ],
+      "issue": [
+        "Problem caused by your funds being low"
+      ],
+      "sub_issue": [
+        "Overdrafts and overdraft fees"
+      ],
+      "rationale": "Relève de §1005.17 (opt-in découvert), absente du corpus."
+    }
+  ],
+  "selection": {
+    "narrative_min_chars": 300,
+    "narrative_max_chars": 3500,
+    "seed": "claimguard-cfpb-v2",
+    "per_rule": {
+      "test": 20,
+      "train": 8,
+      "validation": 4
+    },
+    "out_of_scope_per_rule": {
+      "test": 7
+    }
+  }
+}

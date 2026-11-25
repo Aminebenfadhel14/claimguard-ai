@@ -1,0 +1,83 @@
+{
+  "course": {
+    "repository": "https://github.com/Nadjib23/AI-Engineering-Course",
+    "revision": "fc178ae632816c42dbca8f5c01e97932f0f32502",
+    "folders": [
+      "labs/04-rag",
+      "labs/05-Evaluation/Retrieval Evaluation"
+    ]
+  },
+  "models": {
+    "dense": "sentence-transformers/all-MiniLM-L6-v2",
+    "dense_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "sparse": "Qdrant/bm25",
+    "reranker": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+    "reranker_revision": "1427fd652930e4ba29e8149678df786c240d8825",
+    "llm_default": "openai/gpt-oss-120b",
+    "llm_reasoning_effort": "low"
+  },
+  "qdrant": {
+    "url_default": "http://127.0.0.1:6333",
+    "collection_prefix": "claimguard",
+    "dense_vector_name": "dense",
+    "sparse_vector_name": "sparse"
+  },
+  "chunking": {
+    "reference": {
+      "chunk_size": 1000,
+      "chunk_overlap": 100
+    },
+    "development_candidates": [
+      {
+        "chunk_size": 1000,
+        "chunk_overlap": 100
+      },
+      {
+        "chunk_size": 500,
+        "chunk_overlap": 50
+      }
+    ]
+  },
+  "retrieval": {
+    "k": 5,
+    "n_candidates": 20,
+    "n_candidates_development": [
+      20,
+      40
+    ]
+  },
+  "app": {
+    "chunk_size": 1000,
+    "chunk_overlap": 100,
+    "mode": "hybrid",
+    "rerank": true,
+    "rewrite": false,
+    "n_candidates": 20,
+    "k": 5,
+    "selected_by": "reports/v3/selection.json (développement uniquement)"
+  },
+  "benchmark": {
+    "as_of": "2026-01-01",
+    "paragraphs_per_call": 1,
+    "questions_per_call": 2,
+    "ngram": 5,
+    "generic_ngram_max_chunks": 5,
+    "test_fraction": 0.5,
+    "split_seed": "claimguard-documents-v3",
+    "selection": {
+      "rule": "Sur le développement uniquement : moyenne de hit@5 (suite documents : au moins un chunk du passage dans le top 5) et de paragraph_recall@5 (suite cfpb : part des paragraphes annotés couverts par le top 5) ; égalité départagée par la moyenne de mrr@5, puis par la configuration la plus simple (sans reranking, sans réécriture, découpage de référence, 20 candidats).",
+      "metrics": {
+        "documents": "hit@5",
+        "cfpb": "paragraph_recall@5"
+      },
+      "tie_break": "mrr@5",
+      "amendment": "Règle initiale (recall@5 par chunk) remplacée avant tout run de test : le recall par chunk dépend du nombre de chunks pertinents, donc de la taille des chunks, et ne permet pas de comparer deux découpages."
+    },
+    "groq_pause_seconds": 2,
+    "generation_sample": {
+      "documents": 20,
+      "cfpb_in_scope": 15,
+      "cfpb_out_of_scope": 21
+    }
+  }
+}

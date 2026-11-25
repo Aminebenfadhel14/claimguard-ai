@@ -1,22 +1,17 @@
+# RAG core (components of labs 04-rag and 05-Evaluation)
 langchain-core==1.7.3
-langchain-community==0.4.2
 langchain-text-splitters==1.1.3
+langchain-huggingface==1.2.3
 langchain-qdrant==1.1.0
 langchain-groq==1.1.3
-sentence-transformers==6.2.0
 qdrant-client==1.20.0
 fastembed==0.9.1
-pydantic==2.14.2
-pypdf==6.21.4
-pdfplumber==0.11.10
+sentence-transformers==6.2.0
+torch==2.15.0
 python-dotenv==1.2.4
-mcp==1.30.0
+# Thin web interface (not from the course)
 fastapi==0.162.0
 uvicorn==0.54.0
-streamlit==1.66.1
-httpx==0.28.1
+# Tests
 pytest==9.2.0
-matplotlib==3.11.2
-reportlab==5.1.0
-torch==2.15.0
-socksio==1.0.0
+httpx==0.28.1

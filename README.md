@@ -1,159 +1,100 @@
 # ClaimGuard AI
 
-**Intelligent Customer Complaint Analysis & Policy Compliance Assistant — NovaRetail**
+RAG sur des règlements fédéraux américains de protection du consommateur (12 CFR, textes officiels eCFR), évalué
+sur des questions documentaires et sur de vraies plaintes de la CFPB. Les réponses citent leurs sources et
+sont des brouillons à valider par un humain, pas un avis juridique.
 
-Projet académique TEK-UP, Medamine Ben Fadhel. Cette livraison contient un **socle RAG exécuté et évalué**, un fine-tuning réel, un serveur MCP officiel et un atelier Streamlit. L'application métier complète n'est pas encore terminée : voir [état d'acceptation](reports/ACCEPTANCE.md).
+Projet académique TEK-UP. Version 3 : noyau aligné sur les labs `04-rag` et `05-Evaluation/Retrieval Evaluation`
+du cours [AI-Engineering-Course](https://github.com/Nadjib23/AI-Engineering-Course), révision
+`fc178ae632816c42dbca8f5c01e97932f0f32502` (enregistrée dans `configs/rag.json` et dans chaque rapport).
 
-## Ajout DRIP-R — novembre 2026
+## Chaîne unique
 
-Le dataset Hugging Face **hsuvaskakoty/DRIP-R est inclus** dans `data/external/drip_r/` :
-
-- `scenarios.jsonl` : 400 scénarios synthétiques, issus de 40 situations et de 10 profils.
-- `tasks.jsonl`, `personas.jsonl`, carte du dataset et métadonnées d'origine.
-- Version source figée, SHA-256 contrôlés ; attribution dans `docs/DRIP_R.md`.
-
-Les deux politiques sont extraites sans réécriture dans `data/drip_r/policies/`. Le corpus DRIP-R reste séparé de NovaRetail : les règles, dates et résultats ne doivent pas être mélangés. L'interface propose un sélecteur de corpus et démarre sur DRIP-R.
-
-**Guide de cette adaptation : [docs/DRIP_R.md](docs/DRIP_R.md). Mesures : [reports/drip_r/RESULTS.md](reports/drip_r/RESULTS.md).** Les résultats NovaRetail ci-dessous restent ceux de la livraison précédente.
-
-Après installation des dépendances, les commandes DRIP-R sont :
-
-```powershell
-.\.venv\Scripts\python.exe scripts/prepare_drip_r.py
-.\.venv\Scripts\python.exe -m streamlit run app/Home.py --server.address 127.0.0.1
+```
+XML eCFR (data/cfpb/raw/ecfr) -> Document LangChain (un par paragraphe (a), (b)...)
+  -> RecursiveCharacterTextSplitter (1000 / 100) -> HuggingFaceEmbeddings + FastEmbedSparse(Qdrant/bm25)
+  -> QdrantVectorStore (Qdrant Docker, vecteurs nommés "dense" et "sparse")
+  -> recherche RetrievalMode.DENSE | SPARSE | HYBRID (fusion RRF de Qdrant) -> CrossEncoder si activé
+  -> contexte numéroté -> ChatPromptTemplate -> ChatGroq -> sortie JSON parsée -> citations vérifiées
 ```
 
-Pour reproduire les expériences depuis la racine du projet (remplacer `python` par `.\.venv\Scripts\python.exe` sous Windows) :
+L'application (API + interface), la CLI et les benchmarks appellent les mêmes fonctions de
+[src/claimguard/rag.py](src/claimguard/rag.py).
 
-```bash
-python scripts/prepare_drip_r.py --download
-python scripts/create_drip_annotations.py
-python training/finetune.py --corpus drip_r --epochs 3
-python scripts/evaluate.py --corpus drip_r --trained models/drip-r-policy-embedding
-python scripts/drip_batch.py
-python scripts/report_drip_results.py
-python -m claimguard.mcp.client --corpus drip_r
-python -m pytest -q
-```
+| Fichier | Rôle |
+|---|---|
+| [configs/rag.json](configs/rag.json) | Tous les paramètres : modèles, découpage, k, candidats, configuration de l'application, protocole du benchmark |
+| [src/claimguard/ingest.py](src/claimguard/ingest.py) | XML -> Documents -> chunks (ids stables) -> création, mise à jour ou reconstruction de la collection |
+| [src/claimguard/rag.py](src/claimguard/rag.py) | Modèles chargés une fois, connexion à la collection, recherche, reranking, réécriture, génération, vérification |
+| [src/claimguard/evaluation.py](src/claimguard/evaluation.py) | Questions, qrels, benchmark des six stratégies, benchmark CFPB, évaluation de la génération |
+| [src/claimguard/report.py](src/claimguard/report.py) | Sélection sur le développement et `reports/v3/RESULTS.md` |
+| [src/claimguard/cfpb.py](src/claimguard/cfpb.py) | Import des sources officielles (eCFR, plaintes CFPB) et annotations faibles |
+| [src/claimguard/api.py](src/claimguard/api.py), [frontend/](frontend/) | Interface mince (FastAPI + React, **hors cours**) : question, réponse, sources, évaluations |
+| [src/claimguard/\_\_main\_\_.py](src/claimguard/__main__.py) | CLI `python -m claimguard` |
 
-Le modèle adapté est livré dans `models/drip-r-policy-embedding/`. Les 400 scénarios originaux restent réservés à l'évaluation. L'entraînement porte sur 60 questions séparées rédigées pour le projet à partir des politiques, avec 30 autres pour validation. Le test comprend 50 scénarios annotés provisoirement et 8 cas sans réponse ajoutés au projet. Les labels de pertinence nécessitent une revue indépendante et ne sont pas des labels de conformité DRIP-R.
+## Correspondance avec le cours
 
-Pour l'API/MCP, `CLAIMGUARD_CORPUS=drip_r` choisit ce corpus. Pour vérifier Groq après configuration de `.env` : `python scripts/live_rag_check.py --corpus drip_r`. La génération LLM, l'abstention et le Level 2 restent non validés ici.
+| Étape du projet | Fichier du cours | Implémentation |
+|---|---|---|
+| Qdrant persistant | `04-rag/docker-compose.yml` | [docker-compose.yml](docker-compose.yml) (image épinglée) |
+| Chargement, découpage 1000/100, indexation | `10-init_qdrant.py`, `10bis-…multiple_files.py` | `ingest.load_documents`, `split_documents`, `QdrantVectorStore.from_documents` |
+| Empreinte de fichier, fichiers déjà indexés ignorés, `add_documents` | `14-adding_metadata.py` | `ingest.indexed_hashes`, `ingest.ingest` |
+| Connexion à une collection existante, prompt, `StrOutputParser` | `11-qdrant_retreival.py`, `12-rag_inside_chain.py` | `rag.connect`, `rag.ANSWER_PROMPT`, `rag.rewrite_chain` |
+| Réécriture de requête | `13-rag_query_rewriting.py` | `rag.REWRITE_PROMPT` (consignes ajoutées : négations, dates, montants) |
+| Filtres de métadonnées (`Filter`, `FieldCondition`, `Range`) | `14-dealing_with_metadata.py`, `14bis-…` | `rag.in_force` (version en vigueur) ; filtres source + paragraphe des qrels |
+| BM25 et mode hybride | `15-using_bm25.py`, `15bis-dense_vs_sparse_vs_hybrid.py` | `FastEmbedSparse("Qdrant/bm25")`, `RetrievalMode` |
+| Reranking | `16-including_reranking.py` | `rag.retrieve(..., rerank=True)` |
+| Questions avec passage vérifié | `01-generate_questions.py` | `evaluation.generate_questions` (« paragraphe » remplace « page ») |
+| Qrels par suites de 5 mots | `02-buidling_qrels.py` | `evaluation.build_qrels`, `match_chunks` |
+| Precision@k / Recall@k, six combinaisons | `03-benchmarking_retrieval.ipynb` | `evaluation.run_benchmark` |
 
-## Ce qui fonctionne dans cette livraison
+Écarts volontaires, corrections d'erreurs des exemples :
 
-- PDF, TXT, Markdown ; sections, pages, nettoyage conservateur, tableaux PDF, chunks récursifs 1000/100.
-- Catalogue SQLite avec empreintes SHA-256, versions immuables, filtres temporels, déduplication, désactivation et comparaison.
-- Embeddings MiniLM, vrais vecteurs Qdrant, sparse BM25 FastEmbed, RRF unique k=60, CrossEncoder du cours, traces avant/après fusion.
-- 10 politiques fictives, 11 versions, 76 questions annotées, 60 exemples train et 30 validation.
-- E1–E5 réellement exécutées ; Recall/MRR/precision/nDCG/latence, détails par question et graphiques.
-- Fine-tuning CPU 3 époques, checkpoint inclus dans l'archive sous `models/novaretail-embedding`, logs et SHA des données.
-- MCP stdio : 3 outils découverts et appelés par un client réel.
-- API FastAPI de recherche avec authentification locale et atelier Streamlit.
-- 16 tests réussis sur Linux/Python 3.12 ; vérification supplémentaire du formulaire Streamlit avec recherche réelle.
+- `16-including_reranking.py` appelle `.page_content` sur des chaînes ; ici le reranking renvoie les Documents (comme le notebook 03).
+- Le notebook 03 ne remet pas `average_precision` / `average_recall` à zéro entre les stratégies : le rappel publié y dépasse 1. Ici les accumulateurs sont réinitialisés pour chaque combinaison, les identifiants sont dédupliqués et un test vérifie que toutes les valeurs restent dans [0, 1].
+- `15bis` et `14bis` importent `Range` depuis `param` ; le bon import est `qdrant_client.models.Range`.
+- Le vecteur sparse est créé avec le modificateur IDF, que Qdrant exige pour `Qdrant/bm25`. Sans lui, les scores BM25 n'utilisent pas l'IDF.
+- Les qrels comparent des mots en minuscules sans ponctuation et écartent les suites de 5 mots trop générales (présentes dans plus de 5 chunks).
+- Les modèles sont chargés une fois et partagés par les trois `QdrantVectorStore` ; le corpus n'est jamais réencodé à la requête.
 
-**Limites de livraison :** Groq absent, donc génération/réécriture LLM et abstention non validées en réel. Les modules métier Level 2, les décisions humaines persistées et l'interface métier complète restent à développer après le passage Level 1. Le moteur de recherche ne tranche ni les droits du client ni la culpabilité d'un employé.
+## Démarrage (Windows, PowerShell)
 
-## Démarrage Windows 11 / PowerShell
-
-Depuis le dossier `claimguard-ai`, avec Python 3.12 :
+Python 3.12, Docker Desktop. Node.js n'est nécessaire que pour recompiler l'interface.
 
 ```powershell
 py -3.12 -m venv .venv
-.\.venv\Scripts\python.exe -m pip install --upgrade pip
 .\.venv\Scripts\python.exe -m pip install -e .
-Copy-Item .env.example .env
-.\.venv\Scripts\python.exe -m pytest -q
-.\.venv\Scripts\python.exe -m streamlit run app/Home.py --server.address 127.0.0.1
+Copy-Item .env.example .env                       # renseigner GROQ_API_KEY
+docker compose up -d                              # Qdrant persistant (volume qdrant_data)
+.\.venv\Scripts\python.exe -m claimguard ingest   # collection claimguard_c1000_o100 (idempotent)
+.\.venv\Scripts\python.exe -m claimguard ask "How many days does a consumer have to send a billing error notice?"
+.\.venv\Scripts\python.exe -m claimguard serve    # http://127.0.0.1:8000 (ou start.bat)
 ```
 
-Ouvrir http://localhost:8501. L'activation du venv n'est pas nécessaire avec ces commandes explicites. Les premiers lancements téléchargent les modèles Hugging Face. Les versions directes sont épinglées dans `requirements.txt`. L'environnement Linux complet observé est dans `reports/environment-linux.lock.txt` ; il sert de provenance, pas de fichier universel Windows/CUDA.
+Interface : `cd frontend; npm install; npm run build` (le build `frontend/dist` est livré).
 
-## Démarrage Linux / macOS
+## Reproduire l'évaluation
 
-```bash
-python3.12 -m venv .venv
-.venv/bin/python -m pip install -e .
-cp .env.example .env
-.venv/bin/python -m pytest -q
-.venv/bin/python -m streamlit run app/Home.py --server.address 127.0.0.1
+```powershell
+python -m claimguard import-cfpb --build-only   # plaintes annotées depuis data/cfpb/raw (hors ligne)
+python -m claimguard ingest --all               # collections des découpages candidats (1000/100, 500/50)
+python -m claimguard questions                  # data/benchmark/questions.jsonl (Groq), rejets journalisés
+python -m claimguard qrels --all                # data/benchmark/qrels_<collection>.json + rapport
+python -m claimguard develop                    # grille de développement + reports/v3/selection.json
+python -m claimguard final                      # test : configuration du cours et configuration choisie
+python -m claimguard generation                 # génération et abstention, séparées de la recherche
+python -m claimguard report                     # reports/v3/RESULTS.md
+python -m pytest -q -m "not real"               # tests unitaires (doubles)
+python -m pytest -q -m real                     # vérifications sur Qdrant et les vrais modèles
 ```
 
-Toutes les commandes suivantes s'exécutent à la racine du projet, dans le venv (sur Windows, remplacer `python` par `.\.venv\Scripts\python.exe`).
+Un run isolé : `python -m claimguard benchmark --suite documents --split development [--rewrite] [--n-candidates 40] [--chunk-size 500 --chunk-overlap 50]`.
 
-## Démonstration et évaluation
+## Deux benchmarks distincts
 
-```bash
-python scripts/demo.py --mode rerank --date 2026-11-02
-python scripts/evaluate.py --trained models/novaretail-embedding
-python scripts/evaluate_dense_finetuned.py
-python scripts/report_results.py
-python -m claimguard.mcp.client
-```
+- **Documentaire (méthode du cours)** : questions générées par Groq à partir des paragraphes en vigueur. Le passage justificatif est vérifié dans le paragraphe source avant acceptation, et les questions rejetées ou échouées sont listées dans `data/benchmark/questions_generation.json`. Les qrels sont les identifiants de points Qdrant. Le développement et le test sont séparés par paragraphe.
+- **Plaintes CFPB réelles** : test de janvier–février 2025, développement de novembre–décembre 2024. Les labels sont **faibles** : une catégorie CFPB est associée à des paragraphes ([configs/cfpb.json](configs/cfpb.json)), sans revue juridique. Les qrels regroupent tous les chunks des paragraphes annotés. Les plaintes hors périmètre sont exclues des métriques de recherche et servent à l'évaluation de l'abstention.
 
-Pour reproduire l'entraînement :
+Aucun champ de vérité terrain (paragraphes annotés, réponse de référence, identifiants pertinents) n'est transmis au retriever ou au prompt. Les paramètres sont choisis sur le développement selon la règle écrite dans `configs/rag.json`, puis le test est exécuté. Résultats : [reports/v3/RESULTS.md](reports/v3/RESULTS.md). Les rapports v2, dont l'unité était la section, sont conservés dans [reports/archive/v2_sections/](reports/archive/v2_sections/) ; ils ne sont pas comparables.
 
-```bash
-python training/finetune.py --epochs 3
-```
-
-Le script écrit le meilleur checkpoint de validation à `models/novaretail-embedding`. Sauvegarder une copie si vous souhaitez conserver exactement le checkpoint livré. Le corpus de test est gelé avant entraînement, ses empreintes sont enregistrées. Les exemples synthétiques partagent les politiques mais pas les requêtes/scénarios entre splits. Il ne s'agit pas d'un test sur politiques inconnues.
-
-Pour les appels LLM, remplir uniquement `GROQ_API_KEY` dans `.env`, choisir éventuellement `GROQ_MODEL`, puis :
-
-```bash
-python scripts/live_rag_check.py
-```
-
-Ce script parcourt les 76 questions via Groq (appels réseau au fournisseur), avec réécriture, retrieval et sortie structurée. Sans clé, il échoue clairement et ne simule pas de réponse. Seules les questions fictives sont utilisées. Il ne mesure pas automatiquement l'implication logique des citations ; une revue humaine reste requise.
-
-## Résultats observés
-
-| Expérience | Recall@5 | MRR@10 |
-|---|---:|---:|
-| E1 — Dense | 0,9853 | 0,8771 |
-| E2 — BM25 | 0,9853 | 0,9289 |
-| E3 — Hybride RRF | 1,0000 | 0,9277 |
-| E4 — Hybride + reranker | 0,9926 | 0,9706 |
-| E5 — Fine-tuned + hybride + reranker | 0,9926 | 0,9706 |
-
-Aucun gain end-to-end n'est démontré par le fine-tuning. Le modèle dense seul régresse légèrement sur MRR. Les limites, échecs et graphiques figurent dans [le rapport expérimental](reports/RESULTS.md).
-
-## Documents et mises à jour
-
-Chaque document dans `data/policies/` possède un sidecar `.md.json`, `.txt.json` ou `.pdf.json` contenant des métadonnées validées. Au démarrage, le catalogue ingère les nouveaux documents. Un même policy_id/version avec un contenu différent est refusé. Les intervalles des versions ne doivent pas se chevaucher. Les versions expirées restent éligibles pour leur période historique.
-
-`Catalog.deactivate(policy_id, version, actor)` exclut la version sans supprimer ses octets ni son événement d'audit. Le moteur doit être reconstruit après cette mutation ; les index sont dérivés du catalogue. Une évolution d'une politique à intervalle ouvert nécessite une migration administrative auditée qui reste à développer : le prototype refuse le chevauchement.
-
-## Données du professeur
-
-Le CSV brut n'est pas inclus pour éviter de redistribuer ses données personnelles. L'audit complet agrégé est livré. Pour le reproduire, télécharger le CSV depuis le commit indiqué dans `docs/01_COURSE_MATRIX.md`, puis :
-
-```bash
-python scripts/audit_tickets.py chemin/customer_support_tickets.csv
-```
-
-Les exports expurgés sont locaux dans `var/audit/`, exclus de Git et de l'archive. Ils demandent une revue PII supplémentaire avant tout usage externe. Les résolutions du CSV ne sont jamais utilisées comme labels de conformité.
-
-## API et Docker
-
-Pour l'API, définir une valeur aléatoire longue pour `CLAIMGUARD_API_TOKEN` dans l'environnement, puis :
-
-```bash
-python -m uvicorn claimguard.api:app --host 127.0.0.1 --port 8000
-```
-
-`POST /search` exige `Authorization: Bearer <token>` et un objet `query`, `incident_date`, `mode`, `top_k`, éventuellement `category`. C'est une identité de service locale, pas un système RBAC multi-utilisateurs.
-
-`docker compose up --build` prépare Qdrant serveur et Streamlit. Le mode sans Docker utilise Qdrant in-process. Docker/Windows n'ont pas été exécutés dans cet environnement ; seule la voie Linux in-process a été validée. Aucun port n'est publié sur une interface publique.
-
-## Livrables de conception
-
-1. [Inventaire du cours et matrice](docs/01_COURSE_MATRIX.md), plus inventaire JSON.
-2. [Architecture technique](docs/02_ARCHITECTURE.md).
-3. [Stratégie des 8 469 tickets](docs/03_DATA_STRATEGY.md).
-4. [Modèle des politiques](docs/04_POLICY_MODEL.md).
-5. [Plan détaillé et passage Level 1](docs/05_ROADMAP.md).
-6. [Résultats et preuves](reports/RESULTS.md), [acceptation](reports/ACCEPTANCE.md).
-
-Le dépôt Git est local. Aucun dépôt GitHub distant ni déploiement public n'est créé ou annoncé. Le code applicatif est écrit pour ce projet ; les exemples du cours sont référencés, non redistribués. Le modèle de base et les autres dépendances conservent leurs licences respectives.
+Données et provenance : [docs/DATA.md](docs/DATA.md).
