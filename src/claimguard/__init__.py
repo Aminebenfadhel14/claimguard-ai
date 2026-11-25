@@ -1,1 +1,1 @@
-"""ClaimGuard AI academic core."""
+"""ClaimGuard AI — recherche de preuves réglementaires pour les plaintes clients."""

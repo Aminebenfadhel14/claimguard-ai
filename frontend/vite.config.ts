@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// En développement, Vite (5173) relaie /api vers FastAPI (8000).
+// Dev server (5173) proxies /api to FastAPI (8000).
 export default defineConfig({
   plugins: [react()],
   server: {

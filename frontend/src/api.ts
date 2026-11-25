@@ -1,213 +1,61 @@
-export type CorpusId = 'drip_r' | 'novaretail'
-export type Mode = 'dense' | 'sparse' | 'hybrid' | 'rerank'
-
-export interface Corpus { id: CorpusId; label: string; short: string; dated: boolean; note: string }
-export interface Config {
-  corpora: Corpus[]
-  default_corpus: CorpusId
-  profiles: { id: string; label: string }[]
-  default_profile: string
-  modes: { id: Mode; label: string }[]
-  default_query: string
-  default_date: string
-  groq_configured: boolean
-  groq_model: string | null
+// Typed client of the thin FastAPI interface (src/claimguard/api.py).
+export interface Passage {
+  rank: number; chunk_id: string; citation: string; reference: string; title: string; section_title: string
+  regulation: string; version: string; version_date: string; valid_until: string | null; source: string
+  url: string; start_index: number; rerank_score: number | null; text: string
+}
+export interface CitationCheck { passage: number; quote: string; verified: boolean; chunk_id: string | null; citation: string | null }
+export interface Answer {
+  answer: string; consumer_claims: string[]; citations: CitationCheck[]; abstained: boolean; missing_information: string[]
+}
+export interface AskResult {
+  question: string; search_query: string; as_of: string; documents: Passage[]; answer: Answer | null
+  warnings: string[]; generation_error: string | null; rewrite_error: string | null; timings_ms: Record<string, number>
 }
 export interface Status {
-  corpus: CorpusId
-  documents: number
-  profile: string
-  profile_label: string
-  models: { dense: boolean; sparse: boolean; reranker: boolean }
-  available_modes: Mode[]
-  loaded_modes: Mode[]
-  groq_configured: boolean
-  engine_ready: boolean
+  collection: string; loaded: boolean; groq_configured: boolean; groq_model: string
+  settings: { mode: string; rerank: boolean; rewrite: boolean; k: number; n_candidates: number }
 }
-export interface Case { scenario_id: string; task_id: string; complaint: string; agent_brief: string }
-export interface HitView {
-  rank: number
-  chunk_id: string
-  reference: string
-  policy_id: string
-  version: string
-  title: string
-  category: string
-  access_level: string
-  section: string
-  section_title: string | null
-  text: string
-  source_file: string
-  page: number
-  line_start: number | null
-  line_end: number | null
-  file_hash: string
-  score: number
-  stage: string
+export interface StrategyResult {
+  mode: string; rerank: boolean; questions: number; metrics: Record<string, number>
+  latency_ms: { mean: number | null; p50: number | null; p95: number | null }
 }
-export type StageName = 'dense' | 'sparse' | 'rrf' | 'reranker' | 'final'
-export interface Answer {
-  answer: string
-  abstained: boolean
-  missing_information: string[]
-  citations: { chunk_id: string; quote: string; reference: string | null }[]
+export interface Run {
+  suite: 'documents' | 'cfpb'; split: string; collection: string; k: number; n_candidates: number; rewrite: boolean
+  created_at: string; questions_total: number; questions_evaluated: number; questions_without_qrels: string[]
+  rewrite_failures: string[]; results: Record<string, StrategyResult>; annotation?: string; date_filter?: string
 }
-export interface SearchResult {
-  corpus: CorpusId
-  profile: string
-  mode: Mode
-  incident_date: string
-  query: string
-  original_query: string
-  rewritten_query: string | null
-  stages: Record<StageName, HitView[]>
-  diagnostics: Record<string, unknown> & { latency_ms?: number }
-  answer: Answer | null
-  warnings: string[]
+export interface Selection {
+  rule: string; amendment: string | null; metrics: { documents: string; cfpb: string }
+  chosen: { collection: string; n_candidates: number; rewrite: boolean; mode: string; rerank: boolean; documents: number; cfpb: number }
 }
-export interface SearchPayload {
-  corpus: CorpusId
-  profile: string
-  query: string
-  incident_date: string
-  mode: Mode
-  top_k: number
-  category: string | null
-  agent_brief: string | null
-  use_llm: boolean
+export interface GenerationGroup { count: number; failures: number; abstention_rate: number | null; answered_with_verified_citation: number | null }
+export interface Generation {
+  model: string; created_at: string; notes: string[]
+  summary: { total: number; generation_failures: number; citation_verified_rate: number | null; groups: Record<string, GenerationGroup> }
 }
-export interface DocItem {
-  name: string
-  format: string
-  size: number
-  policy_id: string | null
-  title: string | null
-  version: string | null
-  category: string | null
-  department: string | null
-  access_level: string | null
-  language: string | null
-  effective_date: string | null
-  effective_until: string | null
-  temporal_basis: string
-  has_sections: boolean
-}
-export interface DocDetail {
-  name: string
-  metadata: Record<string, unknown>
-  text: string | null
-  sections: { section: string; title: string; start_line: number; end_line: number }[] | null
-  sha256: string
-  size: number
-}
-export interface Experiment {
-  id: string
-  label: string
-  metrics: Record<string, number>
-  latency_mean_ms: number | null
-  latency_p95_ms: number | null
-  mode: string | null
-  embedding: string | null
-  answerable_questions: number | null
-  unanswerable_questions: number | null
-}
-export interface Evaluation {
-  available: boolean
-  corpus: CorpusId
-  report_path: string
-  split: string
-  created_at: string | null
-  profile_matches: boolean
-  sources_changed: boolean
-  summary: Experiment[]
-  primary: Experiment | null
-  comparisons: { id: string; label: string; metric: string; before: number; after: number; delta: number }[]
-  protocol: Record<string, unknown>
-  experiments: string[]
-  targets: { 'recall@5': number; 'mrr@10': number; latency_p95_s: number }
-}
-export interface QuestionRow {
-  question_id: string
-  language: string
-  expected: string[]
-  ranked_sections: string[]
-  latency_ms: number
-  top_score: number | null
-  metrics?: Record<string, number>
-}
-
-export class ApiError extends Error {
-  status: number
-  errorId?: string
-  constructor(status: number, message: string, errorId?: string) {
-    super(message)
-    this.status = status
-    this.errorId = errorId
-  }
-}
+export interface Evaluation { test: Run[]; development: Run[]; selection: Selection | null; generation: Generation | null }
 
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
   let res: Response
   try {
-    res = await fetch(path, {
-      ...init,
-      headers: init?.body ? { 'Content-Type': 'application/json' } : undefined,
-    })
+    res = await fetch(path, { ...init, headers: init?.body ? { 'Content-Type': 'application/json' } : undefined })
   } catch {
-    throw new ApiError(0, 'Le serveur FastAPI ne répond pas. Lancez python scripts/run_web.py puis rechargez la page.')
+    throw new Error('Le serveur ne répond pas : lancez « python -m claimguard serve ».')
   }
   if (!res.ok) {
-    let message = `Erreur ${res.status}`
-    let errorId: string | undefined
-    try {
-      const body = await res.json()
-      const d = body.detail
-      if (typeof d === 'string') message = d
-      else if (Array.isArray(d)) message = d.map((x: { msg: string }) => x.msg).join(' ; ')
-      else if (d && typeof d === 'object') {
-        message = d.message ?? message
-        errorId = d.error_id
-        if (d.message && typeof d.message === 'object') {
-          message = d.message.message ?? message
-          errorId = d.message.error_id
-        }
-      }
-    } catch { /* corps non JSON */ }
-    throw new ApiError(res.status, message, errorId)
+    const detail = await res.json().then(d => d.detail).catch(() => null)
+    throw new Error(typeof detail === 'string' ? detail : `Erreur ${res.status}`)
   }
   return res.json() as Promise<T>
 }
 
-const qs = (params: Record<string, string | number | undefined | null>) =>
-  '?' + Object.entries(params)
-    .filter(([, v]) => v !== undefined && v !== null && v !== '')
-    .map(([k, v]) => `${k}=${encodeURIComponent(String(v))}`).join('&')
-
 export const api = {
-  config: () => request<Config>('/api/config'),
-  status: (corpus: CorpusId, profile: string) => request<Status>('/api/status' + qs({ corpus, profile })),
-  load: (corpus: CorpusId, profile: string, mode: Mode) =>
-    request<{ loaded: boolean }>('/api/engine/load', { method: 'POST', body: JSON.stringify({ corpus, profile, mode }) }),
-  cases: (q: string, limit = 400) => request<{ total: number; items: Case[] }>('/api/cases' + qs({ corpus: 'drip_r', q, limit })),
-  categories: (corpus: CorpusId) => request<string[]>('/api/categories' + qs({ corpus })),
-  search: (payload: SearchPayload) =>
-    request<SearchResult>('/api/search', { method: 'POST', body: JSON.stringify(payload) }),
-  documents: (corpus: CorpusId) => request<{ items: DocItem[] }>('/api/documents' + qs({ corpus })),
-  document: (corpus: CorpusId, name: string) =>
-    request<DocDetail>(`/api/documents/${encodeURIComponent(name)}` + qs({ corpus })),
-  downloadUrl: (corpus: CorpusId, name: string) =>
-    `/api/documents/${encodeURIComponent(name)}/download` + qs({ corpus }),
-  versions: (corpus: CorpusId, policyId: string) =>
-    request<{ versions: Record<string, unknown>[] }>(`/api/policies/${encodeURIComponent(policyId)}/versions` + qs({ corpus })),
-  compare: (corpus: CorpusId, policyId: string, a: string, b: string) =>
-    request<{ diff: string }>(`/api/policies/${encodeURIComponent(policyId)}/compare` + qs({ corpus, a, b })),
-  evaluation: (corpus: CorpusId, profile: string) => request<Evaluation>('/api/evaluation' + qs({ corpus, profile })),
-  questions: (corpus: CorpusId, experiment: string) =>
-    request<{ items: QuestionRow[] }>('/api/evaluation/questions' + qs({ corpus, experiment })),
-  chartUrl: (corpus: CorpusId) => '/api/evaluation/chart' + qs({ corpus }),
+  status: () => request<Status>('/api/status'),
+  ask: (question: string, as_of: string) =>
+    request<AskResult>('/api/ask', { method: 'POST', body: JSON.stringify({ question, as_of }) }),
+  evaluation: () => request<Evaluation>('/api/evaluation'),
 }
 
-export const pct = (x: number | null | undefined, digits = 1) =>
-  x === null || x === undefined ? '—' : (x * 100).toLocaleString('fr-FR', { maximumFractionDigits: digits, minimumFractionDigits: digits }) + ' %'
 export const num = (x: number | null | undefined, digits = 3) =>
   x === null || x === undefined ? '—' : x.toLocaleString('fr-FR', { maximumFractionDigits: digits, minimumFractionDigits: digits })

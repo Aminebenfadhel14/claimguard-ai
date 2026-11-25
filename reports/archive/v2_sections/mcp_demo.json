@@ -1,0 +1,176 @@
+{
+  "created_at": "2026-11-17T15:16:19.056911+00:00",
+  "transport": "stdio",
+  "tools": [
+    "search_regulations",
+    "get_regulation_section",
+    "compare_regulation_versions",
+    "list_regulations",
+    "compute_deadline"
+  ],
+  "calls": {
+    "list_regulations": {
+      "is_error": false,
+      "content": [
+        {
+          "policy_id": "REGE-006",
+          "version": "1.0",
+          "title": "§ 1005.6 Liability of consumer for unauthorized transfers.",
+          "category": "bank_account",
+          "effective_date": "2017-01-01",
+          "effective_until": null,
+          "source": "eCFR 12 CFR 1005.6 — https://www.ecfr.gov/on/2017-01-01/title-12/section-1005.6"
+        },
+        {
+          "policy_id": "REGE-011",
+          "version": "1.0",
+          "title": "§ 1005.11 Procedures for resolving errors.",
+          "category": "bank_account",
+          "effective_date": "2018-02-13",
+          "effective_until": "2019-04-01",
+          "source": "eCFR 12 CFR 1005.11 — https://www.ecfr.gov/on/2018-02-13/title-12/section-1005.11"
+        },
+        {
+          "policy_id": "REGE-011",
+          "version": "2.0",
+          "title": "§ 1005.11 Procedures for resolving errors.",
+          "category": "bank_account",
+          "effective_date": "2019-04-01",
+          "effective_until": null,
+          "source": "eCFR 12 CFR 1005.11 — https://www.ecfr.gov/on/2019-04-01/title-12/section-1005.11"
+        },
+        {
+          "policy_id": "REGF-034",
+          "version": "1.0",
+          "title": "§ 1006.34 Notice for validation of debts.",
+          "category": "debt_collection",
+          "effective_date": "2021-11-30",
+          "effective_until": null,
+          "source": "eCFR 12 CFR 1006.34 — https://www.ecfr.gov/on/2021-11-30/title-12/section-1006.34"
+        },
+        {
+          "policy_id": "REGF-038",
+          "version": "1.0",
+          "title": "§ 1006.38 Disputes and requests for original-creditor information.",
+          "category": "debt_collection",
+          "effective_date": "2021-11-30",
+          "effective_until": null,
+          "source": "eCFR 12 CFR 1006.38 — https://www.ecfr.gov/on/2021-11-30/title-12/section-1006.38"
+        },
+        {
+          "policy_id": "REGV-042",
+          "version": "1.0",
+          "title": "§ 1022.42 Reasonable policies and procedures concerning the accuracy and integrity of furnished information.",
+          "category": "credit_reporting",
+          "effective_date": "2017-01-01",
+          "effective_until": null,
+          "source": "eCFR 12 CFR 1022.42 — https://www.ecfr.gov/on/2017-01-01/title-12/section-1022.42"
+        },
+        {
+          "policy_id": "REGV-043",
+          "version": "1.0",
+          "title": "§ 1022.43 Direct disputes.",
+          "category": "credit_reporting",
+          "effective_date": "2017-01-01",
+          "effective_until": null,
+          "source": "eCFR 12 CFR 1022.43 — https://www.ecfr.gov/on/2017-01-01/title-12/section-1022.43"
+        },
+        {
+          "policy_id": "REGZ-012",
+          "version": "1.0",
+          "title": "§ 1026.12 Special credit card provisions.",
+          "category": "credit_card",
+          "effective_date": "2018-02-13",
+          "effective_until": "2019-04-01",
+          "source": "eCFR 12 CFR 1026.12 — https://www.ecfr.gov/on/2018-02-13/title-12/section-1026.12"
+        },
+        {
+          "policy_id": "REGZ-012",
+          "version": "2.0",
+          "title": "§ 1026.12 Special credit card provisions.",
+          "category": "credit_card",
+          "effective_date": "2019-04-01",
+          "effective_until": null,
+          "source": "eCFR 12 CFR 1026.12 — https://www.ecfr.gov/on/2019-04-01/title-12/section-1026.12"
+        },
+        {
+          "policy_id": "REGZ-013",
+          "version": "1.0",
+          "title": "§ 1026.13 Billing error resolution.",
+          "category": "credit_card",
+          "effective_date": "2018-02-13",
+          "effective_until": "2019-04-01",
+          "source": "eCFR 12 CFR 1026.13 — https://www.ecfr.gov/on/2018-02-13/title-12/section-1026.13"
+        },
+        {
+          "policy_id": "REGZ-013",
+          "version": "2.0",
+          "title": "§ 1026.13 Billing error resolution.",
+          "category": "credit_card",
+          "effective_date": "2019-04-01",
+          "effective_until": null,
+          "source": "eCFR 12 CFR 1026.13 — https://www.ecfr.gov/on/2019-04-01/title-12/section-1026.13"
+        }
+      ]
+    },
+    "search_regulations": {
+      "is_error": false,
+      "content": [
+        {
+          "query": "My credit card company refuses to remove a charge for an item that was never delivered",
+          "incident_date": "2025-01-15",
+          "results": [
+            {
+              "reference": "REGE-011@2.0#c",
+              "title": "Time limits and extent of investigation",
+              "regulation": "§ 1005.11 Procedures for resolving errors.",
+              "score": 0.32884560201712154,
+              "text": "(ii) The applicable time is 90 days in place of 45 days under paragraph (c)(2) of this section, for completing an investigation, if a notice of error involves an electronic fund transfer that:\n(A) Was not initiated within a state;\n(B) Resulted from a point-of-sale debit card transaction; or\n(C) Occurred within 30 days after the first deposit to the account was made.\n(4) Investigation. With the exception of transfers covered by § 1005.14 of this part, a financial institution's review of its own records regarding an alleged error satisfies the requirements of this section if:\n(i) The alleged error concerns a transfer to or from a third party; and\n(ii) There is no agreement between the institution and the third party for the type of electronic fund transfer involved.",
+              "source": "eCFR 12 CFR 1005.11 — https://www.ecfr.gov/on/2019-04-01/title-12/section-1005.11"
+            },
+            {
+              "reference": "REGV-043@1.0#e",
+              "title": "Duty of furnisher after receiving a direct dispute notice",
+              "regulation": "§ 1022.43 Direct disputes.",
+              "score": 0.29619339926424954,
+              "text": "(4) If the investigation finds that the information reported was inaccurate, promptly notify each consumer reporting agency to which the furnisher provided inaccurate information of that determination and provide to the consumer reporting agency any correction to that information that is necessary to make the information provided by the furnisher accurate.",
+              "source": "eCFR 12 CFR 1022.43 — https://www.ecfr.gov/on/2017-01-01/title-12/section-1022.43"
+            },
+            {
+              "reference": "REGF-034@1.0#e",
+              "title": "Translation into other languages",
+              "regulation": "§ 1006.34 Notice for validation of debts.",
+              "score": 0.27573605503559895,
+              "text": "Source: 86 FR 5854, Jan. 19, 2021",
+              "source": "eCFR 12 CFR 1006.34 — https://www.ecfr.gov/on/2021-11-30/title-12/section-1006.34"
+            }
+          ],
+          "diagnostics": {
+            "profile": "finetuned",
+            "profile_fingerprint": "e4eb67d9b0e05c7368cb0dbb3149707111df21e244590e3f5d8aaa2781aaa98c",
+            "index": "policies_59e78a10510ee8ac",
+            "latency_ms": 17.1395840002333,
+            "ranking_unit": "section",
+            "engine_ready": true
+          }
+        }
+      ]
+    },
+    "compute_deadline": {
+      "is_error": false,
+      "content": [
+        {
+          "start_date": "2025-01-15",
+          "days": 10,
+          "business_days": true,
+          "due_date": "2025-01-30",
+          "note": "Jours ouvrés : hors samedis, dimanches et jours fériés fédéraux US."
+        }
+      ]
+    },
+    "get_regulation_section": {
+      "is_error": false,
+      "reference": "REGE-011@2.0#c"
+    }
+  }
+}

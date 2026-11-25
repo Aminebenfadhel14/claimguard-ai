@@ -1,0 +1,99 @@
+{
+  "created_at": "2026-11-22T22:01:55.127870+00:00",
+  "collection": "claimguard_c1000_o100",
+  "qdrant_url": "http://127.0.0.1:6333",
+  "chunk_size": 1000,
+  "chunk_overlap": 100,
+  "points_in_collection": 122,
+  "new_chunks": 0,
+  "skipped_sources": [
+    "1005.11_2018-02-13.xml",
+    "1005.11_2019-04-01.xml",
+    "1005.6_2017-01-01.xml",
+    "1006.34_2021-11-30.xml",
+    "1006.38_2021-11-30.xml",
+    "1022.42_2017-01-01.xml",
+    "1022.43_2017-01-01.xml",
+    "1026.12_2018-02-13.xml",
+    "1026.12_2019-04-01.xml",
+    "1026.13_2018-02-13.xml",
+    "1026.13_2019-04-01.xml"
+  ],
+  "models": {
+    "dense": "sentence-transformers/all-MiniLM-L6-v2",
+    "dense_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "sparse": "Qdrant/bm25"
+  },
+  "vectors": {
+    "dense": "dense",
+    "sparse": "sparse (IDF)"
+  },
+  "sources": [
+    {
+      "source": "1005.11_2018-02-13.xml",
+      "sha256": "30a5526ff3bdab8bd5ddc5b88fb19c2ce18435b85de878257dbb790cadad66d4",
+      "version_date": "2018-02-13",
+      "valid_until": "2019-04-01"
+    },
+    {
+      "source": "1005.11_2019-04-01.xml",
+      "sha256": "947de8b8c8844f72016d3ab7940e9d622ddf24e8e9795a1998804a0cfaeecbff",
+      "version_date": "2019-04-01",
+      "valid_until": ""
+    },
+    {
+      "source": "1005.6_2017-01-01.xml",
+      "sha256": "6b0c605affaf6f360e552c298a7f8b817518c3d9982e366a28843beec4a2b036",
+      "version_date": "2017-01-01",
+      "valid_until": ""
+    },
+    {
+      "source": "1006.34_2021-11-30.xml",
+      "sha256": "d57185de66ae59ccbe803fa0f7a851ede80db25c74f50d0c31b55c262b199b0c",
+      "version_date": "2021-11-30",
+      "valid_until": ""
+    },
+    {
+      "source": "1006.38_2021-11-30.xml",
+      "sha256": "98dfb9a9695e058782f2ef1e5b858914beafd91c5837a4c7bafb903ec55051ac",
+      "version_date": "2021-11-30",
+      "valid_until": ""
+    },
+    {
+      "source": "1022.42_2017-01-01.xml",
+      "sha256": "6990b3e3bb18432ad7f1e221d151a5b3a7f56b67978a6c69e70756c70f4ab64a",
+      "version_date": "2017-01-01",
+      "valid_until": ""
+    },
+    {
+      "source": "1022.43_2017-01-01.xml",
+      "sha256": "bec9a5356ff14b40f9179e57d66ce84f53197711245daf6f7e9206a1ba6355d7",
+      "version_date": "2017-01-01",
+      "valid_until": ""
+    },
+    {
+      "source": "1026.12_2018-02-13.xml",
+      "sha256": "8b98b8879a3abfa2071b634ab1ec935952e61b9b96773b0ac5b730727bb04f73",
+      "version_date": "2018-02-13",
+      "valid_until": "2019-04-01"
+    },
+    {
+      "source": "1026.12_2019-04-01.xml",
+      "sha256": "c4b8895e2e492f97884b0ae344be89e437715fc16f521b5ef6f56e5264d38f67",
+      "version_date": "2019-04-01",
+      "valid_until": ""
+    },
+    {
+      "source": "1026.13_2018-02-13.xml",
+      "sha256": "1e3f1eb6f5b255d9a5b979afce12ecde20a91c3924f4c6143186bf4ae7a3e060",
+      "version_date": "2018-02-13",
+      "valid_until": "2019-04-01"
+    },
+    {
+      "source": "1026.13_2019-04-01.xml",
+      "sha256": "9f1b70e91cc67739e1bc86196ee187d5d77448c1bd9a47b7e589fa66711c3d3b",
+      "version_date": "2019-04-01",
+      "valid_until": ""
+    }
+  ]
+}

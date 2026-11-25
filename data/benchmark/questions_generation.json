@@ -1,0 +1,53 @@
+{
+  "created_at": "2026-11-22T22:17:36.946732+00:00",
+  "model": "openai/gpt-oss-120b",
+  "as_of": "2026-01-01",
+  "paragraphs": 41,
+  "accepted": 79,
+  "rejected": [
+    {
+      "source": "1005.11_2019-04-01.xml",
+      "paragraphs": [
+        "c"
+      ],
+      "reason": "retried_after_error",
+      "errors": [
+        "RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01jznfad1zeh7bfqse8zmn690f` service tier `on_demand` on tokens per minute (TPM): Limit "
+      ]
+    },
+    {
+      "source": "1005.11_2019-04-01.xml",
+      "paragraphs": [
+        "d"
+      ],
+      "reason": "passage_not_found",
+      "question": "Under Regulation E, what notifications are required of a financial institution after it debits a provisionally credited amount?",
+      "paragraph": "d",
+      "passage": "Notify the consumer of the date and amount of the debiting; Notify the consumer that the institution will honor checks, drafts, or similar instruments payable to third parties and preauthorized transfers from the consumer's account (without charge to the consumer as a result of an overdraft) for five business days after the notification."
+    },
+    {
+      "source": "1006.34_2021-11-30.xml",
+      "paragraphs": [
+        "c"
+      ],
+      "reason": "passage_not_found",
+      "question": "According to the Debt Collection Practices regulation, what specific pieces of information about the debt must a collector provide in the validation notice?",
+      "paragraph": "c",
+      "passage": "The debt collector's name and the mailing address at which the debt collector accepts disputes and requests for original-creditor information.\nThe consumer's name and mailing address.\nIf the debt collector is collecting a debt related to a consumer financial product or service as defined in § 1006.2(f), the name of the creditor to whom the debt was owed on the itemization date.\nThe account number, if any, associated with the debt on the itemization date, or a truncated version of that number.\nThe name of the creditor to whom the debt currently is owed.\nThe itemization date.\nThe amount of the debt on the itemization date.\nAn itemization of the current amount of the debt reflecting interest, fees, payments, and credits since the itemization date.\nThe current amount of the debt."
+    },
+    {
+      "source": "1006.34_2021-11-30.xml",
+      "paragraphs": [
+        "c"
+      ],
+      "reason": "passage_not_found",
+      "question": "What consumer‑response prompts must be included in the validation notice under the same regulation?",
+      "paragraph": "c",
+      "passage": "Dispute prompts. The following statements, listed in the following order, and using the following phrasing or substantially similar phrasing, each next to a prompt:\n(A) “I want to dispute the debt because I think:”;\n(B) “This is not my debt.”;\n(C) “The amount is wrong.”; and\n(D) “Other (please describe on reverse or attach additional information).”\nOriginal-creditor information prompt. The statement, “I want you to send me the name and address of the original creditor.”, using that phrase or a substantially similar phrase, next to a prompt.\nMailing addresses. Mailing addresses for the consumer and the debt collector, which are the debt collector's and the consumer's names and mailing addresses as disclosed pursuant to § 1006.34(c)(2)(i) and (ii)."
+    }
+  ],
+  "splits": {
+    "development": 42,
+    "test": 37
+  }
+}
